@@ -1,0 +1,1566 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../exp3-java/">
+      
+      
+        <link rel="next" href="../exp5/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>实验 4 - 在线实验手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4-hbase" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="在线实验手册" class="md-header__button md-logo" aria-label="在线实验手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c.76 0 1.5.11 2.2.31l1.57-1.57A9.822 9.822 0 0 0 12 2 10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10M7.91 10.08 6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            在线实验手册
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              实验 4
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  欢迎
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../meta/privacy/" class="md-tabs__link">
+          
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  大数据技术原理与应用
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="在线实验手册" class="md-nav__button md-logo" aria-label="在线实验手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c.76 0 1.5.11 2.2.31l1.57-1.57A9.822 9.822 0 0 0 12 2 10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10M7.91 10.08 6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09Z"/></svg>
+
+    </a>
+    在线实验手册
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    欢迎
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    关于
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            关于
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meta/privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    隐私政策
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meta/terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    服务协议
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    大数据技术原理与应用
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            大数据技术原理与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp3-shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 3 (Shell)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp3-java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 3 (Java)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    实验 4
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    实验 4
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 HBase
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装 HBase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      前言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用预编译的二进制包
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用预编译的二进制包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      下载
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hbase_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      自行编译 HBase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hbase_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 HBase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hbase-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 HBase Shell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 Java API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用自动验证工具
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      更新日志 / Changelog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      碎碎念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="碎碎念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache 的“排外”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hbase_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      HBase 文档的混乱
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop 生态糟糕的耦合性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hbase" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 HBase
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装 HBase">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      前言
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用预编译的二进制包
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="使用预编译的二进制包">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      下载
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hbase_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      自行编译 HBase
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hbase_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置 HBase
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      运行
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hbase-shell" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 HBase Shell
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#java-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用 Java API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      使用自动验证工具
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      更新日志 / Changelog
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      碎碎念
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="碎碎念">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#apache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Apache 的“排外”
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hbase_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      HBase 文档的混乱
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop 生态糟糕的耦合性
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="4-hbase">实验 4 - 熟悉常用的 HBase 操作<a class="headerlink" href="#4-hbase" title="Permanent link">&para;</a></h1>
+<h2 id="_1">概述<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p>本次实验中，我们需要搭建起 HBase 集群并在其基础上执行一些基础操作。</p>
+<p>本实验需要<a href="../exp1/">实验 1</a> 的基础，如果你还未完成，请先完成实验 1.</p>
+<div class="admonition warning">
+<p class="admonition-title">实验 1、4 是密切相关的</p>
+<p>很遗憾，Apache 至今没有一个良好的兼容性模型，导致 HBase 和 Hadoop 版本是强相关的。如果你的 Hadoop
+环境搭建并不是跟随“<a href="../exp1/">实验 1</a>”中所述完成的，你很有可能不适合本篇教程。</p>
+</div>
+<p>It's rock time, 开始吧！</p>
+<h2 id="hbase">安装 HBase<a class="headerlink" href="#hbase" title="Permanent link">&para;</a></h2>
+<h3 id="_2">前言<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<div class="admonition danger">
+<p class="admonition-title">Slow down!</p>
+<p>在跟随本教程时，请务必仔细阅读每一个细节。安装 HBase 的步骤可能会相当复杂，出错点较多。本教程<strong>非线性</strong>，将出现选择和根据情况跳跃阅读的情况，请勿直接复制粘贴所有命令。</p>
+</div>
+<p>这也许是本次实验中最简单也最困难的部分——如果你是根据本教程完成的实验 1，则不用担心，<del>编者已经帮你踩过坑了</del>；如果不是，则你有可能遇到问题。</p>
+<p>请根据你的实际情况，<strong>选择下列安装方法中的一个</strong>：</p>
+<ul>
+<li>我根据本教程，安装了 Hadoop 3.3.6：<a href="#_3">使用预编译的二进制包</a></li>
+<li>我安装的不是 Hadoop 3.3.6：<a href="#hbase_1">自行编译 HBase</a></li>
+<li>我想自己编译 HBase：<a href="#hbase_1">自行编译 HBase</a></li>
+<li>我安装了 Hadoop 3.3.6，但我是 M1 或者其它 ARM/AArch64 架构系统：<a href="#hbase_1">自行编译 HBase</a> 或者<a href="#_3">使用预编译的二进制包</a><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></li>
+</ul>
+<h3 id="_3">使用预编译的二进制包<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<h4 id="_4">下载<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h4>
+<p>如果你已经跟随本教程安装了 Hadoop 3.3.6，只需要<a href="../res/bigdata/exp4/hbase-2.5.7-bin.tar.gz"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg></span>在这里</a>下载预编译好的 HBase 即可。</p>
+<p>如果你是 ARMv8/AArch64 系统，可以尝试编者在 AArch64 环境下编译的 HBase 2.5.7：<a href="../res/bigdata/exp4/hbase-2.5.1-bin-aarch64.tar.gz"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg></span>在这里</a>。</p>
+<ul>
+<li>HBase 版本：2.5.7</li>
+<li>目标 Hadoop 版本：3.3.6</li>
+<li>Java 版本：OpenJDK (HotSpot VM) 1.8.0, amd64/aarch64</li>
+</ul>
+<h4 id="_5">安装<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h4>
+<div class="admonition warning">
+<p class="admonition-title">注意用户</p>
+<p>现在，我们正在执行系统维护操作（软件安装），我们会使用 <code>super</code> 用户（或者其它具有 <code>sudo</code> 权限的管理员用户）。请确保你正在使用此类用户执行操作，再继续。</p>
+</div>
+<p>先将 HBase 二进制包（<code>hbase-2.5.7-bin.tar.gz</code>）传输至虚拟机。具体步骤可以参考<a href="../exp1/#hadoop_2">实验 1</a>.</p>
+<p>依然，登录到虚拟机，你可以使用 SSH 远程连接，或者直接在虚拟机内登录操作。</p>
+<p><strong>以下步骤需要在集群内所有机器上均运行一遍</strong>。</p>
+<ul>
+<li>创建 HBase 安装目录：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>/usr/local/hbase
+</code></pre></div></li>
+<li>将 HBase 压缩包移动至目的地：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>sudo<span class="w"> </span>mv<span class="w"> </span>/tmp/hbase-2.5.7-bin.tar.gz<span class="w"> </span>/usr/local/hbase
+</code></pre></div></li>
+<li>前往 HBase 安装目录：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">cd</span><span class="w"> </span>/usr/local/hbase
+</code></pre></div></li>
+<li>解压缩：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-zxf<span class="w"> </span>hbase-2.5.7-bin.tar.gz
+</code></pre></div></li>
+<li>调整位置<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>mv<span class="w"> </span>hbase-2.5.7/*<span class="w"> </span>.
+</code></pre></div></li>
+<li>移除目录：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>hbase-2.5.7
+</code></pre></div></li>
+<li>移除压缩包：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>rm<span class="w"> </span>hbase-2.5.7-bin.tar.gz
+</code></pre></div></li>
+<li>修正权限<sup id="fnref2:2"><a class="footnote-ref" href="#fn:2">2</a></sup>：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>hadoop:hadoop<span class="w"> </span>.
+</code></pre></div></li>
+<li>修改 <code>profile</code>：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/profile.d/hbase.sh
+</code></pre></div></li>
+<li>添加以下内容：
+  <div class="highlight"><span class="filename">hbase.sh</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="c1">#HBASE_HOME</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HBASE_HOME</span><span class="o">=</span>/usr/local/hbase
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HBASE_HOME</span>/bin
+</code></pre></div></li>
+<li>按下 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span>，确认保存（按 <span class="keys"><kbd class="key-y">Y</kbd></span>），确认文件名（<span class="keys"><kbd class="key-enter">Enter</kbd></span>）</li>
+<li>应用变更：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">source</span><span class="w"> </span>/etc/profile
+</code></pre></div></li>
+<li>以 <code>hadoop</code> 用户身份，修改 <code>hbase-env.sh</code>: 
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>-u<span class="w"> </span>hadoop<span class="w"> </span>nano<span class="w"> </span><span class="nv">$HBASE_HOME</span>/conf/hbase-env.sh
+</code></pre></div><ul>
+<li>按 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-w">W</kbd></span>，输入 <code>JAVA_HOME</code> 寻找 <code>JAVA_HOME</code> 环境变量配置位置</li>
+<li>去除 <code>#</code> 来取消注释，填入 <code>/usr/lib/jvm/java-1.8.0-openjdk-amd64</code><sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></li>
+<li>按 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span> 保存</li>
+<li><em>可以参考<a href="../exp1/#java">实验 1</a></em></li>
+</ul>
+</li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">别忘了你有三台机哦</p>
+<p>在 Hadoop 搭建中，我们搭建起来的是一个集群，所以……很不幸，你需要在<strong>所有机器</strong>上执行一遍这些操作。</p>
+</div>
+<p>大功告成！现在，你可以直接前往<a href="#hbase_2">配置</a>部分了。</p>
+<h3 id="hbase_1">自行编译 HBase<a class="headerlink" href="#hbase_1" title="Permanent link">&para;</a></h3>
+<p>如果你是想挑战自己，或者是想尝试一下自己编译而来的，欢迎！而如果你是因为环境不允许而被迫使用此方法的，那么 <del>我在此向你致以慰问</del> 也没关系！接下来，我们开始吧。</p>
+<div class="admonition note">
+<p class="admonition-title">使用最新版本</p>
+<p>撰写时，HBase 2.5.7 为最新版本，如果发生变化，你可能需要对应调整 URL 和文件名来完成编译。</p>
+</div>
+<ul>
+<li>以 <code>super</code> 身份安装 <code>maven</code>：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>maven
+</code></pre></div></li>
+<li>切换到 <code>hadoop</code> 用户：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>su - hadoop
+</code></pre></div></li>
+<li>开辟编译用工作空间：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>mkdir ~/build &amp;&amp; cd ~/build
+</code></pre></div></li>
+<li>获得 HBase 2.5.7 源代码：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>curl -o hbase-2.5.7-src.tar.gz https://mirrors.ustc.edu.cn/apache/hbase/2.5.7/hbase-2.5.7-src.tar.gz
+</code></pre></div></li>
+<li>解压缩：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>tar -zxf hbase-2.5.7-src.tar.gz &amp;&amp; cd hbase-2.5.7
+</code></pre></div></li>
+<li>执行编译：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>mvn clean install -DskipTests -Dhadoop.profile=3.0 -Dhadoop-three.version=3.3.6 assembly:single
+</code></pre></div></li>
+<li>等待：HBase 作为大型项目，编译非常耗时，同时需要从 Maven Central 下载依赖，你可以去喝杯咖啡（<del>三点半力饮茶先啦</del>）、上个厕所或者洗个澡，大约需要 30 分钟时间</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">注意 Hadoop 版本</p>
+<p>如果你是搭配实验 1 的现有环境，或者是已经搭建好了 Hadoop 3.3.6，那没关系，可以无视这个提示。但如果你使用的是其他版本的 Hadoop，请注意上方 <code>-Dhadoop-three.version=3.3.6</code>
+这个参数。如果你使用的是，比如，Hadoop 3.1.3，请使用 <code>-Dhadoop-three.version=3.1.3</code>. HBase 2.5.7 和部分 Hadoop 版本是不兼容的，你可以<a href="https://hbase.apache.org/book.html#hadoop">在这里 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a>检查。</p>
+</div>
+<p>编译完成后的 tar 包的位置在：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>~/build/hbase-2.5.7/hbase-assembly/target/hbase-2.5.7-bin.tar.gz
+</code></pre></div>
+<p>结束了？是的。我们现在获得了可以直接用来部署的 HBase. 遵循<a href="#_5">这里</a>的步骤即可，但你不需要把 tar 文件传输到虚拟机了——它已经在虚拟机上了。</p>
+<div class="admonition note">
+<p class="admonition-title">看起来也没多难？</p>
+<p>这样看起来的话，确实是难度不高，最难的其实主要是找到正确的步骤……所以，again，80% 的工作，咱都给你省下了 ;)</p>
+</div>
+<h2 id="hbase_2">配置 HBase<a class="headerlink" href="#hbase_2" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">注意用户</p>
+<p>现在，我们正在执行软件配置操作，我们会使用 <code>hadoop</code> 用户完成。</p>
+</div>
+<p>可以使用以下命令确认 HBase 安装完成：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>hbase version
+</code></pre></div>
+<p>输出应该类似：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="nl">SLF4J</span><span class="p">:</span><span class="w"> </span><span class="n">Class</span><span class="w"> </span><span class="n">path</span><span class="w"> </span><span class="n">contains</span><span class="w"> </span><span class="n">multiple</span><span class="w"> </span><span class="n">SLF4J</span><span class="w"> </span><span class="n">bindings</span><span class="p">.</span><span class="w"> </span><span class="cm">/* (1)! */</span>
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a><span class="nl">SLF4J</span><span class="p">:</span><span class="w"> </span><span class="n">Found</span><span class="w"> </span><span class="n">binding</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="n">jar</span><span class="o">:</span><span class="n">file</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">hadoop</span><span class="o">/</span><span class="n">common</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">slf4j</span><span class="o">-</span><span class="n">reload4j</span><span class="mf">-1.7.36</span><span class="p">.</span><span class="n">jar</span><span class="o">!/</span><span class="n">org</span><span class="o">/</span><span class="n">slf4j</span><span class="o">/</span><span class="n">impl</span><span class="o">/</span><span class="n">StaticLoggerBinder</span><span class="p">.</span><span class="n">class</span><span class="p">]</span>
+<a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a><span class="nl">SLF4J</span><span class="p">:</span><span class="w"> </span><span class="n">Found</span><span class="w"> </span><span class="n">binding</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="p">[</span><span class="n">jar</span><span class="o">:</span><span class="n">file</span><span class="o">:/</span><span class="n">usr</span><span class="o">/</span><span class="n">local</span><span class="o">/</span><span class="n">hbase</span><span class="o">/</span><span class="n">lib</span><span class="o">/</span><span class="n">client</span><span class="o">-</span><span class="n">facing</span><span class="o">-</span><span class="n">thirdparty</span><span class="o">/</span><span class="n">log4j</span><span class="o">-</span><span class="n">slf4j</span><span class="o">-</span><span class="n">impl</span><span class="mf">-2.17.2</span><span class="p">.</span><span class="n">jar</span><span class="o">!/</span><span class="n">org</span><span class="o">/</span><span class="n">slf4j</span><span class="o">/</span><span class="n">impl</span><span class="o">/</span><span class="n">StaticLoggerBinder</span><span class="p">.</span><span class="n">class</span><span class="p">]</span>
+<a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a><span class="nl">SLF4J</span><span class="p">:</span><span class="w"> </span><span class="n">See</span><span class="w"> </span><span class="n">http</span><span class="o">:</span><span class="c1">//www.slf4j.org/codes.html#multiple_bindings for an explanation.</span>
+<a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="nl">SLF4J</span><span class="p">:</span><span class="w"> </span><span class="n">Actual</span><span class="w"> </span><span class="n">binding</span><span class="w"> </span><span class="n">is</span><span class="w"> </span><span class="n">of</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="p">[</span><span class="n">org</span><span class="p">.</span><span class="n">slf4j</span><span class="p">.</span><span class="n">impl</span><span class="p">.</span><span class="n">Reload4jLoggerFactory</span><span class="p">]</span>
+<a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a><span class="n">HBase</span><span class="w"> </span><span class="mf">2.5.7</span>
+<a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a><span class="n">Source</span><span class="w"> </span><span class="n">code</span><span class="w"> </span><span class="n">repository</span><span class="w"> </span><span class="n">file</span><span class="o">:</span><span class="c1">///never/gonna/give/you/up/hbase-2.5.7 revision=Unknown</span>
+<a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a><span class="n">Compiled</span><span class="w"> </span><span class="n">by</span><span class="w"> </span><span class="n">another</span><span class="o">-</span><span class="n">dimension</span><span class="w"> </span><span class="n">on</span><span class="w"> </span><span class="n">Mon</span><span class="w"> </span><span class="n">Oct</span><span class="w"> </span><span class="mi">31</span><span class="w"> </span><span class="mi">19</span><span class="o">:</span><span class="mi">38</span><span class="o">:</span><span class="mi">33</span><span class="w"> </span><span class="n">HKT</span><span class="w"> </span><span class="mi">2022</span>
+<a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a><span class="n">From</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">with</span><span class="w"> </span><span class="n">checksum</span><span class="w"> </span><span class="mi">9</span><span class="n">d1825cadbe030982fea8866bace7c1fbaa5e3822ffb2d4bbcf2cf61b01d29c109ca42a5c4395e6f3e18df3760cce194f37388a87406d875850fc699a319d940</span>
+</code></pre></div>
+<ol>
+<li>SLF4J 多重后端，可以无视这个报错</li>
+</ol>
+<p>在完成了 HBase 的安装以后，接下来的任务就比较轻松了。我们来配置 HBase，仍然是需要在集群上所有机器上完成：</p>
+<ul>
+<li>进入 HBase 配置目录：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$HBASE_HOME</span>/conf
+</code></pre></div></li>
+<li>将 Hadoop 的配置文件以符号链接形式复制过来：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$HADOOP_HOME</span>/etc/hadoop/core-site.xml<span class="w"> </span>core-site.xml
+<a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$HADOOP_HOME</span>/etc/hadoop/hdfs-site.xml<span class="w"> </span>hdfs-site.xml
+</code></pre></div></li>
+<li>修改 <code>regionservers</code>: 
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>nano regionservers
+</code></pre></div><ul>
+<li>如果本来就有一行 <code>localhost</code>，删掉它</li>
+<li>填入集群内所有服务器：
+  <div class="highlight"><span class="filename">regionservers</span><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>namenode
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a>datanode1
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a>datanode2
+</code></pre></div></li>
+</ul>
+</li>
+<li>修改 <code>hbase-site.xml</code>: <code>nano hbase-site.xml</code>
+  <div class="highlight"><span class="filename">hbase-site.xml</span><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="cp">&lt;?xml version=&quot;1.0&quot;?&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="cp">&lt;?xml-stylesheet type=&quot;text/xsl&quot; href=&quot;configuration.xsl&quot;?&gt;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">        </span><span class="nt">&lt;name&gt;</span>hbase.rootdir<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">        </span><span class="nt">&lt;value&gt;</span>hdfs://namenode:8020/hbase<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">    </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">    </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">        </span><span class="nt">&lt;name&gt;</span>hbase.cluster.distributed<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="w">        </span><span class="nt">&lt;value&gt;</span>true<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-25-11" name="__codelineno-25-11" href="#__codelineno-25-11"></a><span class="w">    </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-25-12" name="__codelineno-25-12" href="#__codelineno-25-12"></a><span class="w">    </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-25-13" name="__codelineno-25-13" href="#__codelineno-25-13"></a><span class="w">        </span><span class="nt">&lt;name&gt;</span>hbase.master<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-25-14" name="__codelineno-25-14" href="#__codelineno-25-14"></a><span class="w">        </span><span class="nt">&lt;value&gt;</span>namenode:16000<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-25-15" name="__codelineno-25-15" href="#__codelineno-25-15"></a><span class="w">    </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-25-16" name="__codelineno-25-16" href="#__codelineno-25-16"></a><span class="w">    </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-25-17" name="__codelineno-25-17" href="#__codelineno-25-17"></a><span class="w">        </span><span class="nt">&lt;name&gt;</span>hbase.master.info.port<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-25-18" name="__codelineno-25-18" href="#__codelineno-25-18"></a><span class="w">        </span><span class="nt">&lt;value&gt;</span>16010<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-25-19" name="__codelineno-25-19" href="#__codelineno-25-19"></a><span class="w">    </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-25-20" name="__codelineno-25-20" href="#__codelineno-25-20"></a><span class="w">    </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-25-21" name="__codelineno-25-21" href="#__codelineno-25-21"></a><span class="w">        </span><span class="nt">&lt;name&gt;</span>hbase.zookeeper.quorum<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-25-22" name="__codelineno-25-22" href="#__codelineno-25-22"></a><span class="w">        </span><span class="nt">&lt;value&gt;</span>namenode,datanode1,datanode2<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-25-23" name="__codelineno-25-23" href="#__codelineno-25-23"></a><span class="w">    </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-25-24" name="__codelineno-25-24" href="#__codelineno-25-24"></a><span class="w">    </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-25-25" name="__codelineno-25-25" href="#__codelineno-25-25"></a><span class="w">        </span><span class="nt">&lt;name&gt;</span>hbase.unsafe.stream.capability.enforce<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-25-26" name="__codelineno-25-26" href="#__codelineno-25-26"></a><span class="w">        </span><span class="nt">&lt;value&gt;</span>false<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-25-27" name="__codelineno-25-27" href="#__codelineno-25-27"></a><span class="w">    </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-25-28" name="__codelineno-25-28" href="#__codelineno-25-28"></a><span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">想偷懒？</p>
+<p>上方 HBase 安装时，我们确实需要在每一台机器上都执行一遍那些操作。但这次，在一台机器上（比如 <code>namenode</code>）完成配置后，只需要使用 <code>scp</code> 将配置文件复制到别的机器即可<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>scp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$HBASE_HOME</span>/conf<span class="w"> </span>datanode1:<span class="nv">$HBASE_HOME</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a>scp<span class="w"> </span>-r<span class="w"> </span><span class="nv">$HBASE_HOME</span>/conf<span class="w"> </span>datanode2:<span class="nv">$HBASE_HOME</span>
+</code></pre></div>
+<p>但是！<code>scp</code> 在处理符号链接时，会直接将文件内容复制到目标……所以，这个懒就只能偷到这为止了，你需要去另外两台机器，<strong>以 <code>hadoop</code> 用户身份</strong>，各自执行这几个命令：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="c1"># 移除复制的文件</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a>rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$HBASE_HOME</span>/conf/core-site.xml
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a>rm<span class="w"> </span>-f<span class="w"> </span><span class="nv">$HBASE_HOME</span>/conf/hdfs-site.xml
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="c1"># 重新建立符号链接</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$HADOOP_HOME</span>/etc/hadoop/core-site.xml<span class="w"> </span><span class="nv">$HBASE_HOME</span>/conf/core-site.xml
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a>ln<span class="w"> </span>-s<span class="w"> </span><span class="nv">$HADOOP_HOME</span>/etc/hadoop/hdfs-site.xml<span class="w"> </span><span class="nv">$HBASE_HOME</span>/conf/hdfs-site.xml
+</code></pre></div>
+</div>
+<h2 id="_6">运行<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<p>终于完成了！我们来运行 HBase 试一下：</p>
+<ul>
+<li>启动 Hadoop HDFS:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>start-dfs.sh
+</code></pre></div></li>
+<li>启动 Hadoop YARN:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>start-yarn.sh
+</code></pre></div></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">注意机器！</p>
+<p>像之前的实验一样，你需要在 <code>datanode1</code> 启动 YARN.</p>
+</div>
+<ul>
+<li><strong>等待 30 秒，待 Hadoop 安全模式停用</strong><br />
+<a class="glightbox" href="../../img/bigdata/exp4/hadoop-safemode.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HDFS 安全模式禁用" src="../../img/bigdata/exp4/hadoop-safemode.png" /></a></li>
+<li>在 <code>namenode</code> 启动 HBase:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>start-hbase.sh
+</code></pre></div></li>
+</ul>
+<p>现在你可以尝试访问 <a href="http://192.168.178.100:16010" target="_blank">HBase 面板 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a> 查看 HBase 状态了。</p>
+<p>根据情况，你可能需要使用 <code>http://[虚拟机 IP]:16010</code>.</p>
+<div class="admonition faq">
+<p class="admonition-title">为什么要等 30 秒？</p>
+<p>Hadoop 集群在启动后会进入“安全模式”，此时的集群处于只读状态（不可写），保证集群启动完毕以后，Hadoop 安全模式将自动关闭。HBase 需要能够直接向 HDFS
+写入数据才能正常运行，因此需要等待 Hadoop 安全模式关闭。</p>
+</div>
+<p>如果你的 HBase 面板显示如下，则说明启动正常。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp4/hbase-status.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="HBase 面板" src="../../img/bigdata/exp4/hbase-status.png" /></a></p>
+<h2 id="hbase-shell">使用 HBase Shell<a class="headerlink" href="#hbase-shell" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">注意用户</p>
+<p>现在，我们正在执行 HBase 操作，我们会使用 <code>hadoop</code> 用户完成。</p>
+</div>
+<ul>
+<li>进入 HBase 客户端命令行：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>hbase<span class="w"> </span>shell
+</code></pre></div></li>
+<li>建表<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="k">create</span><span class="w"> </span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;score&#39;</span>
+</code></pre></div></li>
+<li>列表：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">list</span>
+</code></pre></div></li>
+<li>填入数据：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">put</span><span class="w"> </span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;James&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;score:Math&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;69&#39;</span>
+</code></pre></div></li>
+<li>显示表数据：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="n">scan</span><span class="w"> </span><span class="s1">&#39;example&#39;</span>
+</code></pre></div></li>
+<li>删除数据：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a><span class="k">delete</span><span class="w"> </span><span class="s1">&#39;example&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;James&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;score:Math&#39;</span>
+</code></pre></div></li>
+<li>继续建表，添加数据，再来 drop 掉：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a><span class="k">create</span><span class="w"> </span><span class="s1">&#39;sample&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;score&#39;</span>
+<a id="__codelineno-37-2" name="__codelineno-37-2" href="#__codelineno-37-2"></a><span class="n">put</span><span class="w">    </span><span class="s1">&#39;sample&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Rick&#39;</span><span class="p">,</span><span class="w">   </span><span class="s1">&#39;score:English&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;90&#39;</span>
+<a id="__codelineno-37-3" name="__codelineno-37-3" href="#__codelineno-37-3"></a><span class="n">put</span><span class="w">    </span><span class="s1">&#39;sample&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Astley&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;score:Math&#39;</span><span class="p">,</span><span class="w">    </span><span class="s1">&#39;70&#39;</span>
+<a id="__codelineno-37-4" name="__codelineno-37-4" href="#__codelineno-37-4"></a><span class="k">count</span><span class="w">  </span><span class="s1">&#39;example&#39;</span>
+<a id="__codelineno-37-5" name="__codelineno-37-5" href="#__codelineno-37-5"></a><span class="k">count</span><span class="w">  </span><span class="s1">&#39;sample&#39;</span>
+<a id="__codelineno-37-6" name="__codelineno-37-6" href="#__codelineno-37-6"></a><span class="n">list</span>
+<a id="__codelineno-37-7" name="__codelineno-37-7" href="#__codelineno-37-7"></a><span class="k">truncate</span><span class="w"> </span><span class="s1">&#39;sample&#39;</span>
+<a id="__codelineno-37-8" name="__codelineno-37-8" href="#__codelineno-37-8"></a><span class="n">list</span>
+</code></pre></div></li>
+</ul>
+<h2 id="java-api">使用 Java API<a class="headerlink" href="#java-api" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">不要直接运行！</p>
+<p>在下载源码后，请修改 <code>src/main/resources</code> 文件夹内的 <code>hbase-site.xml</code>，将 Quorum 设置为正确的 IP.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">运行机 <code>hosts</code> 要求</p>
+<p>在运行 Java 应用的机器上，需要设置 <code>hosts</code> 使 <code>namenode</code>, <code>datanode1</code>, <code>datanode2</code> 可以被解析。</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m0 93.7 183.6-25.3v177.4H0V93.7zm0 324.6 183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg></span> <code>C:\Windows\System32\drivers\etc\hosts</code></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7zM223.7 87.3c9.8-22.2 34.2-21.8 44-.4 6.5 14.2 3.6 30.9-4.3 40.4-1.6-.8-5.9-2.6-12.6-4.9 1.1-1.2 3.1-2.7 3.9-4.6 4.8-11.8-.2-27-9.1-27.3-7.3-.5-13.9 10.8-11.8 23-4.1-2-9.4-3.5-13-4.4-1-6.9-.3-14.6 2.9-21.8zM183 75.8c10.1 0 20.8 14.2 19.1 33.5-3.5 1-7.1 2.5-10.2 4.6 1.2-8.9-3.3-20.1-9.6-19.6-8.4.7-9.8 21.2-1.8 28.1 1 .8 1.9-.2-5.9 5.5-15.6-14.6-10.5-52.1 8.4-52.1zm-13.6 60.7c6.2-4.6 13.6-10 14.1-10.5 4.7-4.4 13.5-14.2 27.9-14.2 7.1 0 15.6 2.3 25.9 8.9 6.3 4.1 11.3 4.4 22.6 9.3 8.4 3.5 13.7 9.7 10.5 18.2-2.6 7.1-11 14.4-22.7 18.1-11.1 3.6-19.8 16-38.2 14.9-3.9-.2-7-1-9.6-2.1-8-3.5-12.2-10.4-20-15-8.6-4.8-13.2-10.4-14.7-15.3-1.4-4.9 0-9 4.2-12.3zm3.3 334c-2.7 35.1-43.9 34.4-75.3 18-29.9-15.8-68.6-6.5-76.5-21.9-2.4-4.7-2.4-12.7 2.6-26.4v-.2c2.4-7.6.6-16-.6-23.9-1.2-7.8-1.8-15 .9-20 3.5-6.7 8.5-9.1 14.8-11.3 10.3-3.7 11.8-3.4 19.6-9.9 5.5-5.7 9.5-12.9 14.3-18 5.1-5.5 10-8.1 17.7-6.9 8.1 1.2 15.1 6.8 21.9 16l19.6 35.6c9.5 19.9 43.1 48.4 41 68.9zm-1.4-25.9c-4.1-6.6-9.6-13.6-14.4-19.6 7.1 0 14.2-2.2 16.7-8.9 2.3-6.2 0-14.9-7.4-24.9-13.5-18.2-38.3-32.5-38.3-32.5-13.5-8.4-21.1-18.7-24.6-29.9s-3-23.3-.3-35.2c5.2-22.9 18.6-45.2 27.2-59.2 2.3-1.7.8 3.2-8.7 20.8-8.5 16.1-24.4 53.3-2.6 82.4.6-20.7 5.5-41.8 13.8-61.5 12-27.4 37.3-74.9 39.3-112.7 1.1.8 4.6 3.2 6.2 4.1 4.6 2.7 8.1 6.7 12.6 10.3 12.4 10 28.5 9.2 42.4 1.2 6.2-3.5 11.2-7.5 15.9-9 9.9-3.1 17.8-8.6 22.3-15 7.7 30.4 25.7 74.3 37.2 95.7 6.1 11.4 18.3 35.5 23.6 64.6 3.3-.1 7 .4 10.9 1.4 13.8-35.7-11.7-74.2-23.3-84.9-4.7-4.6-4.9-6.6-2.6-6.5 12.6 11.2 29.2 33.7 35.2 59 2.8 11.6 3.3 23.7.4 35.7 16.4 6.8 35.9 17.9 30.7 34.8-2.2-.1-3.2 0-4.2 0 3.2-10.1-3.9-17.6-22.8-26.1-19.6-8.6-36-8.6-38.3 12.5-12.1 4.2-18.3 14.7-21.4 27.3-2.8 11.2-3.6 24.7-4.4 39.9-.5 7.7-3.6 18-6.8 29-32.1 22.9-76.7 32.9-114.3 7.2zm257.4-11.5c-.9 16.8-41.2 19.9-63.2 46.5-13.2 15.7-29.4 24.4-43.6 25.5s-26.5-4.8-33.7-19.3c-4.7-11.1-2.4-23.1 1.1-36.3 3.7-14.2 9.2-28.8 9.9-40.6.8-15.2 1.7-28.5 4.2-38.7 2.6-10.3 6.6-17.2 13.7-21.1.3-.2.7-.3 1-.5.8 13.2 7.3 26.6 18.8 29.5 12.6 3.3 30.7-7.5 38.4-16.3 9-.3 15.7-.9 22.6 5.1 9.9 8.5 7.1 30.3 17.1 41.6 10.6 11.6 14 19.5 13.7 24.6zM173.3 148.7c2 1.9 4.7 4.5 8 7.1 6.6 5.2 15.8 10.6 27.3 10.6 11.6 0 22.5-5.9 31.8-10.8 4.9-2.6 10.9-7 14.8-10.4s5.9-6.3 3.1-6.6-2.6 2.6-6 5.1c-4.4 3.2-9.7 7.4-13.9 9.8-7.4 4.2-19.5 10.2-29.9 10.2s-18.7-4.8-24.9-9.7c-3.1-2.5-5.7-5-7.7-6.9-1.5-1.4-1.9-4.6-4.3-4.9-1.4-.1-1.8 3.7 1.7 6.5z"/></svg></span> <code>/etc/hosts</code></li>
+</ul>
+<div class="highlight"><span class="filename">hosts</span><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>192.168.178.100    namenode
+<a id="__codelineno-38-2" name="__codelineno-38-2" href="#__codelineno-38-2"></a>192.168.178.101    datanode1
+<a id="__codelineno-38-3" name="__codelineno-38-3" href="#__codelineno-38-3"></a>192.168.178.102    datanode2
+</code></pre></div>
+<p>如果你有自己架设的 DNS 服务器，也可以在 DNS 服务器上设置这些记录。</p>
+</div>
+<p>类似实验 3，你需要：<a href="../../res/bigdata/exp4/exp4-template.tar.gz"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg></span>下载示例源码</a>。再修改完成其中设置的填空代码。</p>
+<p>具体要求，请查看项目中的 README 文件。</p>
+<h2 id="_7">使用自动验证工具<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<p>如果你正在使用 Windows，可以尝试我们开发的这个 app 来测试你对本实验的理解。</p>
+<p>在<a href="../res/bigdata/exp1/HadoopVerifier.exe"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg></span>此处下载</a>。</p>
+<div class="admonition note">
+<p>※ 由于是独立开发应用，Microsoft Defender 反病毒应用程序可能误触发自动提交样本。</p>
+<p>※ 可能不是最新版本，但程序启动时会自动应用增量更新。</p>
+</div>
+<h2 id="changelog">更新日志 / Changelog<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h2>
+<ul>
+<li>2023/04/03<ul>
+<li>调整了 HBase 配置的顺序</li>
+</ul>
+</li>
+<li>2023/03/28<ul>
+<li>修正了一部分格式，与其他实验保持一致</li>
+</ul>
+</li>
+</ul>
+<h2 id="_8">碎碎念<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h2>
+<p><em>这一块是编者的碎碎念，可以不看。</em></p>
+<h3 id="apache">Apache 的“排外”<a class="headerlink" href="#apache" title="Permanent link">&para;</a></h3>
+<p>Apache 系软件陷入了一种“专业人士的陷阱”：里面的人认为不需要教程/指导（如同证明题的“显然”、“易得”），外面的人因为没有基础而难以加入。虽然 Apache 是“专业软件”，并不需要好看的皮囊作为包装，但仍然，简陋的界面设计和不人性化的阅读体验，仍然让初学者望而却步，难以上手。</p>
+<h3 id="hbase_3">HBase 文档的混乱<a class="headerlink" href="#hbase_3" title="Permanent link">&para;</a></h3>
+<p>仅仅是编译 HBase，编者就找到了至少两份官方文档：</p>
+<ul>
+<li><a href="https://hbase.apache.org/book.html#build">https://hbase.apache.org/book.html#build</a></li>
+<li><a href="https://svn.apache.org/repos/asf/hbase/hbase.apache.org/trunk/0.94/developer.html#build.tgz">https://svn.apache.org/repos/asf/hbase/hbase.apache.org/trunk/0.94/developer.html#build.tgz</a></li>
+</ul>
+<p>但其实，没有一个版本是可以成功得到 tar 包的。我们使用的是 <code>mvn clean install -DskipTests -Dhadoop.profile=3.0 -Dhadoop-three.version=3.3.6 assembly:single</code>.</p>
+<p>然后呢？即使 HBase 官方表明 HBase 2.5.x 具有 Hadoop 3.3.2+ 的完整支持，但直接从 HBase 官方下载的预编译包，在 Hadoop 3.x 发布如此长时间（2017-12-08，距撰稿时近 5 年）后，仍然是针对 Hadoop 2.8.5 编译的，无法配合 API 具有巨大变化的 Hadoop 3.3.6 使用。因此才有了需要手动编译针对 Hadoop 3.3.6 的 HBase 这一出闹剧。</p>
+<h3 id="hadoop">Hadoop 生态糟糕的耦合性<a class="headerlink" href="#hadoop" title="Permanent link">&para;</a></h3>
+<p>如上方所述，Hadoop 和 HBase 的强版本依赖会严重妨碍二者的共同运行。个人认为这并不是一个好的设计。而 HBase 在 Hadoop 官方完成 2.x 至 3.x 的升级后，未明确注明 HBase 预编译二进制仍然是针对 Hadoop 2.x 编译的，且未提供针对 Hadoop 3.x 的预编译版本，极易导致用户失误。</p>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>理论上 Java 是不在意系统架构的，这也是 Java 的优点之一。所以你也可以尝试在 ARM 系统上使用现成的 HBase 包。但编者因为暂无可供测试的 ARM 设备，无法验证是否可行&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>别把最后的那个“点”（<code>.</code>）看丢啦，如果没打进去，自然是会报错的&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>这是 x86-64 Ubuntu 的 <code>openjdk-8-jdk</code> 包安装的目标位置，如果你使用的是其它发行版、处理器架构或包（比如 Arch Linux 的 <code>jdk8-openjdk</code> 包在 <code>/usr/lib/jvm/java-8-openjdk</code>），请使用 <code>ls /usr/lib/jvm</code> 确认正确的 <code>$JAVA_HOME</code> 位置&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>由于 <a href="https://nvd.nist.gov/vuln/detail/CVE-2018-20685">CVE-2018-20685 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a>，<code>scp</code> 不再支持使用 <code>.</code> 作为目录名，可参见<a href="https://github.com/fsprojects/FAKE/issues/2552">这个 GitHub Issue <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a>&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>HBase 建表时要求至少有一个列族&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../exp3-java/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 实验 3 (Java)">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                实验 3 (Java)
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../exp5/" class="md-footer__link md-footer__link--next" aria-label="下一页: 实验 5">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                实验 5
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      版权所有 &copy; 2022 - 2024，仅限内部使用，不得未经允许再分发。<a href='/meta/privacy'>隐私政策 </a>及<a href='/meta/terms'> 服务协议</a>。
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+
+
+  
+
+<h4>数据隐私</h4>
+<p>我们不向您收集任何数据，或以任何形式跟踪您。请查看我们的<a href="/meta/privacy">隐私政策</a>以获得更多信息。</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.footer", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

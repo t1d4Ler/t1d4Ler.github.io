@@ -1,0 +1,3084 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../exp2/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>实验 1 - 在线实验手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1-hadoop" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="在线实验手册" class="md-header__button md-logo" aria-label="在线实验手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c.76 0 1.5.11 2.2.31l1.57-1.57A9.822 9.822 0 0 0 12 2 10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10M7.91 10.08 6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            在线实验手册
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              实验 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  欢迎
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../meta/privacy/" class="md-tabs__link">
+          
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  大数据技术原理与应用
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="在线实验手册" class="md-nav__button md-logo" aria-label="在线实验手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c.76 0 1.5.11 2.2.31l1.57-1.57A9.822 9.822 0 0 0 12 2 10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10M7.91 10.08 6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09Z"/></svg>
+
+    </a>
+    在线实验手册
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    欢迎
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    关于
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            关于
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meta/privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    隐私政策
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meta/terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    服务协议
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    大数据技术原理与应用
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            大数据技术原理与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    实验 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    实验 1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      前置条件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      下载需要的软件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="下载需要的软件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      虚拟化软件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      软件镜像
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置虚拟机
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置虚拟机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建虚拟机
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建虚拟机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择镜像
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装操作系统
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装操作系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      语言设置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      识别键盘布局
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择安装类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络设置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      代理服务器配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      镜像源配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬盘格式化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统安装前的小插曲
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统安装
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      完成！
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      卡住了？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      初来咋到！
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      首次登录
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop 安装
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hadoop 安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hadoop_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建 Hadoop 用户
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 Hadoop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 Java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      切换到 Hadoop 用户
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hadoop_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop 配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hadoop 配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-sitexml" class="md-nav__link">
+    <span class="md-ellipsis">
+      core-site.xml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdfs-sitexml" class="md-nav__link">
+    <span class="md-ellipsis">
+      hdfs-site.xml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yarn-sitexml" class="md-nav__link">
+    <span class="md-ellipsis">
+      yarn-site.xml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapred-sitexml" class="md-nav__link">
+    <span class="md-ellipsis">
+      mapred-site.xml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      workers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置网络
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      克隆虚拟机
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="克隆虚拟机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      克隆文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置克隆机网络
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      在三台机器上配置公钥登录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      格式化 HDFS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动集群
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      结束了？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结束了？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      成功的标志
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="成功的标志">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动和停止过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      三台服务器运行的后台任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop 集群节点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yarn" class="md-nav__link">
+    <span class="md-ellipsis">
+      YARN 节点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动验证
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      那以后呢？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ / 常见问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ / 常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      其它系统配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop-envsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      hadoop-env.sh 文件未找到
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt" class="md-nav__link">
+    <span class="md-ellipsis">
+      apt 无法连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      scp 连接超时
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      scp 无法确认连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      scp 命令未找到
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssh 或 scp 提示远程指纹更改
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动集群时提示权限拒绝
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datanode" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动集群后看不到 datanode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changelog / 更新日志
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp3-shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 3 (Shell)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp3-java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 3 (Java)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      前置条件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      下载需要的软件
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="下载需要的软件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      虚拟化软件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      软件镜像
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置虚拟机
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置虚拟机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建虚拟机
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="创建虚拟机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择镜像
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬件配置
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装操作系统
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="安装操作系统">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_11" class="md-nav__link">
+    <span class="md-ellipsis">
+      语言设置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_12" class="md-nav__link">
+    <span class="md-ellipsis">
+      识别键盘布局
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_13" class="md-nav__link">
+    <span class="md-ellipsis">
+      选择安装类型
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_14" class="md-nav__link">
+    <span class="md-ellipsis">
+      网络设置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_15" class="md-nav__link">
+    <span class="md-ellipsis">
+      代理服务器配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_16" class="md-nav__link">
+    <span class="md-ellipsis">
+      镜像源配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_17" class="md-nav__link">
+    <span class="md-ellipsis">
+      硬盘格式化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_18" class="md-nav__link">
+    <span class="md-ellipsis">
+      用户配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_19" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统安装前的小插曲
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_20" class="md-nav__link">
+    <span class="md-ellipsis">
+      系统安装
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_21" class="md-nav__link">
+    <span class="md-ellipsis">
+      完成！
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_22" class="md-nav__link">
+    <span class="md-ellipsis">
+      卡住了？
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_23" class="md-nav__link">
+    <span class="md-ellipsis">
+      初来咋到！
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_24" class="md-nav__link">
+    <span class="md-ellipsis">
+      首次登录
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop 安装
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hadoop 安装">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#hadoop_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建 Hadoop 用户
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 Hadoop
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    <span class="md-ellipsis">
+      安装 Java
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      切换到 Hadoop 用户
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hadoop_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop 配置
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hadoop 配置">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-sitexml" class="md-nav__link">
+    <span class="md-ellipsis">
+      core-site.xml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdfs-sitexml" class="md-nav__link">
+    <span class="md-ellipsis">
+      hdfs-site.xml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yarn-sitexml" class="md-nav__link">
+    <span class="md-ellipsis">
+      yarn-site.xml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mapred-sitexml" class="md-nav__link">
+    <span class="md-ellipsis">
+      mapred-site.xml
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#workers" class="md-nav__link">
+    <span class="md-ellipsis">
+      workers
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_25" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置网络
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_26" class="md-nav__link">
+    <span class="md-ellipsis">
+      克隆虚拟机
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="克隆虚拟机">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_27" class="md-nav__link">
+    <span class="md-ellipsis">
+      克隆文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_28" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置克隆机网络
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_29" class="md-nav__link">
+    <span class="md-ellipsis">
+      在三台机器上配置公钥登录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hdfs" class="md-nav__link">
+    <span class="md-ellipsis">
+      格式化 HDFS
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_30" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动集群
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_31" class="md-nav__link">
+    <span class="md-ellipsis">
+      结束了？
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="结束了？">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_32" class="md-nav__link">
+    <span class="md-ellipsis">
+      成功的标志
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="成功的标志">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_33" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动和停止过程
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_34" class="md-nav__link">
+    <span class="md-ellipsis">
+      三台服务器运行的后台任务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hadoop 集群节点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#yarn" class="md-nav__link">
+    <span class="md-ellipsis">
+      YARN 节点
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_35" class="md-nav__link">
+    <span class="md-ellipsis">
+      自动验证
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_36" class="md-nav__link">
+    <span class="md-ellipsis">
+      那以后呢？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#faq" class="md-nav__link">
+    <span class="md-ellipsis">
+      FAQ / 常见问题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="FAQ / 常见问题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_37" class="md-nav__link">
+    <span class="md-ellipsis">
+      其它系统配置
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hadoop-envsh" class="md-nav__link">
+    <span class="md-ellipsis">
+      hadoop-env.sh 文件未找到
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apt" class="md-nav__link">
+    <span class="md-ellipsis">
+      apt 无法连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      scp 连接超时
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      scp 无法确认连接
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scp_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      scp 命令未找到
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ssh-scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      ssh 或 scp 提示远程指纹更改
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_38" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动集群时提示权限拒绝
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datanode" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动集群后看不到 datanode
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changelog / 更新日志
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="1-hadoop">实验 1 - 搭建 Hadoop 环境<a class="headerlink" href="#1-hadoop" title="Permanent link">&para;</a></h1>
+<h2 id="_1">前置条件<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项目</th>
+<th>最低配置</th>
+<th>推荐配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m6 2a6 6 0 0 0-6 6c0 3.31 2.69 6 6.1 6l-.88-2.23a1.01 1.01 0 0 1 .37-1.37l.86-.5a1.01 1.01 0 0 1 1.37.37l1.92 2.42A5.977 5.977 0 0 0 18 10a6 6 0 0 0-6-6m0 5a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-5 9a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m5.09-4.73 2.49 6.31 2.59-1.5-4.22-5.31-.86.5Z"/></svg></span> 存储</td>
+<td>10 GB HDD</td>
+<td>20 GB SSD</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 4h12v1h3v2h-3v2h3v2h-3v2h3v2h-3v2h3v2h-3v1H6v-1H3v-2h3v-2H3v-2h3v-2H3V9h3V7H3V5h3V4m5 11v3h1v-3h-1m2 0v3h1v-3h-1m2 0v3h1v-3h-1Z"/></svg></span> 内存</td>
+<td>8 GB DDR3</td>
+<td>16 GB DDR4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 17H7V7h10m4 4V9h-2V7a2 2 0 0 0-2-2h-2V3h-2v2h-2V3H9v2H7c-1.11 0-2 .89-2 2v2H3v2h2v2H3v2h2v2a2 2 0 0 0 2 2h2v2h2v-2h2v2h2v-2h2a2 2 0 0 0 2-2v-2h2v-2h-2v-2m-6 2h-2v-2h2m2-2H9v6h6V9Z"/></svg></span> 处理器核心数</td>
+<td>2</td>
+<td>≥ 4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 17H7V7h10m4 4V9h-2V7a2 2 0 0 0-2-2h-2V3h-2v2h-2V3H9v2H7c-1.11 0-2 .89-2 2v2H3v2h2v2H3v2h2v2a2 2 0 0 0 2 2h2v2h2v-2h2v2h2v-2h2a2 2 0 0 0 2-2v-2h2v-2h-2v-2m-6 2h-2v-2h2m2-2H9v6h6V9Z"/></svg></span> 处理器架构</td>
+<td>Sandy Bridge / K10</td>
+<td>Skylake / Zen / ARMv8</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 17H7V7h10m4 4V9h-2V7a2 2 0 0 0-2-2h-2V3h-2v2h-2V3H9v2H7c-1.11 0-2 .89-2 2v2H3v2h2v2H3v2h2v2a2 2 0 0 0 2 2h2v2h2v-2h2v2h2v-2h2a2 2 0 0 0 2-2v-2h2v-2h-2v-2m-6 2h-2v-2h2m2-2H9v6h6V9Z"/></svg></span> 处理器指令集</td>
+<td>无虚拟化扩展</td>
+<td>VT-x / AMD-V / ARMv8 VMID</td>
+</tr>
+</tbody>
+</table>
+<p>这些条件非硬性要求，在不满足若干个上述条件的情况下仍可继续完成本系列实验。</p>
+<h2 id="_2">概述<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>本次实验的目的是得到一个搭建好且可以正常运行的 Hadoop 环境。我们的原则是：</p>
+<ul>
+<li>同时支持 Windows、macOS 和 Linux</li>
+<li>尽可能使用现代化，非过时的技术栈/软件版本</li>
+<li>尽可能按照行业最佳实践操作</li>
+<li>尽可能在配置层面<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup>与原始 CentOS 版本保持一致</li>
+</ul>
+<p>使用的软件：</p>
+<ul>
+<li>虚拟机工具</li>
+<li>操作系统：Ubuntu Server 22.04.4 LTS</li>
+<li>Hadoop：Hadoop 3.3.6</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">注意！</p>
+<p>你<strong>不需要</strong>下载全部虚拟机工具，请根据你使用的系统选择。所有和主机操作系统有关的下载项前均有对应的图标。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">刚买了 MacBook？</p>
+<p>没关系，在 M 家族 Apple 芯片的 Mac 设备或其它 ARM 架构的设备上（如 Surface Pro X），此教程无法完全适用，但技术上运行 Hadoop 是完全可行的，可以尝试。况且 Hadoop 3.3.6 还增加了原生 ARMv8 支持呢。</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">有问题？</p>
+<p>我们为你总结了一系列在本实验中可能遇到的常见问题，你可以在目录中找到。</p>
+</div>
+<h2 id="_3">下载需要的软件<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<h3 id="_4">虚拟化软件<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">曾经安装过虚拟化软件？</p>
+<p>如果你已经安装并配置好了虚拟机软件，可以直接跳过这个小段的下载。</p>
+</div>
+<ul>
+<li>
+<p>如果你正在使用 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m0 93.7 183.6-25.3v177.4H0V93.7zm0 324.6 183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg></span> Windows，你有多个选择<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>：</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.5 10.1a.505.505 0 0 0-.197.048.497.497 0 0 0-.25.68l1.138 2.475c.179.38.38.592.721.592.342 0 .542-.22.72-.592l1.003-2.186a.144.144 0 0 1 .144-.092.16.16 0 0 1 .157.16v2.118a.535.535 0 1 0 1.066 0v-1.73a.531.531 0 0 1 .566-.552.52.52 0 0 1 .541.551v1.73a.531.531 0 0 0 .53.593.539.539 0 0 0 .535-.592v-1.73a.531.531 0 0 1 .564-.552.52.52 0 0 1 .543.551v1.73a.531.531 0 0 0 .528.593.535.535 0 0 0 .535-.592v-1.969a1.234 1.234 0 0 0-1.283-1.23 1.647 1.647 0 0 0-1.14.486 1.26 1.26 0 0 0-1.095-.483 1.807 1.807 0 0 0-1.074.483 1.287 1.287 0 0 0-.961-.483 1.177 1.177 0 0 0-1.158.786l-.729 1.716-.933-2.203.011-.004A.505.505 0 0 0 .5 10.1zm18.43.06a.27.27 0 0 0-.266.274h.002v3.142a.27.27 0 1 0 .535 0v-1.222c0-1.037.571-1.56 1.27-1.643a.266.266 0 0 0 .238-.274.258.258 0 0 0-.266-.269 1.465 1.465 0 0 0-1.242.88v-.614a.266.266 0 0 0-.271-.274zm-6.735.008a.273.273 0 0 0-.25.217l-.912 2.627-.902-2.62a.28.28 0 0 0-.274-.22.266.266 0 0 0-.27.258.493.493 0 0 0 .034.144l1.09 3.037.02-.007a.319.319 0 0 0 .298.242.3.3 0 0 0 .293-.242l.903-2.583.896 2.583a.3.3 0 0 0 .293.242h.018a.319.319 0 0 0 .293-.242l1.097-3.038a.512.512 0 0 0 .033-.144.258.258 0 0 0-.265-.25.262.262 0 0 0-.258.209l-.918 2.63-.904-2.626a.285.285 0 0 0-.278-.217h-.025a.273.273 0 0 0-.012 0zm10.168.008a1.75 1.75 0 0 0-1.691 1.851 1.765 1.765 0 0 0 1.76 1.858l-.008.013a1.784 1.784 0 0 0 1.33-.539.228.228 0 0 0 .082-.17.228.228 0 0 0-.379-.168 1.435 1.435 0 0 1-1.018.415 1.237 1.237 0 0 1-1.24-1.207h2.555a.247.247 0 0 0 .246-.247c0-.945-.593-1.806-1.637-1.806zm-5.744.002a1.571 1.571 0 0 0-.158.006 2.384 2.384 0 0 0-1.078.205.22.22 0 0 0-.143.222.24.24 0 0 0 .235.229.266.266 0 0 0 .095-.024 1.822 1.822 0 0 1 .834-.162c.691 0 1.07.334 1.07.979v.125a3.796 3.796 0 0 0-1.103-.15c-.892 0-1.52.4-1.52 1.16l-.003-.004c0 .736.671 1.117 1.34 1.117a1.575 1.575 0 0 0 1.298-.62v.343a.247.247 0 0 0 .254.25.254.254 0 0 0 .258-.262v-1.983a1.416 1.416 0 0 0-.379-1.046 1.571 1.571 0 0 0-1-.385zm5.719.43c.714 0 1.085.565 1.139 1.214h-2.278a1.222 1.222 0 0 1 1.139-1.215zm-5.885 1.382a3.75 3.75 0 0 1 1.057.153v.347c0 .57-.539.973-1.2.973-.485 0-.904-.261-.904-.713 0-.467.375-.76 1.047-.76Z"/></svg></span> VMware Workstation Pro 17: <a href='https://www.vmware.com/go/getworkstation-win' target='_blank'>官方地址 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.5 10.1a.505.505 0 0 0-.197.048.497.497 0 0 0-.25.68l1.138 2.475c.179.38.38.592.721.592.342 0 .542-.22.72-.592l1.003-2.186a.144.144 0 0 1 .144-.092.16.16 0 0 1 .157.16v2.118a.535.535 0 1 0 1.066 0v-1.73a.531.531 0 0 1 .566-.552.52.52 0 0 1 .541.551v1.73a.531.531 0 0 0 .53.593.539.539 0 0 0 .535-.592v-1.73a.531.531 0 0 1 .564-.552.52.52 0 0 1 .543.551v1.73a.531.531 0 0 0 .528.593.535.535 0 0 0 .535-.592v-1.969a1.234 1.234 0 0 0-1.283-1.23 1.647 1.647 0 0 0-1.14.486 1.26 1.26 0 0 0-1.095-.483 1.807 1.807 0 0 0-1.074.483 1.287 1.287 0 0 0-.961-.483 1.177 1.177 0 0 0-1.158.786l-.729 1.716-.933-2.203.011-.004A.505.505 0 0 0 .5 10.1zm18.43.06a.27.27 0 0 0-.266.274h.002v3.142a.27.27 0 1 0 .535 0v-1.222c0-1.037.571-1.56 1.27-1.643a.266.266 0 0 0 .238-.274.258.258 0 0 0-.266-.269 1.465 1.465 0 0 0-1.242.88v-.614a.266.266 0 0 0-.271-.274zm-6.735.008a.273.273 0 0 0-.25.217l-.912 2.627-.902-2.62a.28.28 0 0 0-.274-.22.266.266 0 0 0-.27.258.493.493 0 0 0 .034.144l1.09 3.037.02-.007a.319.319 0 0 0 .298.242.3.3 0 0 0 .293-.242l.903-2.583.896 2.583a.3.3 0 0 0 .293.242h.018a.319.319 0 0 0 .293-.242l1.097-3.038a.512.512 0 0 0 .033-.144.258.258 0 0 0-.265-.25.262.262 0 0 0-.258.209l-.918 2.63-.904-2.626a.285.285 0 0 0-.278-.217h-.025a.273.273 0 0 0-.012 0zm10.168.008a1.75 1.75 0 0 0-1.691 1.851 1.765 1.765 0 0 0 1.76 1.858l-.008.013a1.784 1.784 0 0 0 1.33-.539.228.228 0 0 0 .082-.17.228.228 0 0 0-.379-.168 1.435 1.435 0 0 1-1.018.415 1.237 1.237 0 0 1-1.24-1.207h2.555a.247.247 0 0 0 .246-.247c0-.945-.593-1.806-1.637-1.806zm-5.744.002a1.571 1.571 0 0 0-.158.006 2.384 2.384 0 0 0-1.078.205.22.22 0 0 0-.143.222.24.24 0 0 0 .235.229.266.266 0 0 0 .095-.024 1.822 1.822 0 0 1 .834-.162c.691 0 1.07.334 1.07.979v.125a3.796 3.796 0 0 0-1.103-.15c-.892 0-1.52.4-1.52 1.16l-.003-.004c0 .736.671 1.117 1.34 1.117a1.575 1.575 0 0 0 1.298-.62v.343a.247.247 0 0 0 .254.25.254.254 0 0 0 .258-.262v-1.983a1.416 1.416 0 0 0-.379-1.046 1.571 1.571 0 0 0-1-.385zm5.719.43c.714 0 1.085.565 1.139 1.214h-2.278a1.222 1.222 0 0 1 1.139-1.215zm-5.885 1.382a3.75 3.75 0 0 1 1.057.153v.347c0 .57-.539.973-1.2.973-.485 0-.904-.261-.904-.713 0-.467.375-.76 1.047-.76Z"/></svg></span> VMware Workstation Player 16: <a href='https://www.vmware.com/go/getplayer-win' target='_blank'>官方地址 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0a.477.477 0 0 0-.188.047L2.17 4.274c-.265.169-.378.363-.372.692l.832 10.278c.009.107.047.165.128.25l3.564 2.713s.015 2.015.455 2.806C7.109 21.61 8.652 24.033 12 24c3.348-.033 4.988-2.03 5.484-3.028.47-.946.46-2.912.46-2.912l3.255-2.548a.31.31 0 0 0 .14-.258l.86-10.31c.026-.312-.103-.57-.368-.685L12.181.047A.435.435 0 0 0 12 0zm-.051 1.078c.054.002.108.02.188.056l7.417 3.429L12.132 8.9c-.115.058-.166.049-.264 0l-7.35-4.264c-.113-.074-.12-.125 0-.197l7.234-3.314a.534.534 0 0 1 .197-.047zm.01.688L5.905 4.591l6.042 3.49 6.067-3.48zm0 .375 5.232 2.46-3.262 1.82-1.04-.557 1.764-2.208-2.138.838L13.639 3.1l-3.252 1.346 1.1-1.15-.978-.45zm-1.837.849.784.388-2.115 2.098 3.615-1.492-1.246 1.502 2.237-.932-1.136 1.419 1.232.666-1.56.885-5.148-2.946zm-6.93 3.902c.029 0 .072.02.135.054l7.28 4.577.017 7.818-6.853-5.057c-.077-.073-.104-.098-.103-.193l-.52-7.137c0-.043.015-.062.044-.062zm17.592.086c.03 0 .042.02.043.062l-.495 7.027c0 .096-.026.12-.103.193l-6.843 5.081.043-7.805 7.219-4.504a.348.348 0 0 1 .136-.054zm-.805 3.206-.177.126-.133.442-.049-.315-.226.15.145.598-.224.915.233-.195.085-.527.064.413.278-.184-.195-.682zm-15.71.249c-.12-.011-.19.127-.169.37.028.327.21.72.408.877l.419.33c.2.158.338.018.307-.313-.03-.33-.216-.724-.414-.879l-.417-.323a.265.265 0 0 0-.134-.062zm.075.235a.173.173 0 0 1 .087.041l.397.31c.129.101.25.358.27.57.02.215-.07.304-.199.202l-.4-.315c-.128-.101-.246-.354-.264-.566-.014-.158.03-.249.109-.242zm14.823.103c0-.035-.074.01-.115.04-.16.123-.358.559-.372 1.068-.015.556.11.619.263.514.162-.11.382-.492.39-1.026.007-.409-.166-.491-.166-.596zm-.713.067s-.439.19-.44.295c-.01.65-.07 1.968-.07 1.968l.332-.251s.329-.218.334-.82c.003-.386-.126-.31-.126-.31s.104-.218.106-.514c.005-.445-.136-.368-.136-.368zm.602.214c.115 0 .094.268.092.446-.002.175-.088.576-.18.643-.093.068-.1-.243-.098-.423.003-.173.074-.666.186-.666zm-.72.075s.08-.05.073.214a.829.829 0 0 1-.088.328l-.134.09.006-.538zm-.512.021-.229.14-.06 1.843s-.014.184.036.222c.072.056.267-.173.267-.173l-.004-.21s-.075.018-.072-.058zM5.25 11.16l.112 1.196.14.111-.091-.988.461.363a.47.47 0 0 1 .137.287c.01.108-.033.154-.098.103l-.396-.313.477.936.205.163-.32-.617.063.05c.137.107.23.013.208-.213-.022-.225-.15-.496-.287-.602zm13.049.78s.1-.024.09.279c-.008.257-.09.338-.09.338l-.152.11.013-.62zm-.95.174c-.042-.012-.102.006-.189.077-.107.07-.305.38-.305.38l.008.19s.114-.141.171-.187c.221-.22.165.09.165.09l-.005.099-.156.146s-.231.227-.243.658c-.006.206.068.35.18.265.11-.082.247-.33.247-.33l.004.144.19-.17.013-1.02s.043-.307-.08-.342zm-10.704.126c-.035-.028-.066-.027-.08.004l-.334.8.167.133.273-.671.254.69-.38-.3.105.28.386.307.103.28.17.134-.572-1.518a.338.338 0 0 0-.092-.139zm10.054.35-.18.132-.01 1.078s-.098.19-.14.217c-.072.047-.07-.107-.07-.107l.015-1.02-.192.145-.015 1.02s-.011.457.182.313a.779.779 0 0 0 .222-.323l.017.128.154-.11zm-.806.11-.164.108-.066.489-.077.049v.023l-.152.095c-.06.093-.098.38-.098.38l.002-.288-.175.124-.04 1.483.198-.143.043-.877s.032-.211.098-.321l.107-.086.017-.309.002.155.066-.056-.008.945s-.015.314.15.204c.057-.039.213-.23.213-.23L16 14.252s-.076.071-.1.086c-.037.023-.036-.058-.036-.058l.021-.915.11-.077-.003-.24-.096.06zm-8.551.14c-.124-.012-.197.13-.171.384.035.339.232.748.44.913l.449.353.062-.15-.524-.415c-.134-.107-.263-.37-.286-.59-.023-.219.07-.31.203-.206l.423.333.062-.15-.517-.408a.28.28 0 0 0-.141-.064zm9.85.172v.357s-.107.126-.156.155c-.048.029-.06-.055-.06-.129a.457.457 0 0 1 .118-.293zm-2.226.171c-.067.048-.123.188-.124.313 0 .125.053.187.12.14.068-.048.125-.188.126-.314 0-.125-.054-.188-.122-.139zm-6.887.189.12 1.12a.296.296 0 0 0 .087.178l.673.532.062-.152-.686-.543-.11-1.022zm6.684.109-.213.156s-.022.371-.182 1.69c-.132-.98-.132-1.45-.132-1.45l-.246.163.152 1.803.365-.208zm.259.298-.197.141-.062 1.505.197-.142zm-5.911.446c-.127-.013-.198.133-.169.392.039.346.244.765.457.934l.46.364.064-.154-.541-.426c-.114-.09-.225-.29-.273-.485l.636.5.062-.153-.724-.57c.01-.146.094-.196.207-.107l.436.343.062-.152-.534-.418a.292.292 0 0 0-.143-.068zm.769.587c-.013.013-.02.042-.015.081a.351.351 0 0 0 .105.21c.048.038.08.006.07-.073a.36.36 0 0 0-.105-.212c-.024-.018-.042-.02-.055-.006zm.015.032c.01-.01.026-.01.045.004.038.03.074.104.08.165.008.063-.016.088-.055.058-.012-.01-.015-.035-.025-.051l.006.004-.006-.06.015.01.025.078.022.017-.03-.084h.004c.008-.002.009-.013.008-.019v-.013a.122.122 0 0 0-.025-.058.12.12 0 0 0-.026-.025l-.023-.02.015.137c-.015-.03-.037-.05-.04-.08-.005-.032 0-.053.01-.063zm.036.047.006.004c.01.008.013.011.018.017a.07.07 0 0 1 .01.026c0 .006.002.01 0 .013-.002.006-.009.002-.015-.002l-.013-.01z"/></svg></span> VirtualBox: <a href='https://mirrors.tuna.tsinghua.edu.cn/virtualbox/virtualbox-Win-latest.exe' target='_blank'>清华大学开源软件镜像 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.003.064C5.376.064 0 5.407 0 12s5.376 11.936 12.003 11.936c2.169 0 4.2-.57 5.955-1.57l.624 1.57h4.841l-1.893-4.679A11.845 11.845 0 0 0 24 12C24 5.407 18.63.064 12.003.064zM8.818 2.03c.398.339.324.198.86.134.61-.397.893.942 1.147.195.748.097 1.542.34 2.25.584a3.447 3.447 0 0 1 1.859 1.128l-.014.007.35.463c.045.08.082.164.12.248.142 1.205 1.48 1.19 2.377 1.625.767.272 1.69.686 1.785 1.611-.193-.042-.941-.921-1.53-1.007a3.919 3.919 0 0 1-1.094-.255L14.86 6.38v-.007a3.035 3.035 0 0 1-.309-.053v.013l-2.927-.362c.048.033.1.077.148.12l3 .585v-.007l.209.053.839.188c.166.016.334.043.47.067.856.236 1.868.194 2.571.792-.184.352-1.21.153-1.719.108-.062-.012-.131-.023-.194-.034l-.034-.007c-.696-.113-1.411-.12-2.081.088h-.007a3.193 3.193 0 0 0-.671.302c-.968.563-2.164.767-2.967 1.577-.787.847-.739 2.012-.604 3.095h.033v.275c.013.095.028.19.04.282.41 2.19 1.5 4.2 1.84 6.412.065.843.203 1.932.309 2.618-.306-.091-.475-1.462-.544-1.007a38.196 38.196 0 0 0-3.565-5.25c-.853-1.004-1.697-2.06-2.712-2.894-.685-.528-.468-1.55-.537-2.302-.23-.926-.094-1.848.06-2.773.313-.963.418-1.968.846-2.893.653-.581.669-1.63 1.303-2.135.094.058.157.085.2.1l.068.008h.007c.09-.095-.888-1.116.02-.712.035-.537.854-.128.866-.597zm3.847 2.182c-.323.009-.574.13-.645.335-.114.33.273.755.866.96.594.205 1.168.109 1.282-.221.114-.33-.272-.762-.866-.967a1.842 1.842 0 0 0-.637-.107z"/></svg></span> QEMU</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.05 4.24 6.56 18.05 2 18l5.09-8.76 5.96-5m.7 1.09L22 19.76H6.74l9.3-1.66-4.87-5.79 2.58-6.98Z"/></svg></span> Hyper-V</li>
+</ul>
+<details class="note">
+<summary>VMware Workstation Pro 激活</summary>
+<p>如果你需要激活 VMware Workstation Pro 17，可以尝试这个密钥：</p>
+<p><code>
+JU<mark></mark>090-<mark></mark>6039P-084<mark></mark>09-8J0<mark></mark>QH-<mark></mark>2YR7F
+</code></p>
+<p>法律上，这类行为仍构成未经授权使用产品。<strong>仅供学习使用</strong>，<del>除非你所在公司的法务部足够强大</del>，否则不提倡在实际应用场合使用。</p>
+</details>
+</li>
+<li>
+<p>如果你正在使用 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span> macOS，你有多个选择：</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M.5 10.1a.505.505 0 0 0-.197.048.497.497 0 0 0-.25.68l1.138 2.475c.179.38.38.592.721.592.342 0 .542-.22.72-.592l1.003-2.186a.144.144 0 0 1 .144-.092.16.16 0 0 1 .157.16v2.118a.535.535 0 1 0 1.066 0v-1.73a.531.531 0 0 1 .566-.552.52.52 0 0 1 .541.551v1.73a.531.531 0 0 0 .53.593.539.539 0 0 0 .535-.592v-1.73a.531.531 0 0 1 .564-.552.52.52 0 0 1 .543.551v1.73a.531.531 0 0 0 .528.593.535.535 0 0 0 .535-.592v-1.969a1.234 1.234 0 0 0-1.283-1.23 1.647 1.647 0 0 0-1.14.486 1.26 1.26 0 0 0-1.095-.483 1.807 1.807 0 0 0-1.074.483 1.287 1.287 0 0 0-.961-.483 1.177 1.177 0 0 0-1.158.786l-.729 1.716-.933-2.203.011-.004A.505.505 0 0 0 .5 10.1zm18.43.06a.27.27 0 0 0-.266.274h.002v3.142a.27.27 0 1 0 .535 0v-1.222c0-1.037.571-1.56 1.27-1.643a.266.266 0 0 0 .238-.274.258.258 0 0 0-.266-.269 1.465 1.465 0 0 0-1.242.88v-.614a.266.266 0 0 0-.271-.274zm-6.735.008a.273.273 0 0 0-.25.217l-.912 2.627-.902-2.62a.28.28 0 0 0-.274-.22.266.266 0 0 0-.27.258.493.493 0 0 0 .034.144l1.09 3.037.02-.007a.319.319 0 0 0 .298.242.3.3 0 0 0 .293-.242l.903-2.583.896 2.583a.3.3 0 0 0 .293.242h.018a.319.319 0 0 0 .293-.242l1.097-3.038a.512.512 0 0 0 .033-.144.258.258 0 0 0-.265-.25.262.262 0 0 0-.258.209l-.918 2.63-.904-2.626a.285.285 0 0 0-.278-.217h-.025a.273.273 0 0 0-.012 0zm10.168.008a1.75 1.75 0 0 0-1.691 1.851 1.765 1.765 0 0 0 1.76 1.858l-.008.013a1.784 1.784 0 0 0 1.33-.539.228.228 0 0 0 .082-.17.228.228 0 0 0-.379-.168 1.435 1.435 0 0 1-1.018.415 1.237 1.237 0 0 1-1.24-1.207h2.555a.247.247 0 0 0 .246-.247c0-.945-.593-1.806-1.637-1.806zm-5.744.002a1.571 1.571 0 0 0-.158.006 2.384 2.384 0 0 0-1.078.205.22.22 0 0 0-.143.222.24.24 0 0 0 .235.229.266.266 0 0 0 .095-.024 1.822 1.822 0 0 1 .834-.162c.691 0 1.07.334 1.07.979v.125a3.796 3.796 0 0 0-1.103-.15c-.892 0-1.52.4-1.52 1.16l-.003-.004c0 .736.671 1.117 1.34 1.117a1.575 1.575 0 0 0 1.298-.62v.343a.247.247 0 0 0 .254.25.254.254 0 0 0 .258-.262v-1.983a1.416 1.416 0 0 0-.379-1.046 1.571 1.571 0 0 0-1-.385zm5.719.43c.714 0 1.085.565 1.139 1.214h-2.278a1.222 1.222 0 0 1 1.139-1.215zm-5.885 1.382a3.75 3.75 0 0 1 1.057.153v.347c0 .57-.539.973-1.2.973-.485 0-.904-.261-.904-.713 0-.467.375-.76 1.047-.76Z"/></svg></span> VMware Fusion Player:<ul>
+<li><a href='https://customerconnect.vmware.com/evalcenter?p=fusion-player-personal' target='_blank'>登录后下载 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a></li>
+<li>如果你的 macOS 版本是 Monterey（12）或更新，并且已经安装了 <a href='https://brew.sh' target='_blank'>Homebrew <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a>，你可以使用以下命令来快速安装：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>vmware-fusion
+</code></pre></div></li>
+</ul>
+</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0a.477.477 0 0 0-.188.047L2.17 4.274c-.265.169-.378.363-.372.692l.832 10.278c.009.107.047.165.128.25l3.564 2.713s.015 2.015.455 2.806C7.109 21.61 8.652 24.033 12 24c3.348-.033 4.988-2.03 5.484-3.028.47-.946.46-2.912.46-2.912l3.255-2.548a.31.31 0 0 0 .14-.258l.86-10.31c.026-.312-.103-.57-.368-.685L12.181.047A.435.435 0 0 0 12 0zm-.051 1.078c.054.002.108.02.188.056l7.417 3.429L12.132 8.9c-.115.058-.166.049-.264 0l-7.35-4.264c-.113-.074-.12-.125 0-.197l7.234-3.314a.534.534 0 0 1 .197-.047zm.01.688L5.905 4.591l6.042 3.49 6.067-3.48zm0 .375 5.232 2.46-3.262 1.82-1.04-.557 1.764-2.208-2.138.838L13.639 3.1l-3.252 1.346 1.1-1.15-.978-.45zm-1.837.849.784.388-2.115 2.098 3.615-1.492-1.246 1.502 2.237-.932-1.136 1.419 1.232.666-1.56.885-5.148-2.946zm-6.93 3.902c.029 0 .072.02.135.054l7.28 4.577.017 7.818-6.853-5.057c-.077-.073-.104-.098-.103-.193l-.52-7.137c0-.043.015-.062.044-.062zm17.592.086c.03 0 .042.02.043.062l-.495 7.027c0 .096-.026.12-.103.193l-6.843 5.081.043-7.805 7.219-4.504a.348.348 0 0 1 .136-.054zm-.805 3.206-.177.126-.133.442-.049-.315-.226.15.145.598-.224.915.233-.195.085-.527.064.413.278-.184-.195-.682zm-15.71.249c-.12-.011-.19.127-.169.37.028.327.21.72.408.877l.419.33c.2.158.338.018.307-.313-.03-.33-.216-.724-.414-.879l-.417-.323a.265.265 0 0 0-.134-.062zm.075.235a.173.173 0 0 1 .087.041l.397.31c.129.101.25.358.27.57.02.215-.07.304-.199.202l-.4-.315c-.128-.101-.246-.354-.264-.566-.014-.158.03-.249.109-.242zm14.823.103c0-.035-.074.01-.115.04-.16.123-.358.559-.372 1.068-.015.556.11.619.263.514.162-.11.382-.492.39-1.026.007-.409-.166-.491-.166-.596zm-.713.067s-.439.19-.44.295c-.01.65-.07 1.968-.07 1.968l.332-.251s.329-.218.334-.82c.003-.386-.126-.31-.126-.31s.104-.218.106-.514c.005-.445-.136-.368-.136-.368zm.602.214c.115 0 .094.268.092.446-.002.175-.088.576-.18.643-.093.068-.1-.243-.098-.423.003-.173.074-.666.186-.666zm-.72.075s.08-.05.073.214a.829.829 0 0 1-.088.328l-.134.09.006-.538zm-.512.021-.229.14-.06 1.843s-.014.184.036.222c.072.056.267-.173.267-.173l-.004-.21s-.075.018-.072-.058zM5.25 11.16l.112 1.196.14.111-.091-.988.461.363a.47.47 0 0 1 .137.287c.01.108-.033.154-.098.103l-.396-.313.477.936.205.163-.32-.617.063.05c.137.107.23.013.208-.213-.022-.225-.15-.496-.287-.602zm13.049.78s.1-.024.09.279c-.008.257-.09.338-.09.338l-.152.11.013-.62zm-.95.174c-.042-.012-.102.006-.189.077-.107.07-.305.38-.305.38l.008.19s.114-.141.171-.187c.221-.22.165.09.165.09l-.005.099-.156.146s-.231.227-.243.658c-.006.206.068.35.18.265.11-.082.247-.33.247-.33l.004.144.19-.17.013-1.02s.043-.307-.08-.342zm-10.704.126c-.035-.028-.066-.027-.08.004l-.334.8.167.133.273-.671.254.69-.38-.3.105.28.386.307.103.28.17.134-.572-1.518a.338.338 0 0 0-.092-.139zm10.054.35-.18.132-.01 1.078s-.098.19-.14.217c-.072.047-.07-.107-.07-.107l.015-1.02-.192.145-.015 1.02s-.011.457.182.313a.779.779 0 0 0 .222-.323l.017.128.154-.11zm-.806.11-.164.108-.066.489-.077.049v.023l-.152.095c-.06.093-.098.38-.098.38l.002-.288-.175.124-.04 1.483.198-.143.043-.877s.032-.211.098-.321l.107-.086.017-.309.002.155.066-.056-.008.945s-.015.314.15.204c.057-.039.213-.23.213-.23L16 14.252s-.076.071-.1.086c-.037.023-.036-.058-.036-.058l.021-.915.11-.077-.003-.24-.096.06zm-8.551.14c-.124-.012-.197.13-.171.384.035.339.232.748.44.913l.449.353.062-.15-.524-.415c-.134-.107-.263-.37-.286-.59-.023-.219.07-.31.203-.206l.423.333.062-.15-.517-.408a.28.28 0 0 0-.141-.064zm9.85.172v.357s-.107.126-.156.155c-.048.029-.06-.055-.06-.129a.457.457 0 0 1 .118-.293zm-2.226.171c-.067.048-.123.188-.124.313 0 .125.053.187.12.14.068-.048.125-.188.126-.314 0-.125-.054-.188-.122-.139zm-6.887.189.12 1.12a.296.296 0 0 0 .087.178l.673.532.062-.152-.686-.543-.11-1.022zm6.684.109-.213.156s-.022.371-.182 1.69c-.132-.98-.132-1.45-.132-1.45l-.246.163.152 1.803.365-.208zm.259.298-.197.141-.062 1.505.197-.142zm-5.911.446c-.127-.013-.198.133-.169.392.039.346.244.765.457.934l.46.364.064-.154-.541-.426c-.114-.09-.225-.29-.273-.485l.636.5.062-.153-.724-.57c.01-.146.094-.196.207-.107l.436.343.062-.152-.534-.418a.292.292 0 0 0-.143-.068zm.769.587c-.013.013-.02.042-.015.081a.351.351 0 0 0 .105.21c.048.038.08.006.07-.073a.36.36 0 0 0-.105-.212c-.024-.018-.042-.02-.055-.006zm.015.032c.01-.01.026-.01.045.004.038.03.074.104.08.165.008.063-.016.088-.055.058-.012-.01-.015-.035-.025-.051l.006.004-.006-.06.015.01.025.078.022.017-.03-.084h.004c.008-.002.009-.013.008-.019v-.013a.122.122 0 0 0-.025-.058.12.12 0 0 0-.026-.025l-.023-.02.015.137c-.015-.03-.037-.05-.04-.08-.005-.032 0-.053.01-.063zm.036.047.006.004c.01.008.013.011.018.017a.07.07 0 0 1 .01.026c0 .006.002.01 0 .013-.002.006-.009.002-.015-.002l-.013-.01z"/></svg></span> VirtualBox:<ul>
+<li><a href='https://mirrors.tuna.tsinghua.edu.cn/virtualbox/virtualbox-osx-latest.dmg' target='_blank'>清华大学开源软件镜像 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a></li>
+<li>如果你的 macOS 版本是 High Sierra（10.13）或更新，并且已经安装了 <a href='https://brew.sh' target='_blank'>Homebrew <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a>，你可以使用以下命令来快速安装：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>brew<span class="w"> </span>install<span class="w"> </span>--cask<span class="w"> </span>virtualbox
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>如果你正在使用 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7zM223.7 87.3c9.8-22.2 34.2-21.8 44-.4 6.5 14.2 3.6 30.9-4.3 40.4-1.6-.8-5.9-2.6-12.6-4.9 1.1-1.2 3.1-2.7 3.9-4.6 4.8-11.8-.2-27-9.1-27.3-7.3-.5-13.9 10.8-11.8 23-4.1-2-9.4-3.5-13-4.4-1-6.9-.3-14.6 2.9-21.8zM183 75.8c10.1 0 20.8 14.2 19.1 33.5-3.5 1-7.1 2.5-10.2 4.6 1.2-8.9-3.3-20.1-9.6-19.6-8.4.7-9.8 21.2-1.8 28.1 1 .8 1.9-.2-5.9 5.5-15.6-14.6-10.5-52.1 8.4-52.1zm-13.6 60.7c6.2-4.6 13.6-10 14.1-10.5 4.7-4.4 13.5-14.2 27.9-14.2 7.1 0 15.6 2.3 25.9 8.9 6.3 4.1 11.3 4.4 22.6 9.3 8.4 3.5 13.7 9.7 10.5 18.2-2.6 7.1-11 14.4-22.7 18.1-11.1 3.6-19.8 16-38.2 14.9-3.9-.2-7-1-9.6-2.1-8-3.5-12.2-10.4-20-15-8.6-4.8-13.2-10.4-14.7-15.3-1.4-4.9 0-9 4.2-12.3zm3.3 334c-2.7 35.1-43.9 34.4-75.3 18-29.9-15.8-68.6-6.5-76.5-21.9-2.4-4.7-2.4-12.7 2.6-26.4v-.2c2.4-7.6.6-16-.6-23.9-1.2-7.8-1.8-15 .9-20 3.5-6.7 8.5-9.1 14.8-11.3 10.3-3.7 11.8-3.4 19.6-9.9 5.5-5.7 9.5-12.9 14.3-18 5.1-5.5 10-8.1 17.7-6.9 8.1 1.2 15.1 6.8 21.9 16l19.6 35.6c9.5 19.9 43.1 48.4 41 68.9zm-1.4-25.9c-4.1-6.6-9.6-13.6-14.4-19.6 7.1 0 14.2-2.2 16.7-8.9 2.3-6.2 0-14.9-7.4-24.9-13.5-18.2-38.3-32.5-38.3-32.5-13.5-8.4-21.1-18.7-24.6-29.9s-3-23.3-.3-35.2c5.2-22.9 18.6-45.2 27.2-59.2 2.3-1.7.8 3.2-8.7 20.8-8.5 16.1-24.4 53.3-2.6 82.4.6-20.7 5.5-41.8 13.8-61.5 12-27.4 37.3-74.9 39.3-112.7 1.1.8 4.6 3.2 6.2 4.1 4.6 2.7 8.1 6.7 12.6 10.3 12.4 10 28.5 9.2 42.4 1.2 6.2-3.5 11.2-7.5 15.9-9 9.9-3.1 17.8-8.6 22.3-15 7.7 30.4 25.7 74.3 37.2 95.7 6.1 11.4 18.3 35.5 23.6 64.6 3.3-.1 7 .4 10.9 1.4 13.8-35.7-11.7-74.2-23.3-84.9-4.7-4.6-4.9-6.6-2.6-6.5 12.6 11.2 29.2 33.7 35.2 59 2.8 11.6 3.3 23.7.4 35.7 16.4 6.8 35.9 17.9 30.7 34.8-2.2-.1-3.2 0-4.2 0 3.2-10.1-3.9-17.6-22.8-26.1-19.6-8.6-36-8.6-38.3 12.5-12.1 4.2-18.3 14.7-21.4 27.3-2.8 11.2-3.6 24.7-4.4 39.9-.5 7.7-3.6 18-6.8 29-32.1 22.9-76.7 32.9-114.3 7.2zm257.4-11.5c-.9 16.8-41.2 19.9-63.2 46.5-13.2 15.7-29.4 24.4-43.6 25.5s-26.5-4.8-33.7-19.3c-4.7-11.1-2.4-23.1 1.1-36.3 3.7-14.2 9.2-28.8 9.9-40.6.8-15.2 1.7-28.5 4.2-38.7 2.6-10.3 6.6-17.2 13.7-21.1.3-.2.7-.3 1-.5.8 13.2 7.3 26.6 18.8 29.5 12.6 3.3 30.7-7.5 38.4-16.3 9-.3 15.7-.9 22.6 5.1 9.9 8.5 7.1 30.3 17.1 41.6 10.6 11.6 14 19.5 13.7 24.6zM173.3 148.7c2 1.9 4.7 4.5 8 7.1 6.6 5.2 15.8 10.6 27.3 10.6 11.6 0 22.5-5.9 31.8-10.8 4.9-2.6 10.9-7 14.8-10.4s5.9-6.3 3.1-6.6-2.6 2.6-6 5.1c-4.4 3.2-9.7 7.4-13.9 9.8-7.4 4.2-19.5 10.2-29.9 10.2s-18.7-4.8-24.9-9.7c-3.1-2.5-5.7-5-7.7-6.9-1.5-1.4-1.9-4.6-4.3-4.9-1.4-.1-1.8 3.7 1.7 6.5z"/></svg></span> Linux:<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 0a.477.477 0 0 0-.188.047L2.17 4.274c-.265.169-.378.363-.372.692l.832 10.278c.009.107.047.165.128.25l3.564 2.713s.015 2.015.455 2.806C7.109 21.61 8.652 24.033 12 24c3.348-.033 4.988-2.03 5.484-3.028.47-.946.46-2.912.46-2.912l3.255-2.548a.31.31 0 0 0 .14-.258l.86-10.31c.026-.312-.103-.57-.368-.685L12.181.047A.435.435 0 0 0 12 0zm-.051 1.078c.054.002.108.02.188.056l7.417 3.429L12.132 8.9c-.115.058-.166.049-.264 0l-7.35-4.264c-.113-.074-.12-.125 0-.197l7.234-3.314a.534.534 0 0 1 .197-.047zm.01.688L5.905 4.591l6.042 3.49 6.067-3.48zm0 .375 5.232 2.46-3.262 1.82-1.04-.557 1.764-2.208-2.138.838L13.639 3.1l-3.252 1.346 1.1-1.15-.978-.45zm-1.837.849.784.388-2.115 2.098 3.615-1.492-1.246 1.502 2.237-.932-1.136 1.419 1.232.666-1.56.885-5.148-2.946zm-6.93 3.902c.029 0 .072.02.135.054l7.28 4.577.017 7.818-6.853-5.057c-.077-.073-.104-.098-.103-.193l-.52-7.137c0-.043.015-.062.044-.062zm17.592.086c.03 0 .042.02.043.062l-.495 7.027c0 .096-.026.12-.103.193l-6.843 5.081.043-7.805 7.219-4.504a.348.348 0 0 1 .136-.054zm-.805 3.206-.177.126-.133.442-.049-.315-.226.15.145.598-.224.915.233-.195.085-.527.064.413.278-.184-.195-.682zm-15.71.249c-.12-.011-.19.127-.169.37.028.327.21.72.408.877l.419.33c.2.158.338.018.307-.313-.03-.33-.216-.724-.414-.879l-.417-.323a.265.265 0 0 0-.134-.062zm.075.235a.173.173 0 0 1 .087.041l.397.31c.129.101.25.358.27.57.02.215-.07.304-.199.202l-.4-.315c-.128-.101-.246-.354-.264-.566-.014-.158.03-.249.109-.242zm14.823.103c0-.035-.074.01-.115.04-.16.123-.358.559-.372 1.068-.015.556.11.619.263.514.162-.11.382-.492.39-1.026.007-.409-.166-.491-.166-.596zm-.713.067s-.439.19-.44.295c-.01.65-.07 1.968-.07 1.968l.332-.251s.329-.218.334-.82c.003-.386-.126-.31-.126-.31s.104-.218.106-.514c.005-.445-.136-.368-.136-.368zm.602.214c.115 0 .094.268.092.446-.002.175-.088.576-.18.643-.093.068-.1-.243-.098-.423.003-.173.074-.666.186-.666zm-.72.075s.08-.05.073.214a.829.829 0 0 1-.088.328l-.134.09.006-.538zm-.512.021-.229.14-.06 1.843s-.014.184.036.222c.072.056.267-.173.267-.173l-.004-.21s-.075.018-.072-.058zM5.25 11.16l.112 1.196.14.111-.091-.988.461.363a.47.47 0 0 1 .137.287c.01.108-.033.154-.098.103l-.396-.313.477.936.205.163-.32-.617.063.05c.137.107.23.013.208-.213-.022-.225-.15-.496-.287-.602zm13.049.78s.1-.024.09.279c-.008.257-.09.338-.09.338l-.152.11.013-.62zm-.95.174c-.042-.012-.102.006-.189.077-.107.07-.305.38-.305.38l.008.19s.114-.141.171-.187c.221-.22.165.09.165.09l-.005.099-.156.146s-.231.227-.243.658c-.006.206.068.35.18.265.11-.082.247-.33.247-.33l.004.144.19-.17.013-1.02s.043-.307-.08-.342zm-10.704.126c-.035-.028-.066-.027-.08.004l-.334.8.167.133.273-.671.254.69-.38-.3.105.28.386.307.103.28.17.134-.572-1.518a.338.338 0 0 0-.092-.139zm10.054.35-.18.132-.01 1.078s-.098.19-.14.217c-.072.047-.07-.107-.07-.107l.015-1.02-.192.145-.015 1.02s-.011.457.182.313a.779.779 0 0 0 .222-.323l.017.128.154-.11zm-.806.11-.164.108-.066.489-.077.049v.023l-.152.095c-.06.093-.098.38-.098.38l.002-.288-.175.124-.04 1.483.198-.143.043-.877s.032-.211.098-.321l.107-.086.017-.309.002.155.066-.056-.008.945s-.015.314.15.204c.057-.039.213-.23.213-.23L16 14.252s-.076.071-.1.086c-.037.023-.036-.058-.036-.058l.021-.915.11-.077-.003-.24-.096.06zm-8.551.14c-.124-.012-.197.13-.171.384.035.339.232.748.44.913l.449.353.062-.15-.524-.415c-.134-.107-.263-.37-.286-.59-.023-.219.07-.31.203-.206l.423.333.062-.15-.517-.408a.28.28 0 0 0-.141-.064zm9.85.172v.357s-.107.126-.156.155c-.048.029-.06-.055-.06-.129a.457.457 0 0 1 .118-.293zm-2.226.171c-.067.048-.123.188-.124.313 0 .125.053.187.12.14.068-.048.125-.188.126-.314 0-.125-.054-.188-.122-.139zm-6.887.189.12 1.12a.296.296 0 0 0 .087.178l.673.532.062-.152-.686-.543-.11-1.022zm6.684.109-.213.156s-.022.371-.182 1.69c-.132-.98-.132-1.45-.132-1.45l-.246.163.152 1.803.365-.208zm.259.298-.197.141-.062 1.505.197-.142zm-5.911.446c-.127-.013-.198.133-.169.392.039.346.244.765.457.934l.46.364.064-.154-.541-.426c-.114-.09-.225-.29-.273-.485l.636.5.062-.153-.724-.57c.01-.146.094-.196.207-.107l.436.343.062-.152-.534-.418a.292.292 0 0 0-.143-.068zm.769.587c-.013.013-.02.042-.015.081a.351.351 0 0 0 .105.21c.048.038.08.006.07-.073a.36.36 0 0 0-.105-.212c-.024-.018-.042-.02-.055-.006zm.015.032c.01-.01.026-.01.045.004.038.03.074.104.08.165.008.063-.016.088-.055.058-.012-.01-.015-.035-.025-.051l.006.004-.006-.06.015.01.025.078.022.017-.03-.084h.004c.008-.002.009-.013.008-.019v-.013a.122.122 0 0 0-.025-.058.12.12 0 0 0-.026-.025l-.023-.02.015.137c-.015-.03-.037-.05-.04-.08-.005-.032 0-.053.01-.063zm.036.047.006.004c.01.008.013.011.018.017a.07.07 0 0 1 .01.026c0 .006.002.01 0 .013-.002.006-.009.002-.015-.002l-.013-.01z"/></svg></span> VirtualBox: <a href='https://www.virtualbox.org/wiki/Linux_Downloads' target='_blank'>官方文档 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a></li>
+</ul>
+</li>
+</ul>
+<h3 id="_5">软件镜像<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M469.2 75a75.6 75.6 0 1 0-151.3 0 75.6 75.6 0 1 0 151.2 0zm-315 165.7a75.6 75.6 0 1 0-151.2 0 75.6 75.6 0 1 0 151.2 0zM57 346c18.6 46.9 51 87 93 115.1s91.5 42.6 142 41.7c-14.7-18.6-22.9-41.5-23.2-65.2-6.8-.9-13.3-2.1-19.5-3.4-26.8-5.7-51.9-17.3-73.6-34s-39.3-38.1-51.7-62.5c-20.9 9.9-44.5 12.8-67.1 8.2zm395.1 89.8a75.6 75.6 0 1 0-151.2 0 75.6 75.6 0 1 0 151.2 0zm-8.1-84.2c18.5 14.8 31.6 35.2 37.2 58.2 33.3-41.3 52.6-92.2 54.8-145.2s-12.5-105.4-42.2-149.4c-8.6 21.5-24 39.6-43.8 51.6 15.4 28.6 22.9 60.8 21.9 93.2s-10.7 64-28 91.6zM101.1 135.4c12.4 2.7 24.3 7.5 35.1 14.3 16.6-24.2 38.9-44.1 64.8-58s54.8-21.3 84.2-21.7c.2-5.9.9-11.9 2-17.7C290.8 35.6 298.3 20 309 6.8c-47.7-3.8-95.4 6-137.6 28.5S94.3 91.7 70.8 133.4c2.7-.2 5.3-.3 8-.3 7.5 0 15 .8 22.4 2.3z"/></svg></span> 系统镜像: Ubuntu Server 22.04 LTS (x86-64): <a href='https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases/jammy/ubuntu-22.04.4-live-server-amd64.iso' target='_blank'>清华大学开源软件镜像 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.098 3.01c-1.133.277-1.466.474-1.842 1.787.478-.962.84-1.315 1.842-1.787zm3.228.076c-.834-.053-1.715.177-2.756.615a3.97 3.97 0 0 0-1.199.76c-.31.287-.576.62-.866 1.006a1.312 1.312 0 0 0-.468.095 1.868 1.868 0 0 0-.539.356c-.141.124-.28.252-.416.383v.002c-.123.12-.244.241-.363.365-.945.152-1.72.32-2.41.588a6.314 6.314 0 0 0-1.97 1.217 5.205 5.205 0 0 0-.687.736 5.435 5.435 0 0 0-.503.803c-.13.142-.26.288-.399.414a1.45 1.45 0 0 1-.441.285c-.093.035-.133.058-.137.056-.004-.001-.008-.033-.012-.047.235-.21.267-.55.289-.86.03.034.053.068.082.113.031.047.062.095.1.142l.158.2.055-.249c.046-.208.081-.484.027-.724-.034-.153-.117-.315-.235-.393l.036-.09c.04-.1.08-.204.115-.303l.069-.193-.204.035c-.27.047-.852.366-1.261.791-.152.158-.284.33-.37.514a.984.984 0 0 0-.093.59.91.91 0 0 0 .272.498c.03.12.058.223.087.316.033.104.068.198.112.29.119.247.31.398.529.468.182.059.369.066.566.02a3.83 3.83 0 0 0-.072.69 8.911 8.911 0 0 0 .07 1.394c.013.093.028.184.045.275l-.107.291-.166.455-.37.365-.343.34a9.22 9.22 0 0 1-.082.08c-.232.224-.279.27-.213.662.04.241.119.484.242.72.114.216.267.427.463.624.245.245.647.55 1.066.71.245.092.488.138.723.097l-.039.11a4.046 4.046 0 0 1-.123.3c-.285.624.008.95.463 1.158.227.104.497.173.748.238l.168.045c.298.08.812.228 1.281.258.513.033.974-.073 1.098-.533.049-.182.078-.322.09-.459a2.33 2.33 0 0 0-.01-.406c.144-.32.21-.423.316-.578l.053-.08c.115-.17.168-.29.188-.426.018-.131.004-.262-.02-.461l-.011-.084a6.822 6.822 0 0 0 1.338.05l-.118.061-.055.03c-.395.203-.413.587-.289.984.112.357.343.723.487.945.303.467.592.861.943 1.076.368.226.786.253 1.328-.04.276-.15.363-.302.48-.507.038-.066.08-.133.126-.204.101-.05.382-.296.67-.534l.296-.242c.073.053.164.09.27.115.14.034.305.05.504.065.149.01.635.01.949.01h.227c.324.001.585-.016.783-.128.21-.119.334-.331.361-.71a1.28 1.28 0 0 0-.008-.378.946.946 0 0 0-.136-.312l-.014-.502-.016-.521a2.372 2.372 0 0 0-.068-.536 3.558 3.558 0 0 0-.18-.505c-.053-.127-.096-.245-.138-.36a5.756 5.756 0 0 0-.229-.547l.018-.123.181.174.266.258c.203.196.39.373.607.502.226.133.479.21.807.195a1.925 1.925 0 0 0 1.016-.385c.293-.216.528-.509.627-.832l.084-.279.07-.225c.482.082.998.11 1.498.057a3.7 3.7 0 0 0 1.351-.389 3.406 3.406 0 0 0 1.35-1.33h.002v-.002c.355-.616.555-1.34.63-2.088.062-.599.028-1.415-.097-2.2-.11-.701-.295-1.38-.55-1.87a.736.736 0 0 0-.137-.178 1.413 1.413 0 0 0-.51-.31c-.206-.07-.422-.084-.594.006a.485.485 0 0 0-.123.09 2.793 2.793 0 0 0-.3.388c-.106.153-.21.307-.337.414-.149.128-.327.202-.502.272a3.454 3.454 0 0 0-.261-.508 4.81 4.81 0 0 0-.399-.54 2.21 2.21 0 0 0-.365-.349 5.357 5.357 0 0 0-.41-.275c-.407-.255-.754-.559-1.108-.87-.16-.14-.323-.282-.482-.413-.842-.695-1.628-1.031-2.469-1.084zm-4.129.004c-.57.137-.68.245-.851.804.273-.41.43-.545.851-.804zm3.952.465c.829-.001 1.587.303 2.431 1.013.412.347.774.684 1.192.983-.152.013-.283.04-.455.107.21-.04.451 0 .67.04.06.039.124.078.189.116.295.174.463.27.662.547.21.294.386.589.541.912-.101-.036-.186-.067-.262-.09a.566.566 0 0 0-.533.034l-.012.006c-.163.079-.416.17-.586.197a.7.7 0 0 0 .405-.006.565.565 0 0 0-.018.539.269.269 0 0 1-.02-.12.228.228 0 0 1 .249-.208.233.233 0 0 1 .187.33c-.117.02-.233.055-.353.1a4.41 4.41 0 0 0-.237.095 3.722 3.722 0 0 1 1.084-.02c.025.117.05.24.073.366l-.137.01-.012.002c-.174-.14-.367-.117-.633-.057-.806.184-.617.637-.988 1.318.385-.47.357-.962.984-1.11.147-.036.247-.078.346-.063-.178.09-.333.237-.394.41-.173.486-.065.895-.254 1.35.234-.407.249-.802.459-1.23.075-.153.354-.4.525-.403l.14-.002c.042.27.068.539.052.761a8.535 8.535 0 0 1-.198 1.24c.213-.272.31-.85.403-1.257.097-.424.07-.934-.014-1.389-.117-.625.527-.522.9-.816.275-.217.463-.564.715-.809.25-.243.644.114.742.352.426 1.03.62 2.65.508 3.69-.126 1.164-.69 2.437-1.719 3.01-1.31.732-2.854.285-4.156-.154-.278-.093-.47-.229-.715-.382.067.3.097.615.008.914-.14.474-.367 1.251.277 1.394.246.055.357.048.704-.13a1.3 1.3 0 0 1-.616.011.397.397 0 0 1-.314-.273c.06.044.16.066.33.107.478.115.932-.114 1.021-.445.052-.194.043-.295.153-.559.099.03.202.059.306.084l-.177.578c-.154.501-.752.904-1.28.895-.488-.009-.797-.314-1.134-.613l-.678-.6a5.228 5.228 0 0 1-1.658-.834c.4.472.673.732 1.232.967-.081.83-.37 1.436-.615 2.23-.111.36-.991 1.8-1.234 1.94-.174.1-1.26 1.016-1.465 1.136-.153.203-.287.483-.516.604-.698.37-1.148-.339-1.523-.936-.171-.272-.645-1.054-.23-1.273.39-.208.61-.357 1.009-.62.059.108.159.212.225.32l-.043-.352a2.752 2.752 0 0 1-.008-.596c.016-.206.03-.413.047-.62-.06.21-.179.42-.239.63-.024.084-.045.152-.056.214a7.05 7.05 0 0 1-2.682.034 16.76 16.76 0 0 0-.185-.926c-.018.278-.007 1.047-.008 1.476-.001.333-.016.448-.188.731-.16.265-.228.325-.453.773.019.283.019.47-.057.739-.125.446-1.386.098-1.718.007-.41-.112-1.256-.278-1.043-.824.187-.48.307-.986.398-1.658-.75-1.08-1.448-2.56-1.582-3.873-.104-1.019-.04-1.646.18-2.27.35-.987.837-1.843 1.62-2.53 1.06-.929 2.049-1.303 3.598-1.539-.373.417-.741.858-1.143 1.33-.406.479-.648.963-.906 1.487-.357.722-.348.996.125 1.63.407.547.627.794.804 1.328-.146.303-.2.56-.25.973.5.545.87.918 1.354 1.033.475.113.872.093 1.297-.125.944-.482 1.816-1.107 2.88-1.132.493-1.211.444-2.222.208-3.393-.162-.8-.227-1.557-.278-2.373-.2.84-.236 1.577-.088 2.414.18 1.008.318 2.124-.18 3.01-.962.073-1.788.658-2.655 1.107-.35.18-.712.198-1.098.092-.358-.098-.6-.334-.986-.78-.006-.446.095-.653.3-1.058.33-.65.695-1.255 1.094-1.894-.49.59-.953 1.084-1.338 1.677-.147-.419-.358-.633-.707-1.105-.34-.461-.375-.662-.12-1.196.255-.536.472-1.008.907-1.478.753-.813 1.443-1.717 2.266-2.518.447-.434.628-.42 1.22-.51a20.768 20.768 0 0 0 1.606-.31 22.5 22.5 0 0 1-1.553.08h-.015c.506-.646.799-1.006 1.62-1.363.95-.412 1.738-.652 2.47-.652zm.556 2.79c-1.101.276-1.307.739-1.166 1.45.121-.535.335-1.05 1.166-1.45zm-3.263.061c-.446.05-.89.096-1.336.139-.375.035-.436.03-.702.293-.403.399-.794 1.768-.92 2.316.198-.455.69-1.729 1.069-2.053.105-.09.18-.143.258-.183-.271.455-.252.566-.157 1.176.081-.62.295-.859.647-1.32a9.287 9.287 0 0 0 1.14-.368zm10.226.053c-.255.517-.65.95-1.185 1.215-.288.142-.47.093-.791.062.326.094.533.21.853.096.652-.233.967-.756 1.123-1.373zm-2.28.834c.023.047.046.096.067.144a.602.602 0 0 0-.05.041.572.572 0 0 0-.126-.181l.11-.004zm-3.26.4c-.36.166-.779.126-1.087.334-.271.184-.646.764-.922 1.01.2-.078.394-.212.57-.354.002.22.101.426.27.565a.31.31 0 0 1 .092-.492.312.312 0 0 1 .432.191c-.148.11-.284.238-.397.387a1.666 1.666 0 0 0-.24.44 4.222 4.222 0 0 1 2.002-1.294c-.2-.003-.437.034-.678.114a.732.732 0 0 0-.482-.614c.16-.085.316-.175.44-.287zm-1.042 1.64a.735.735 0 0 1-.125-.083.35.35 0 0 0 .125.084zM1.32 8.34c-.953.672-1.19.978-1.062 2.338C.352 9.608.56 9.145 1.32 8.34zm-.808.404c-.482.336-.545.475-.5 1.059.105-.482.203-.664.5-1.059zm1.779.195c-.07.15-.118.264-.152.381-.147.508.066.962-.395 1.33.217.438.207.612.711.41.195-.078.355-.187.498-.316-.07.18-.133.361-.191.545l-.03.094c-.36.153-.834.25-1.015-.13a3.458 3.458 0 0 1-.203-.595c-.594-.615.294-1.427.777-1.719zm.123.276c.123.071.156.2.17.375-.073-.074-.132-.122-.227-.112a1.495 1.495 0 0 1 .057-.263zm14.87 3.267c-.131.022-.365.07-.495.092-.348.059-.387.142-.441.484l-.086.524a9.16 9.16 0 0 1 .228-.568c.084-.184.132-.202.31-.3.127-.068.357-.163.483-.232zm-14.47 2.4c.274.946.738 1.876 1.255 2.657v.014a.993.993 0 0 1-.149.369c-.369.493-1.306-.23-1.578-.508-.297-.303-.496-.662-.543-.998-.034-.246-.001-.252.17-.426l.693-.701.153-.406zm12.405.62c.056.183.101.364.183.558.138.326.205.526.215.875l.032 1.106c.117.206.136.249.115.484-.043.481-.203.513-.625.506-.192-.003-.957-.007-1.15-.023-.274-.024-.429-.05-.512-.112.43-.316 1.162-1.619 1.304-2.068.151-.474.315-.888.438-1.326z"/></svg></span> Hadoop: Hadoop 3.3.6: <a href='https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-3.3.6/hadoop-3.3.6.tar.gz' target='_blank'>清华大学开源软件镜像 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">macOS 用户提示</p>
+<p>如果你使用 macOS，VMware Fusion Player 要求在 VMware 官方注册并获得免费密钥后才能使用。上方链接将带你前往对应页面（英语）。</p>
+</div>
+<details class="info">
+<summary>如果你是使用 M 家族 Apple 芯片的 Mac，Surface Pro X 等 ARM 设备</summary>
+<p>尝试以下组合：</p>
+<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M469.2 75a75.6 75.6 0 1 0-151.3 0 75.6 75.6 0 1 0 151.2 0zm-315 165.7a75.6 75.6 0 1 0-151.2 0 75.6 75.6 0 1 0 151.2 0zM57 346c18.6 46.9 51 87 93 115.1s91.5 42.6 142 41.7c-14.7-18.6-22.9-41.5-23.2-65.2-6.8-.9-13.3-2.1-19.5-3.4-26.8-5.7-51.9-17.3-73.6-34s-39.3-38.1-51.7-62.5c-20.9 9.9-44.5 12.8-67.1 8.2zm395.1 89.8a75.6 75.6 0 1 0-151.2 0 75.6 75.6 0 1 0 151.2 0zm-8.1-84.2c18.5 14.8 31.6 35.2 37.2 58.2 33.3-41.3 52.6-92.2 54.8-145.2s-12.5-105.4-42.2-149.4c-8.6 21.5-24 39.6-43.8 51.6 15.4 28.6 22.9 60.8 21.9 93.2s-10.7 64-28 91.6zM101.1 135.4c12.4 2.7 24.3 7.5 35.1 14.3 16.6-24.2 38.9-44.1 64.8-58s54.8-21.3 84.2-21.7c.2-5.9.9-11.9 2-17.7C290.8 35.6 298.3 20 309 6.8c-47.7-3.8-95.4 6-137.6 28.5S94.3 91.7 70.8 133.4c2.7-.2 5.3-.3 8-.3 7.5 0 15 .8 22.4 2.3z"/></svg></span> 系统镜像: Ubuntu Server 22.04 LTS (ARM64): <a href='https://mirrors.tuna.tsinghua.edu.cn/ubuntu-cdimage/ubuntu/releases/22.04.4/release/ubuntu-22.04.4-live-server-arm64.iso' target='_blank'>清华大学开源软件镜像 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.098 3.01c-1.133.277-1.466.474-1.842 1.787.478-.962.84-1.315 1.842-1.787zm3.228.076c-.834-.053-1.715.177-2.756.615a3.97 3.97 0 0 0-1.199.76c-.31.287-.576.62-.866 1.006a1.312 1.312 0 0 0-.468.095 1.868 1.868 0 0 0-.539.356c-.141.124-.28.252-.416.383v.002c-.123.12-.244.241-.363.365-.945.152-1.72.32-2.41.588a6.314 6.314 0 0 0-1.97 1.217 5.205 5.205 0 0 0-.687.736 5.435 5.435 0 0 0-.503.803c-.13.142-.26.288-.399.414a1.45 1.45 0 0 1-.441.285c-.093.035-.133.058-.137.056-.004-.001-.008-.033-.012-.047.235-.21.267-.55.289-.86.03.034.053.068.082.113.031.047.062.095.1.142l.158.2.055-.249c.046-.208.081-.484.027-.724-.034-.153-.117-.315-.235-.393l.036-.09c.04-.1.08-.204.115-.303l.069-.193-.204.035c-.27.047-.852.366-1.261.791-.152.158-.284.33-.37.514a.984.984 0 0 0-.093.59.91.91 0 0 0 .272.498c.03.12.058.223.087.316.033.104.068.198.112.29.119.247.31.398.529.468.182.059.369.066.566.02a3.83 3.83 0 0 0-.072.69 8.911 8.911 0 0 0 .07 1.394c.013.093.028.184.045.275l-.107.291-.166.455-.37.365-.343.34a9.22 9.22 0 0 1-.082.08c-.232.224-.279.27-.213.662.04.241.119.484.242.72.114.216.267.427.463.624.245.245.647.55 1.066.71.245.092.488.138.723.097l-.039.11a4.046 4.046 0 0 1-.123.3c-.285.624.008.95.463 1.158.227.104.497.173.748.238l.168.045c.298.08.812.228 1.281.258.513.033.974-.073 1.098-.533.049-.182.078-.322.09-.459a2.33 2.33 0 0 0-.01-.406c.144-.32.21-.423.316-.578l.053-.08c.115-.17.168-.29.188-.426.018-.131.004-.262-.02-.461l-.011-.084a6.822 6.822 0 0 0 1.338.05l-.118.061-.055.03c-.395.203-.413.587-.289.984.112.357.343.723.487.945.303.467.592.861.943 1.076.368.226.786.253 1.328-.04.276-.15.363-.302.48-.507.038-.066.08-.133.126-.204.101-.05.382-.296.67-.534l.296-.242c.073.053.164.09.27.115.14.034.305.05.504.065.149.01.635.01.949.01h.227c.324.001.585-.016.783-.128.21-.119.334-.331.361-.71a1.28 1.28 0 0 0-.008-.378.946.946 0 0 0-.136-.312l-.014-.502-.016-.521a2.372 2.372 0 0 0-.068-.536 3.558 3.558 0 0 0-.18-.505c-.053-.127-.096-.245-.138-.36a5.756 5.756 0 0 0-.229-.547l.018-.123.181.174.266.258c.203.196.39.373.607.502.226.133.479.21.807.195a1.925 1.925 0 0 0 1.016-.385c.293-.216.528-.509.627-.832l.084-.279.07-.225c.482.082.998.11 1.498.057a3.7 3.7 0 0 0 1.351-.389 3.406 3.406 0 0 0 1.35-1.33h.002v-.002c.355-.616.555-1.34.63-2.088.062-.599.028-1.415-.097-2.2-.11-.701-.295-1.38-.55-1.87a.736.736 0 0 0-.137-.178 1.413 1.413 0 0 0-.51-.31c-.206-.07-.422-.084-.594.006a.485.485 0 0 0-.123.09 2.793 2.793 0 0 0-.3.388c-.106.153-.21.307-.337.414-.149.128-.327.202-.502.272a3.454 3.454 0 0 0-.261-.508 4.81 4.81 0 0 0-.399-.54 2.21 2.21 0 0 0-.365-.349 5.357 5.357 0 0 0-.41-.275c-.407-.255-.754-.559-1.108-.87-.16-.14-.323-.282-.482-.413-.842-.695-1.628-1.031-2.469-1.084zm-4.129.004c-.57.137-.68.245-.851.804.273-.41.43-.545.851-.804zm3.952.465c.829-.001 1.587.303 2.431 1.013.412.347.774.684 1.192.983-.152.013-.283.04-.455.107.21-.04.451 0 .67.04.06.039.124.078.189.116.295.174.463.27.662.547.21.294.386.589.541.912-.101-.036-.186-.067-.262-.09a.566.566 0 0 0-.533.034l-.012.006c-.163.079-.416.17-.586.197a.7.7 0 0 0 .405-.006.565.565 0 0 0-.018.539.269.269 0 0 1-.02-.12.228.228 0 0 1 .249-.208.233.233 0 0 1 .187.33c-.117.02-.233.055-.353.1a4.41 4.41 0 0 0-.237.095 3.722 3.722 0 0 1 1.084-.02c.025.117.05.24.073.366l-.137.01-.012.002c-.174-.14-.367-.117-.633-.057-.806.184-.617.637-.988 1.318.385-.47.357-.962.984-1.11.147-.036.247-.078.346-.063-.178.09-.333.237-.394.41-.173.486-.065.895-.254 1.35.234-.407.249-.802.459-1.23.075-.153.354-.4.525-.403l.14-.002c.042.27.068.539.052.761a8.535 8.535 0 0 1-.198 1.24c.213-.272.31-.85.403-1.257.097-.424.07-.934-.014-1.389-.117-.625.527-.522.9-.816.275-.217.463-.564.715-.809.25-.243.644.114.742.352.426 1.03.62 2.65.508 3.69-.126 1.164-.69 2.437-1.719 3.01-1.31.732-2.854.285-4.156-.154-.278-.093-.47-.229-.715-.382.067.3.097.615.008.914-.14.474-.367 1.251.277 1.394.246.055.357.048.704-.13a1.3 1.3 0 0 1-.616.011.397.397 0 0 1-.314-.273c.06.044.16.066.33.107.478.115.932-.114 1.021-.445.052-.194.043-.295.153-.559.099.03.202.059.306.084l-.177.578c-.154.501-.752.904-1.28.895-.488-.009-.797-.314-1.134-.613l-.678-.6a5.228 5.228 0 0 1-1.658-.834c.4.472.673.732 1.232.967-.081.83-.37 1.436-.615 2.23-.111.36-.991 1.8-1.234 1.94-.174.1-1.26 1.016-1.465 1.136-.153.203-.287.483-.516.604-.698.37-1.148-.339-1.523-.936-.171-.272-.645-1.054-.23-1.273.39-.208.61-.357 1.009-.62.059.108.159.212.225.32l-.043-.352a2.752 2.752 0 0 1-.008-.596c.016-.206.03-.413.047-.62-.06.21-.179.42-.239.63-.024.084-.045.152-.056.214a7.05 7.05 0 0 1-2.682.034 16.76 16.76 0 0 0-.185-.926c-.018.278-.007 1.047-.008 1.476-.001.333-.016.448-.188.731-.16.265-.228.325-.453.773.019.283.019.47-.057.739-.125.446-1.386.098-1.718.007-.41-.112-1.256-.278-1.043-.824.187-.48.307-.986.398-1.658-.75-1.08-1.448-2.56-1.582-3.873-.104-1.019-.04-1.646.18-2.27.35-.987.837-1.843 1.62-2.53 1.06-.929 2.049-1.303 3.598-1.539-.373.417-.741.858-1.143 1.33-.406.479-.648.963-.906 1.487-.357.722-.348.996.125 1.63.407.547.627.794.804 1.328-.146.303-.2.56-.25.973.5.545.87.918 1.354 1.033.475.113.872.093 1.297-.125.944-.482 1.816-1.107 2.88-1.132.493-1.211.444-2.222.208-3.393-.162-.8-.227-1.557-.278-2.373-.2.84-.236 1.577-.088 2.414.18 1.008.318 2.124-.18 3.01-.962.073-1.788.658-2.655 1.107-.35.18-.712.198-1.098.092-.358-.098-.6-.334-.986-.78-.006-.446.095-.653.3-1.058.33-.65.695-1.255 1.094-1.894-.49.59-.953 1.084-1.338 1.677-.147-.419-.358-.633-.707-1.105-.34-.461-.375-.662-.12-1.196.255-.536.472-1.008.907-1.478.753-.813 1.443-1.717 2.266-2.518.447-.434.628-.42 1.22-.51a20.768 20.768 0 0 0 1.606-.31 22.5 22.5 0 0 1-1.553.08h-.015c.506-.646.799-1.006 1.62-1.363.95-.412 1.738-.652 2.47-.652zm.556 2.79c-1.101.276-1.307.739-1.166 1.45.121-.535.335-1.05 1.166-1.45zm-3.263.061c-.446.05-.89.096-1.336.139-.375.035-.436.03-.702.293-.403.399-.794 1.768-.92 2.316.198-.455.69-1.729 1.069-2.053.105-.09.18-.143.258-.183-.271.455-.252.566-.157 1.176.081-.62.295-.859.647-1.32a9.287 9.287 0 0 0 1.14-.368zm10.226.053c-.255.517-.65.95-1.185 1.215-.288.142-.47.093-.791.062.326.094.533.21.853.096.652-.233.967-.756 1.123-1.373zm-2.28.834c.023.047.046.096.067.144a.602.602 0 0 0-.05.041.572.572 0 0 0-.126-.181l.11-.004zm-3.26.4c-.36.166-.779.126-1.087.334-.271.184-.646.764-.922 1.01.2-.078.394-.212.57-.354.002.22.101.426.27.565a.31.31 0 0 1 .092-.492.312.312 0 0 1 .432.191c-.148.11-.284.238-.397.387a1.666 1.666 0 0 0-.24.44 4.222 4.222 0 0 1 2.002-1.294c-.2-.003-.437.034-.678.114a.732.732 0 0 0-.482-.614c.16-.085.316-.175.44-.287zm-1.042 1.64a.735.735 0 0 1-.125-.083.35.35 0 0 0 .125.084zM1.32 8.34c-.953.672-1.19.978-1.062 2.338C.352 9.608.56 9.145 1.32 8.34zm-.808.404c-.482.336-.545.475-.5 1.059.105-.482.203-.664.5-1.059zm1.779.195c-.07.15-.118.264-.152.381-.147.508.066.962-.395 1.33.217.438.207.612.711.41.195-.078.355-.187.498-.316-.07.18-.133.361-.191.545l-.03.094c-.36.153-.834.25-1.015-.13a3.458 3.458 0 0 1-.203-.595c-.594-.615.294-1.427.777-1.719zm.123.276c.123.071.156.2.17.375-.073-.074-.132-.122-.227-.112a1.495 1.495 0 0 1 .057-.263zm14.87 3.267c-.131.022-.365.07-.495.092-.348.059-.387.142-.441.484l-.086.524a9.16 9.16 0 0 1 .228-.568c.084-.184.132-.202.31-.3.127-.068.357-.163.483-.232zm-14.47 2.4c.274.946.738 1.876 1.255 2.657v.014a.993.993 0 0 1-.149.369c-.369.493-1.306-.23-1.578-.508-.297-.303-.496-.662-.543-.998-.034-.246-.001-.252.17-.426l.693-.701.153-.406zm12.405.62c.056.183.101.364.183.558.138.326.205.526.215.875l.032 1.106c.117.206.136.249.115.484-.043.481-.203.513-.625.506-.192-.003-.957-.007-1.15-.023-.274-.024-.429-.05-.512-.112.43-.316 1.162-1.619 1.304-2.068.151-.474.315-.888.438-1.326z"/></svg></span> Hadoop: Hadoop 3.3.6 for AArch64: <a href='https://mirrors.tuna.tsinghua.edu.cn/apache/hadoop/common/hadoop-3.3.6/hadoop-3.3.6-aarch64.tar.gz' target='_blank'>清华大学开源软件镜像 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a></li>
+</ul>
+</details>
+<h2 id="_6">配置虚拟机<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h3 id="_7">创建虚拟机<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h3>
+<p>跟随对应的虚拟机软件中的菜单，新建一个虚拟机，除非特别说明，否则均可以使用默认配置。</p>
+<h4 id="_8">选择镜像<a class="headerlink" href="#_8" title="Permanent link">&para;</a></h4>
+<p><a class="glightbox" href="../../img/bigdata/exp1/create.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="VMware 界面" src="../../img/bigdata/exp1/create.png" /></a></p>
+<p>选中下载的镜像后（文件名应为 <code>ubuntu-22.04.4-live-server-amd64.iso</code>），进行下一步。</p>
+<div class="admonition danger">
+<p class="admonition-title">VMware 用户提示</p>
+<p>如果你使用 VMware 系列软件，在被提示到“使用简易安装”时，请务必关闭该功能（取消勾选）。简易安装主要适用于带图形界面的桌面版 Ubuntu 操作系统，在我们使用的服务器版 Ubuntu 中可能导致问题。</p>
+</div>
+<details class="question">
+<summary>BIOS/UEFI 启动</summary>
+<p><a class="glightbox" href="../../img/bigdata/exp1/bios-boot.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img align="left" alt="使用 BIOS 启动" src="../../img/bigdata/exp1/bios-boot.png" /></a></p>
+<p>如果被问及是使用 BIOS 还是 UEFI 启动，请选择“传统 BIOS”</p>
+<p>UEFI 是更加现代化的操作系统引导机制，由 Intel 提出，但同时 UEFI 也会引入更多复杂情况。为了保持流程简单，继续使用传统 BIOS 启动。</p>
+</details>
+<h4 id="_9">硬件配置<a class="headerlink" href="#_9" title="Permanent link">&para;</a></h4>
+<p>完成后，建议将硬件调整为以下配置：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">项目</th>
+<th style="text-align: left;">配置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v2H7a2 2 0 0 0-2 2v2H3v2h2v2H3v2h2v2a2 2 0 0 0 2 2h2v2h2v-2h2v2h2v-2h2a2 2 0 0 0 2-2v-2h2v-2h-2v-2h2V9h-2V7a2 2 0 0 0-2-2h-2V3h-2v2h-2V3M8 9h3.5v1.5h-3v.75h2a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H8a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1m4.5 0H14v2h1.5V9H17v6h-1.5v-2.5h-3m-4 .25v.75H10v-.75"/></svg></span> CPU</td>
+<td style="text-align: left;">2 核心</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 17H7V7h10m4 4V9h-2V7a2 2 0 0 0-2-2h-2V3h-2v2h-2V3H9v2H7c-1.11 0-2 .89-2 2v2H3v2h2v2H3v2h2v2a2 2 0 0 0 2 2h2v2h2v-2h2v2h2v-2h2a2 2 0 0 0 2-2v-2h2v-2h-2v-2m-6 2h-2v-2h2m2-2H9v6h6V9Z"/></svg></span> 内存</td>
+<td style="text-align: left;">2 GB / 2048 MiB</td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2m6 2a6 6 0 0 0-6 6c0 3.31 2.69 6 6.1 6l-.88-2.23a1.01 1.01 0 0 1 .37-1.37l.86-.5a1.01 1.01 0 0 1 1.37.37l1.92 2.42A5.977 5.977 0 0 0 18 10a6 6 0 0 0-6-6m0 5a1 1 0 0 1 1 1 1 1 0 0 1-1 1 1 1 0 0 1-1-1 1 1 0 0 1 1-1m-5 9a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1m5.09-4.73 2.49 6.31 2.59-1.5-4.22-5.31-.86.5Z"/></svg></span> 硬盘</td>
+<td style="text-align: left;">20 GB，多文件<sup id="fnref:3"><a class="footnote-ref" href="#fn:3">3</a></sup></td>
+</tr>
+<tr>
+<td style="text-align: left;"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 19h1a1 1 0 0 1 1 1h7v2h-7a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1H2v-2h7a1 1 0 0 1 1-1h1v-2H4a1 1 0 0 1-1-1v-4a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1h-7v2M4 3h16a1 1 0 0 1 1 1v4a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1m5 4h1V5H9v2m0 8h1v-2H9v2M5 5v2h2V5H5m0 8v2h2v-2H5Z"/></svg></span> 网络</td>
+<td style="text-align: left;">NAT</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">CPU 设置的细节</p>
+<p>如果你使用的是 VMware Workstation Pro，请记得在设置处理器核心数量时，设置为<strong>处理器数量为 1</strong>、<strong>每个处理器的内核数量为 2</strong>.</p>
+</div>
+<details class="tip">
+<summary>提高性能！</summary>
+<p>可以移除虚拟机默认添加的，不需要使用的硬件来部分减轻负载。以下设备可以安全移除：</p>
+<ul>
+<li>打印机</li>
+<li>摄像头</li>
+<li>声卡</li>
+</ul>
+<p>推荐的配置如下图所示：</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/recommended-configuration.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="推荐配置 - VMware Workstation Pro" src="../../img/bigdata/exp1/recommended-configuration.png" /></a></p>
+</details>
+<h3 id="_10">安装操作系统<a class="headerlink" href="#_10" title="Permanent link">&para;</a></h3>
+<h4 id="_11">语言设置<a class="headerlink" href="#_11" title="Permanent link">&para;</a></h4>
+<p>将虚拟机开机，等待启动完成，进入设置向导。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-language.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="设置向导 - 语言选择界面" src="../../img/bigdata/exp1/setup-language.png" /></a></p>
+<p>在这里直接选择默认的 <strong>English</strong>，按下回车键继续。在下一页中，保持默认键盘布局设置，回车继续。</p>
+<div class="admonition tip">
+<p class="admonition-title">为什么不用中文？</p>
+<p>中文字符集相对复杂，依然建议使用字符集简单的英语为操作系统语言，否则容易出现 TTY 乱码或显示豆腐字（◻︎）问题。在 VESA VGA 模式下，默认色深只能显示
+256 个字符。</p>
+<p><del>真的，不是什么东西都能设置成中文的</del></p>
+</div>
+<h4 id="_12">识别键盘布局<a class="headerlink" href="#_12" title="Permanent link">&para;</a></h4>
+<p>正常情况下，在国内购买的键盘大多为美式键盘（ANSI）布局，偶见 ISO 布局键盘，这里我们可以直接按 <span class="keys"><kbd class="key-tab">Tab</kbd></span> 选择 <code>Done</code> 跳过。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/identify-keyboard.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="设置向导 - 选择键盘布局" src="../../img/bigdata/exp1/identify-keyboard.png" /></a></p>
+<h4 id="_13">选择安装类型<a class="headerlink" href="#_13" title="Permanent link">&para;</a></h4>
+<p>在 Ubuntu 22.04，Canonical 新增了“最小版本”服务器安装，我们不需要最小版本，以免缺少一些常用工具，保持默认选择 <code>Ubuntu Server</code>，选择 <code>Done</code> 继续。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/normal-or-minimal.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="设置向导 - 选择安装类型" src="../../img/bigdata/exp1/normal-or-minimal.png" /></a></p>
+<h4 id="_14">网络设置<a class="headerlink" href="#_14" title="Permanent link">&para;</a></h4>
+<p>接下来迎接我们的就是网络设置页面。在 NAT 模式下，默认采用 DHCP 方式为虚拟机<em>动态</em>分配 IP 地址，我们需要让虚拟机主动“认领”属于自己的静态 IP 地址。</p>
+<ul>
+<li><strong>记下 DHCP 服务为你分配的 IP 地址</strong>，这次我们将使用 <code>192.168.178.123</code></li>
+<li>在你的设备上，这个第三段可能<strong>不是</strong> <code>178</code>，你需要在接下来出现 <code>178</code> 的时候将其<strong>更换成符合你的情况的数字</strong></li>
+<li>使用方向键选中 <code>[ens33   eth   - ▶︎]</code>，回车进入子菜单</li>
+<li>选择 <code>Edit IPv4</code></li>
+<li>选择 <code>Automatic (DHCP)</code></li>
+<li>选择 <code>Manual</code></li>
+<li>填写所有字段，保持 IPv4 地址<strong>前三段</strong>不变：<ul>
+<li>Subnet: <code>192.168.178.0/24</code></li>
+<li>Address: <code>192.168.178.100</code></li>
+<li>Gateway: <code>192.168.178.2</code></li>
+<li>Name servers: <code>192.168.178.2</code></li>
+<li>Search domains 留空</li>
+</ul>
+</li>
+<li>选择 <code>Save</code> 保存设置</li>
+<li>等待屏幕底部 <code>Applying changes</code> 动画消失后，选择 <code>Done</code> 完成网络配置</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">情况可能不一样</p>
+<p>不同的设备上，VMware 自动选择的子网可能不一样。比如新的虚拟机可能拿到 <code>192.168.114.51</code> 这个地址，在此情况下，通常将上文中所有 <code>178</code> 都替换为 <code>114</code> 即可。<strong>接下来的步骤中，请记住这个小提醒</strong>，而不是盲目地复制形如 <code>192.168.178.xxx</code> 的 IP 地址。</p>
+</div>
+<p><a class="glightbox" href="../../img/bigdata/exp1/network-settings.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="网络配置" src="../../img/bigdata/exp1/network-settings.png" /></a></p>
+<h4 id="_15">代理服务器配置<a class="headerlink" href="#_15" title="Permanent link">&para;</a></h4>
+<div class="admonition danger inline end">
+<p class="admonition-title">仔细看！</p>
+<p>不要把镜像地址填写到代理服务器配置中，否则会导致后续 <code>apt</code> 无法联网。</p>
+</div>
+<p>此时我们来到了代理服务器配置，这在使用企业网络时通常有用，我们不需要，直接选择 <code>Done</code> 继续。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-proxy.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="代理配置" src="../../img/bigdata/exp1/setup-proxy.png" /></a></p>
+<h4 id="_16">镜像源配置<a class="headerlink" href="#_16" title="Permanent link">&para;</a></h4>
+<div class="admonition question inline end">
+<p class="admonition-title">为什么不用 HTTPS?</p>
+<p>是的，HTTPS 的确更安全，但绝大多数主流 Linux 发行版的包管理器都有一套自己的校验机制（通常是基于 GnuPG），保证软件包不被篡改。即使是 HTTP 连接也可以放心使用。HTTPS 连接有可能会因为 <code>ca-certificates</code> 包过老等原因失败，但 HTTP 不会。</p>
+</div>
+<p>接下来是镜像服务器配置，我们使用中国科学技术大学的开源软件镜像源，填入以下地址：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>http://mirrors.ustc.edu.cn/ubuntu
+</code></pre></div>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-mirror.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="镜像配置" src="../../img/bigdata/exp1/setup-mirror.png" /></a></p>
+<h4 id="_17">硬盘格式化<a class="headerlink" href="#_17" title="Permanent link">&para;</a></h4>
+<p>接下来进入硬盘格式化页面（放心，格式化的是虚拟机的硬盘，不是主机硬盘），使用方向键移动到 <code>[ ] Set up this disk as an LVM group</code> 上，按回车键取消勾选，随后继续至下一页。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-format.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="格式化硬盘 1" src="../../img/bigdata/exp1/setup-format.png" /></a></p>
+<p>在这一页我们可以检查格式化配置，默认配置即可，回车继续。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-format-confirm.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="格式化硬盘 2" src="../../img/bigdata/exp1/setup-format-confirm.png" /></a></p>
+<p>系统会提示我们是否确定（因为存在先有数据在格式化过程中丢失的风险），直接选择 <code>Continue</code> 即可。</p>
+<h4 id="_18">用户配置<a class="headerlink" href="#_18" title="Permanent link">&para;</a></h4>
+<p>在接下来的页面，配置默认管理员用户的信息，我们使用 <code>super</code> 作为管理员用户的用户名。当然，你也可以自定义一个属于你自己的用户。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-user.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="用户配置" src="../../img/bigdata/exp1/setup-user.png" /></a></p>
+<h4 id="_19">系统安装前的小插曲<a class="headerlink" href="#_19" title="Permanent link">&para;</a></h4>
+<p>恭喜！现在我们达到了正式的系统安装步骤，可以休——等等，你还要配置一些别的东西。</p>
+<p>我们不需要 Ubuntu Pro 的功能，暂且跳过，选择 <code>Skip for now</code>.</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-ubuntu-pro.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="跳过 Ubuntu Pro" src="../../img/bigdata/exp1/setup-ubuntu-pro.png" /></a></p>
+<p>在新的页面，选择 <code>[ ] Install OpenSSH server</code>，按回车键勾选，然后选择 <code>Done</code>.</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-ssh.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="OpenSSH 确认界面" src="../../img/bigdata/exp1/setup-ssh.png" /></a></p>
+<p>Ubuntu Server 是一个热门的服务器操作系统，下一个页面会询问你是否需要一些主流环境，只可惜我们不需要。按下 <span class="keys"><kbd class="key-tab">Tab</kbd></span> 键，选择 <code>Done</code>.</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-snap.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="跳过热门 Snap 包" src="../../img/bigdata/exp1/setup-snap.png" /></a></p>
+<h4 id="_20">系统安装<a class="headerlink" href="#_20" title="Permanent link">&para;</a></h4>
+<p>现在，我们来到了系统安装界面，等待系统安装完成。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-install.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="系统安装" src="../../img/bigdata/exp1/setup-install.png" /></a></p>
+<h4 id="_21">完成！<a class="headerlink" href="#_21" title="Permanent link">&para;</a></h4>
+<p>可能不是那么的显眼，但安装过程通常较快，待底部菜单出现 <code>[ Reboot Now ]</code> 时，即可将其选中，确定重启，完成安装。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-finish.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="完成安装" src="../../img/bigdata/exp1/setup-finish.png" /></a></p>
+<h4 id="_22">卡住了？<a class="headerlink" href="#_22" title="Permanent link">&para;</a></h4>
+<p>如果你遇到满屏幕的 <code>Failed unmounting /cdrom</code>，没关系，检查虚拟机软件界面（VMware Workstation Player 的右下角，VMware Fusion Player 的标题栏）的光驱连接状态。</p>
+<p>如果光驱尚未弹出，点击后，选择断开连接。如果光驱已经弹出，在虚拟机中按下回车即可。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-eject.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="弹出光驱" src="../../img/bigdata/exp1/setup-eject.png" /></a></p>
+<h4 id="_23">初来咋到！<a class="headerlink" href="#_23" title="Permanent link">&para;</a></h4>
+<div class="admonition question inline end">
+<p class="admonition-title">咋回事？</p>
+<p>TTY 的显示原理，可能出现 getty 启动后输出的提示信息被日志覆盖掉的情况，而此时 getty 已经在运行，等待用户登录。你也可以长按回车键，用刷屏的方式清空日志。</p>
+</div>
+<p>在重启后，如果长时间未出现新的日志项目，这个时候 getty 可能已经启动，可以登录了。按下回车键（可以多按几次），应该就会出现 <code>namenode login:</code> 的提示。如果没有，再重启一次。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-rebooted.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="登录界面" src="../../img/bigdata/exp1/setup-rebooted.png" /></a></p>
+<h4 id="_24">首次登录<a class="headerlink" href="#_24" title="Permanent link">&para;</a></h4>
+<p>输入之前设置的管理员用户名和密码，登录到系统。</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/setup-firstlook.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="登录完成" src="../../img/bigdata/exp1/setup-firstlook.png" /></a></p>
+<h2 id="hadoop">Hadoop 安装<a class="headerlink" href="#hadoop" title="Permanent link">&para;</a></h2>
+<p>终于！可以进入真正的重头戏了：Hadoop 的安装和配置。在此之后，我们需要克隆出两台相同的机器作为其他节点。</p>
+<h3 id="hadoop_1">创建 Hadoop 用户<a class="headerlink" href="#hadoop_1" title="Permanent link">&para;</a></h3>
+<p>使用以下命令创建新用户：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>sudo<span class="w"> </span>adduser<span class="w"> </span>hadoop
+</code></pre></div>
+<details class="question">
+<summary>为什么不用 <code>useradd</code>？</summary>
+<p><code>adduser</code> 是 Debian 系 Linux 发行版的独有命令，而 <code>useradd</code> 可用于所有 Linux 发行版中，层级更低，不建议使用。如果你使用了其它发行版，没关系！可以使用以下命令创建用户：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>sudo<span class="w"> </span>useradd<span class="w"> </span>-m<span class="w"> </span>hadoop
+</code></pre></div>
+<p>随后可以使用</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>sudo<span class="w"> </span>passwd<span class="w"> </span>hadoop
+</code></pre></div>
+<p>来修改 <code>hadoop</code> 用户的密码。</p>
+</details>
+<p>如果被提示到 <code>super</code> 或你创建的管理员用户的密码，输入并按下回车确认。</p>
+<p>随后为 <code>hadoop</code> 用户设置密码，接下来提示设置全名等信息可以不填，直接回车跳过。最后被问及信息是否正确，直接按回车确定。</p>
+<div class="admonition danger">
+<p class="admonition-title">看清用户名！</p>
+<p>在被问及输入密码时，一定要仔细确认“这是要输入谁的密码”，在 <code>sudo</code> 时需要输入的是<strong>执行 <code>sudo</code> 命令的用户</strong>的密码，并且会在提示中显示用户名。</p>
+<p>虽然说对于母语为中文的我们来说，英语不是那么易读，但也不能完全不读。</p>
+</div>
+<p><a class="glightbox" href="../../img/bigdata/exp1/hadoop-adduser.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="添加用户" src="../../img/bigdata/exp1/hadoop-adduser.png" /></a></p>
+<h3 id="hadoop_2">安装 Hadoop<a class="headerlink" href="#hadoop_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在虚拟机中，创建 Hadoop 安装目录：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>sudo<span class="w"> </span>mkdir<span class="w"> </span>/usr/local/hadoop
+</code></pre></div></li>
+<li>在主机上：<ul>
+<li>找到我们刚刚下载的 Hadoop 文件（<code>hadoop-3.3.6.tar.gz</code>）。</li>
+<li>打开：<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7zM223.7 87.3c9.8-22.2 34.2-21.8 44-.4 6.5 14.2 3.6 30.9-4.3 40.4-1.6-.8-5.9-2.6-12.6-4.9 1.1-1.2 3.1-2.7 3.9-4.6 4.8-11.8-.2-27-9.1-27.3-7.3-.5-13.9 10.8-11.8 23-4.1-2-9.4-3.5-13-4.4-1-6.9-.3-14.6 2.9-21.8zM183 75.8c10.1 0 20.8 14.2 19.1 33.5-3.5 1-7.1 2.5-10.2 4.6 1.2-8.9-3.3-20.1-9.6-19.6-8.4.7-9.8 21.2-1.8 28.1 1 .8 1.9-.2-5.9 5.5-15.6-14.6-10.5-52.1 8.4-52.1zm-13.6 60.7c6.2-4.6 13.6-10 14.1-10.5 4.7-4.4 13.5-14.2 27.9-14.2 7.1 0 15.6 2.3 25.9 8.9 6.3 4.1 11.3 4.4 22.6 9.3 8.4 3.5 13.7 9.7 10.5 18.2-2.6 7.1-11 14.4-22.7 18.1-11.1 3.6-19.8 16-38.2 14.9-3.9-.2-7-1-9.6-2.1-8-3.5-12.2-10.4-20-15-8.6-4.8-13.2-10.4-14.7-15.3-1.4-4.9 0-9 4.2-12.3zm3.3 334c-2.7 35.1-43.9 34.4-75.3 18-29.9-15.8-68.6-6.5-76.5-21.9-2.4-4.7-2.4-12.7 2.6-26.4v-.2c2.4-7.6.6-16-.6-23.9-1.2-7.8-1.8-15 .9-20 3.5-6.7 8.5-9.1 14.8-11.3 10.3-3.7 11.8-3.4 19.6-9.9 5.5-5.7 9.5-12.9 14.3-18 5.1-5.5 10-8.1 17.7-6.9 8.1 1.2 15.1 6.8 21.9 16l19.6 35.6c9.5 19.9 43.1 48.4 41 68.9zm-1.4-25.9c-4.1-6.6-9.6-13.6-14.4-19.6 7.1 0 14.2-2.2 16.7-8.9 2.3-6.2 0-14.9-7.4-24.9-13.5-18.2-38.3-32.5-38.3-32.5-13.5-8.4-21.1-18.7-24.6-29.9s-3-23.3-.3-35.2c5.2-22.9 18.6-45.2 27.2-59.2 2.3-1.7.8 3.2-8.7 20.8-8.5 16.1-24.4 53.3-2.6 82.4.6-20.7 5.5-41.8 13.8-61.5 12-27.4 37.3-74.9 39.3-112.7 1.1.8 4.6 3.2 6.2 4.1 4.6 2.7 8.1 6.7 12.6 10.3 12.4 10 28.5 9.2 42.4 1.2 6.2-3.5 11.2-7.5 15.9-9 9.9-3.1 17.8-8.6 22.3-15 7.7 30.4 25.7 74.3 37.2 95.7 6.1 11.4 18.3 35.5 23.6 64.6 3.3-.1 7 .4 10.9 1.4 13.8-35.7-11.7-74.2-23.3-84.9-4.7-4.6-4.9-6.6-2.6-6.5 12.6 11.2 29.2 33.7 35.2 59 2.8 11.6 3.3 23.7.4 35.7 16.4 6.8 35.9 17.9 30.7 34.8-2.2-.1-3.2 0-4.2 0 3.2-10.1-3.9-17.6-22.8-26.1-19.6-8.6-36-8.6-38.3 12.5-12.1 4.2-18.3 14.7-21.4 27.3-2.8 11.2-3.6 24.7-4.4 39.9-.5 7.7-3.6 18-6.8 29-32.1 22.9-76.7 32.9-114.3 7.2zm257.4-11.5c-.9 16.8-41.2 19.9-63.2 46.5-13.2 15.7-29.4 24.4-43.6 25.5s-26.5-4.8-33.7-19.3c-4.7-11.1-2.4-23.1 1.1-36.3 3.7-14.2 9.2-28.8 9.9-40.6.8-15.2 1.7-28.5 4.2-38.7 2.6-10.3 6.6-17.2 13.7-21.1.3-.2.7-.3 1-.5.8 13.2 7.3 26.6 18.8 29.5 12.6 3.3 30.7-7.5 38.4-16.3 9-.3 15.7-.9 22.6 5.1 9.9 8.5 7.1 30.3 17.1 41.6 10.6 11.6 14 19.5 13.7 24.6zM173.3 148.7c2 1.9 4.7 4.5 8 7.1 6.6 5.2 15.8 10.6 27.3 10.6 11.6 0 22.5-5.9 31.8-10.8 4.9-2.6 10.9-7 14.8-10.4s5.9-6.3 3.1-6.6-2.6 2.6-6 5.1c-4.4 3.2-9.7 7.4-13.9 9.8-7.4 4.2-19.5 10.2-29.9 10.2s-18.7-4.8-24.9-9.7c-3.1-2.5-5.7-5-7.7-6.9-1.5-1.4-1.9-4.6-4.3-4.9-1.4-.1-1.8 3.7 1.7 6.5z"/></svg></span> 终端</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m0 93.7 183.6-25.3v177.4H0V93.7zm0 324.6 183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg></span> 命令提示符（Windows 10）</li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M0 0h11.377v11.372H0Zm12.623 0H24v11.372H12.623ZM0 12.623h11.377V24H0Zm12.623 0H24V24H12.623"/></svg></span> Windows 终端（Windows 11）</li>
+</ul>
+</li>
+<li>使用 <code>cd</code> 进入到所在文件夹，<em>比如</em>：<ul>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/></svg></span><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M220.8 123.3c1 .5 1.8 1.7 3 1.7 1.1 0 2.8-.4 2.9-1.5.2-1.4-1.9-2.3-3.2-2.9-1.7-.7-3.9-1-5.5-.1-.4.2-.8.7-.6 1.1.3 1.3 2.3 1.1 3.4 1.7zm-21.9 1.7c1.2 0 2-1.2 3-1.7 1.1-.6 3.1-.4 3.5-1.6.2-.4-.2-.9-.6-1.1-1.6-.9-3.8-.6-5.5.1-1.3.6-3.4 1.5-3.2 2.9.1 1 1.8 1.5 2.8 1.4zM420 403.8c-3.6-4-5.3-11.6-7.2-19.7-1.8-8.1-3.9-16.8-10.5-22.4-1.3-1.1-2.6-2.1-4-2.9-1.3-.8-2.7-1.5-4.1-2 9.2-27.3 5.6-54.5-3.7-79.1-11.4-30.1-31.3-56.4-46.5-74.4-17.1-21.5-33.7-41.9-33.4-72C311.1 85.4 315.7.1 234.8 0 132.4-.2 158 103.4 156.9 135.2c-1.7 23.4-6.4 41.8-22.5 64.7-18.9 22.5-45.5 58.8-58.1 96.7-6 17.9-8.8 36.1-6.2 53.3-6.5 5.8-11.4 14.7-16.6 20.2-4.2 4.3-10.3 5.9-17 8.3s-14 6-18.5 14.5c-2.1 3.9-2.8 8.1-2.8 12.4 0 3.9.6 7.9 1.2 11.8 1.2 8.1 2.5 15.7.8 20.8-5.2 14.4-5.9 24.4-2.2 31.7 3.8 7.3 11.4 10.5 20.1 12.3 17.3 3.6 40.8 2.7 59.3 12.5 19.8 10.4 39.9 14.1 55.9 10.4 11.6-2.6 21.1-9.6 25.9-20.2 12.5-.1 26.3-5.4 48.3-6.6 14.9-1.2 33.6 5.3 55.1 4.1.6 2.3 1.4 4.6 2.5 6.7v.1c8.3 16.7 23.8 24.3 40.3 23 16.6-1.3 34.1-11 48.3-27.9 13.6-16.4 36-23.2 50.9-32.2 7.4-4.5 13.4-10.1 13.9-18.3.4-8.2-4.4-17.3-15.5-29.7zM223.7 87.3c9.8-22.2 34.2-21.8 44-.4 6.5 14.2 3.6 30.9-4.3 40.4-1.6-.8-5.9-2.6-12.6-4.9 1.1-1.2 3.1-2.7 3.9-4.6 4.8-11.8-.2-27-9.1-27.3-7.3-.5-13.9 10.8-11.8 23-4.1-2-9.4-3.5-13-4.4-1-6.9-.3-14.6 2.9-21.8zM183 75.8c10.1 0 20.8 14.2 19.1 33.5-3.5 1-7.1 2.5-10.2 4.6 1.2-8.9-3.3-20.1-9.6-19.6-8.4.7-9.8 21.2-1.8 28.1 1 .8 1.9-.2-5.9 5.5-15.6-14.6-10.5-52.1 8.4-52.1zm-13.6 60.7c6.2-4.6 13.6-10 14.1-10.5 4.7-4.4 13.5-14.2 27.9-14.2 7.1 0 15.6 2.3 25.9 8.9 6.3 4.1 11.3 4.4 22.6 9.3 8.4 3.5 13.7 9.7 10.5 18.2-2.6 7.1-11 14.4-22.7 18.1-11.1 3.6-19.8 16-38.2 14.9-3.9-.2-7-1-9.6-2.1-8-3.5-12.2-10.4-20-15-8.6-4.8-13.2-10.4-14.7-15.3-1.4-4.9 0-9 4.2-12.3zm3.3 334c-2.7 35.1-43.9 34.4-75.3 18-29.9-15.8-68.6-6.5-76.5-21.9-2.4-4.7-2.4-12.7 2.6-26.4v-.2c2.4-7.6.6-16-.6-23.9-1.2-7.8-1.8-15 .9-20 3.5-6.7 8.5-9.1 14.8-11.3 10.3-3.7 11.8-3.4 19.6-9.9 5.5-5.7 9.5-12.9 14.3-18 5.1-5.5 10-8.1 17.7-6.9 8.1 1.2 15.1 6.8 21.9 16l19.6 35.6c9.5 19.9 43.1 48.4 41 68.9zm-1.4-25.9c-4.1-6.6-9.6-13.6-14.4-19.6 7.1 0 14.2-2.2 16.7-8.9 2.3-6.2 0-14.9-7.4-24.9-13.5-18.2-38.3-32.5-38.3-32.5-13.5-8.4-21.1-18.7-24.6-29.9s-3-23.3-.3-35.2c5.2-22.9 18.6-45.2 27.2-59.2 2.3-1.7.8 3.2-8.7 20.8-8.5 16.1-24.4 53.3-2.6 82.4.6-20.7 5.5-41.8 13.8-61.5 12-27.4 37.3-74.9 39.3-112.7 1.1.8 4.6 3.2 6.2 4.1 4.6 2.7 8.1 6.7 12.6 10.3 12.4 10 28.5 9.2 42.4 1.2 6.2-3.5 11.2-7.5 15.9-9 9.9-3.1 17.8-8.6 22.3-15 7.7 30.4 25.7 74.3 37.2 95.7 6.1 11.4 18.3 35.5 23.6 64.6 3.3-.1 7 .4 10.9 1.4 13.8-35.7-11.7-74.2-23.3-84.9-4.7-4.6-4.9-6.6-2.6-6.5 12.6 11.2 29.2 33.7 35.2 59 2.8 11.6 3.3 23.7.4 35.7 16.4 6.8 35.9 17.9 30.7 34.8-2.2-.1-3.2 0-4.2 0 3.2-10.1-3.9-17.6-22.8-26.1-19.6-8.6-36-8.6-38.3 12.5-12.1 4.2-18.3 14.7-21.4 27.3-2.8 11.2-3.6 24.7-4.4 39.9-.5 7.7-3.6 18-6.8 29-32.1 22.9-76.7 32.9-114.3 7.2zm257.4-11.5c-.9 16.8-41.2 19.9-63.2 46.5-13.2 15.7-29.4 24.4-43.6 25.5s-26.5-4.8-33.7-19.3c-4.7-11.1-2.4-23.1 1.1-36.3 3.7-14.2 9.2-28.8 9.9-40.6.8-15.2 1.7-28.5 4.2-38.7 2.6-10.3 6.6-17.2 13.7-21.1.3-.2.7-.3 1-.5.8 13.2 7.3 26.6 18.8 29.5 12.6 3.3 30.7-7.5 38.4-16.3 9-.3 15.7-.9 22.6 5.1 9.9 8.5 7.1 30.3 17.1 41.6 10.6 11.6 14 19.5 13.7 24.6zM173.3 148.7c2 1.9 4.7 4.5 8 7.1 6.6 5.2 15.8 10.6 27.3 10.6 11.6 0 22.5-5.9 31.8-10.8 4.9-2.6 10.9-7 14.8-10.4s5.9-6.3 3.1-6.6-2.6 2.6-6 5.1c-4.4 3.2-9.7 7.4-13.9 9.8-7.4 4.2-19.5 10.2-29.9 10.2s-18.7-4.8-24.9-9.7c-3.1-2.5-5.7-5-7.7-6.9-1.5-1.4-1.9-4.6-4.3-4.9-1.4-.1-1.8 3.7 1.7 6.5z"/></svg></span> <code>cd ~/Downloads</code></li>
+<li><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="m0 93.7 183.6-25.3v177.4H0V93.7zm0 324.6 183.6 25.3V268.4H0v149.9zm203.8 28L448 480V268.4H203.8v177.9zm0-380.6v180.1H448V32L203.8 65.7z"/></svg></span> <code>cd %USERPROFILE%\Downloads</code></li>
+</ul>
+</li>
+<li>使用该命令传输文件到虚拟机：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>scp<span class="w"> </span>hadoop-3.3.6.tar.gz<span class="w"> </span>super@192.168.178.100:/tmp
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">注意用户名！</p>
+<p>如果你的虚拟机管理员用户名不是 <code>super</code>，你需要在这里将它替换为你的管理员用户名。</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">找不到 <code>scp</code> 或者 <code>ssh</code> 命令？</p>
+<p>如果出现找不到命令的情况，请参考<a href="#scp_2">常见问题 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <code>scp</code> 命令未找到</a>。</p>
+</div>
+<p>我们来偷懒：在虚拟机里，输入 <code>exit</code> 退出 <code>hadoop</code> 用户登录，再运行一次 <code>exit</code> 退出 <code>super</code> 用户登录，然后最小化/隐藏虚拟机软件界面。</p>
+<p>在 getty 下，主机与虚拟机的剪贴板并不共享，也没有剪贴功能。这种情况下是无法使用复制粘贴功能的。但可以曲线救国：在主机的终端/命令提示符下，使用 <code>ssh</code> 连接到虚拟机：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="n">ssh</span><span class="w"> </span><span class="n">super</span><span class="cm">/* (1)! */</span><span class="err">@</span><span class="mf">192.168.178.100</span><span class="cm">/* (2)! */</span>
+</code></pre></div>
+<ol>
+<li>使用 <code>super</code> 用户登录</li>
+<li>连接到 <code>192.168.178.100</code></li>
+</ol>
+<p>如果提示，输入 <code>yes</code> 信任虚拟机，输入密码登录，随后即可将内容粘贴至虚拟机中。</p>
+<p>我们现在在虚拟机中，进行以下操作：</p>
+<ul>
+<li>将 Hadoop 压缩包移动至目的地
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>sudo<span class="w"> </span>mv<span class="w"> </span>/tmp/hadoop-3.3.6.tar.gz<span class="w"> </span>/usr/local/hadoop
+</code></pre></div></li>
+<li>前往 Hadoop 安装目录：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span>/usr/local/hadoop
+</code></pre></div></li>
+<li>解压缩：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>sudo<span class="w"> </span>tar<span class="w"> </span>-zxf<span class="w"> </span>hadoop-3.3.6.tar.gz
+</code></pre></div></li>
+<li>调整位置：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>sudo<span class="w"> </span>mv<span class="w"> </span>hadoop-3.3.6/*<span class="w"> </span>.
+</code></pre></div></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">仔细阅读！</p>
+<p>以上命令的末尾有一个点（<code>.</code>），在输入的时候务必不要遗漏。</p>
+</div>
+<ul>
+<li>移除目录：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>hadoop-3.3.6
+</code></pre></div></li>
+<li>移除压缩包：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>sudo<span class="w"> </span>rm<span class="w"> </span>hadoop-3.3.6.tar.gz
+</code></pre></div></li>
+<li>修正权限：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>-R<span class="w"> </span>hadoop:hadoop<span class="w"> </span>.
+</code></pre></div></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">仔细阅读！</p>
+<p>以上命令的末尾有一个点（<code>.</code>），在输入的时候务必不要遗漏。</p>
+</div>
+<ul>
+<li>修改 <code>profile</code>：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/profile.d/hadoop.sh
+</code></pre></div></li>
+<li>添加以下内容：
+  <div class="highlight"><span class="filename">hadoop.sh</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="c1">#HADOOP_HOME</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="nb">export</span><span class="w"> </span><span class="nv">HADOOP_HOME</span><span class="o">=</span>/usr/local/hadoop
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HADOOP_HOME</span>/bin
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="nb">export</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="nv">$PATH</span>:<span class="nv">$HADOOP_HOME</span>/sbin
+</code></pre></div></li>
+<li>按下 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span>，确认保存（按 <span class="keys"><kbd class="key-y">Y</kbd></span>），确认文件名（回车 <span class="keys"><kbd class="key-enter">Enter</kbd></span>）</li>
+<li>应用变更：<code>source /etc/profile</code></li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">不是所有事情都是需要 <code>sudo</code> 的</p>
+<p>Linux 有一个常见误区：无法完成想做的事情？加上 <code>sudo</code> 试试。在真正需要<strong>管理系统的权限</strong>时，应当使用 <code>sudo</code> 来提升权限，其他时候都不应该。反之，应当仔细检查其它可能的出错原因。<code>sudo</code> 的误用往往是一时解决了问题，但却会在后期带来更多的隐形的问题。同时任意 <code>sudo</code> 也有可能破坏系统安全，为系统带来安全隐患。在这一步，我们执行的基本都是系统管理命令，必须使用 <code>sudo</code> 才能正常完成。</p>
+</div>
+<h3 id="java">安装 Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h3>
+<details class="info inline end" open="open">
+<summary>为什么还在用 Java 8?</summary>
+<p>连 Minecraft 1.18 都需要 Java 19 或更高版本才能启动了。但至于 Hadoop，这是一个需要去问 Apache 的问题。Hadoop 目前仅有 Java 8 的完整支持，Java 11（2018 年发布）仍然处于“实验性”阶段。所以很抱歉，我们只能用 Java 8 了。</p>
+</details>
+<ul>
+<li>安装 OpenJDK 包<sup id="fnref:4"><a class="footnote-ref" href="#fn:4">4</a></sup>：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>openjdk-8-jdk
+</code></pre></div></li>
+<li>修改 Hadoop 运行环境配置：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/usr/local/hadoop/etc/hadoop/hadoop-env.sh
+</code></pre></div></li>
+<li>按 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-w">W</kbd></span>，输入 <code>JAVA_HOME</code> 寻找 <code>JAVA_HOME</code> 环境变量配置位置</li>
+<li>找到如下图位置，去除 <code>#</code> 来取消注释，填入：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>/usr/lib/jvm/java-1.8.0-openjdk-amd64
+</code></pre></div></li>
+</ul>
+<details class="info">
+<summary>如果你使用 ARM 虚拟机</summary>
+<p>如果你使用 ARM 虚拟机，你需要填写 ARM64 JDK 的路径：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>/usr/lib/jvm/java-1.8.0-openjdk-arm64
+</code></pre></div>
+</details>
+<ul>
+<li>按 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-x">X</kbd></span> 保存</li>
+</ul>
+<p><a class="glightbox" href="../../img/bigdata/exp1/hadoop-env.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hadoop 环境配置" src="../../img/bigdata/exp1/hadoop-env.png" /></a></p>
+<h3 id="hadoop_3">切换到 Hadoop 用户<a class="headerlink" href="#hadoop_3" title="Permanent link">&para;</a></h3>
+<p>使用以下命令切换到 <code>hadoop</code> 用户：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>su<span class="w"> </span>-<span class="w"> </span>hadoop
+</code></pre></div>
+<p>输入 <code>hadoop</code> 用户的密码，完成登录。</p>
+<ul>
+<li>如果遇到 <code>su: Authentication failure</code>，则说明密码有误，需要重新尝试</li>
+<li>如果看到 <code>hadoop@namenode:~$</code> 显示，则说明登录成功</li>
+</ul>
+<p>此时可以执行 <code>hadoop version</code> 命令，如果显示 Hadoop 版本信息，则说明没有问题，可以继续。</p>
+<h2 id="hadoop_4">Hadoop 配置<a class="headerlink" href="#hadoop_4" title="Permanent link">&para;</a></h2>
+<p>接下来我们执行 Hadoop 的配置。使用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a><span class="nb">cd</span><span class="w"> </span><span class="nv">$HADOOP_HOME</span>/etc/hadoop
+</code></pre></div>
+<p>命令，进入配置文件夹。</p>
+<h3 id="core-sitexml">core-site.xml<a class="headerlink" href="#core-sitexml" title="Permanent link">&para;</a></h3>
+<p>执行 <code>nano core-site.xml</code>，在 <code>&lt;configuration&gt;</code> 块内填写以下信息（注释可以不添加）：</p>
+<div class="highlight"><span class="filename">core-site.xml</span><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2" href="#__codelineno-24-2"></a><span class="w">  </span><span class="cm">&lt;!-- Namenode address --&gt;</span>
+<a id="__codelineno-24-3" name="__codelineno-24-3" href="#__codelineno-24-3"></a><span class="w">  </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-24-4" name="__codelineno-24-4" href="#__codelineno-24-4"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>fs.defaultFS<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5" href="#__codelineno-24-5"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>hdfs://namenode:8020<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-24-6" name="__codelineno-24-6" href="#__codelineno-24-6"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-24-7" name="__codelineno-24-7" href="#__codelineno-24-7"></a>
+<a id="__codelineno-24-8" name="__codelineno-24-8" href="#__codelineno-24-8"></a><span class="w">  </span><span class="cm">&lt;!-- Hadoop data location --&gt;</span>
+<a id="__codelineno-24-9" name="__codelineno-24-9" href="#__codelineno-24-9"></a><span class="w">  </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-24-10" name="__codelineno-24-10" href="#__codelineno-24-10"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>hadoop.tmp.dir<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11" href="#__codelineno-24-11"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>/usr/local/hadoop/data<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-24-12" name="__codelineno-24-12" href="#__codelineno-24-12"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-24-13" name="__codelineno-24-13" href="#__codelineno-24-13"></a>
+<a id="__codelineno-24-14" name="__codelineno-24-14" href="#__codelineno-24-14"></a><span class="w">  </span><span class="cm">&lt;!-- Static user - no login needed --&gt;</span>
+<a id="__codelineno-24-15" name="__codelineno-24-15" href="#__codelineno-24-15"></a><span class="w">  </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-24-16" name="__codelineno-24-16" href="#__codelineno-24-16"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>hadoop.http.staticuser.user<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-24-17" name="__codelineno-24-17" href="#__codelineno-24-17"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>hadoop<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-24-18" name="__codelineno-24-18" href="#__codelineno-24-18"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-24-19" name="__codelineno-24-19" href="#__codelineno-24-19"></a><span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div>
+<p><a class="glightbox" href="../../img/bigdata/exp1/hadoop-core-site.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="core-site.xml" src="../../img/bigdata/exp1/hadoop-core-site.png" /></a></p>
+<h3 id="hdfs-sitexml">hdfs-site.xml<a class="headerlink" href="#hdfs-sitexml" title="Permanent link">&para;</a></h3>
+<p>类似地，编辑 <code>hdfs-site.xml</code>，在 <code>&lt;configuration&gt;</code> 块内填写以下信息：</p>
+<div class="highlight"><span class="filename">hdfs-site.xml</span><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2" href="#__codelineno-25-2"></a><span class="w">  </span><span class="nt">&lt;property&gt;</span><span class="cm">&lt;!-- (1)! --&gt;</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3" href="#__codelineno-25-3"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>dfs.namenode.http-address<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-25-4" name="__codelineno-25-4" href="#__codelineno-25-4"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>namenode:9870<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-25-5" name="__codelineno-25-5" href="#__codelineno-25-5"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-25-6" name="__codelineno-25-6" href="#__codelineno-25-6"></a><span class="w">  </span><span class="nt">&lt;property&gt;</span><span class="cm">&lt;!-- (2)! --&gt;</span>
+<a id="__codelineno-25-7" name="__codelineno-25-7" href="#__codelineno-25-7"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>dfs.namenode.secondary.http-address<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-25-8" name="__codelineno-25-8" href="#__codelineno-25-8"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>datanode2:9868<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-25-9" name="__codelineno-25-9" href="#__codelineno-25-9"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-25-10" name="__codelineno-25-10" href="#__codelineno-25-10"></a><span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div>
+<ol>
+<li>主 Namenode 地址</li>
+<li>第二 Namenode 地址</li>
+</ol>
+<p><a class="glightbox" href="../../img/bigdata/exp1/hadoop-hdfs-site.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="hdfs-site.xml" src="../../img/bigdata/exp1/hadoop-hdfs-site.png" /></a></p>
+<h3 id="yarn-sitexml">yarn-site.xml<a class="headerlink" href="#yarn-sitexml" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">yarn-site.xml</span><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-26-2" name="__codelineno-26-2" href="#__codelineno-26-2"></a><span class="w">  </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-26-3" name="__codelineno-26-3" href="#__codelineno-26-3"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>yarn.nodemanager.aux-services<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-26-4" name="__codelineno-26-4" href="#__codelineno-26-4"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>mapreduce_shuffle<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-26-5" name="__codelineno-26-5" href="#__codelineno-26-5"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-26-6" name="__codelineno-26-6" href="#__codelineno-26-6"></a><span class="w">  </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-26-7" name="__codelineno-26-7" href="#__codelineno-26-7"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>yarn.resourcemanager<span class="cm">&lt;!-- (1)! --&gt;</span>.hostname<span class="nt">&lt;/name&gt;</span><span class="cm">&lt;!-- (2)! --&gt;</span>
+<a id="__codelineno-26-8" name="__codelineno-26-8" href="#__codelineno-26-8"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>datanode1<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-26-9" name="__codelineno-26-9" href="#__codelineno-26-9"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-26-10" name="__codelineno-26-10" href="#__codelineno-26-10"></a><span class="w">  </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-26-11" name="__codelineno-26-11" href="#__codelineno-26-11"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>yarn.nodemanager.env-whitelist<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-26-12" name="__codelineno-26-12" href="#__codelineno-26-12"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-26-13" name="__codelineno-26-13" href="#__codelineno-26-13"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-26-14" name="__codelineno-26-14" href="#__codelineno-26-14"></a><span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div>
+<ol>
+<li>如果你正通过 Web VPN 访问此文档，复制时，请务必查看下方提示框内容</li>
+<li>指定 YARN 在 <code>datanode1</code> 运行</li>
+</ol>
+<div class="admonition bug">
+<p class="admonition-title">如果你正在使用 Web VPN 访问此文档</p>
+<p>学校使用的深信服 Web VPN 存在一个已知 bug，可能会将上方代码中的 <mark class="critic">yarn.resourcemanager</mark>.hostname 替换为 <mark class="critic">proxy<mark></mark>Loc(yarn.resourcemanager)</mark>.hostname，<strong>请务必参照下方截图确认你的配置无误</strong>。</p>
+<p><del>嗯，是的，其实我在编写的时候也被顺手坑了一把。</del></p>
+<p>如果在启动 YARN 后发现只有 1 个活跃节点，大概率就是在这里被坑了。</p>
+</div>
+<p><a class="glightbox" href="../../img/bigdata/exp1/hadoop-yarn-site.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="yarn-site.xml" src="../../img/bigdata/exp1/hadoop-yarn-site.png" /></a></p>
+<h3 id="mapred-sitexml">mapred-site.xml<a class="headerlink" href="#mapred-sitexml" title="Permanent link">&para;</a></h3>
+<div class="highlight"><span class="filename">mapred-site.xml</span><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-27-2" name="__codelineno-27-2" href="#__codelineno-27-2"></a><span class="w">  </span><span class="nt">&lt;property&gt;</span>
+<a id="__codelineno-27-3" name="__codelineno-27-3" href="#__codelineno-27-3"></a><span class="w">    </span><span class="nt">&lt;name&gt;</span>mapreduce.framework.name<span class="nt">&lt;/name&gt;</span>
+<a id="__codelineno-27-4" name="__codelineno-27-4" href="#__codelineno-27-4"></a><span class="w">    </span><span class="nt">&lt;value&gt;</span>yarn<span class="nt">&lt;/value&gt;</span>
+<a id="__codelineno-27-5" name="__codelineno-27-5" href="#__codelineno-27-5"></a><span class="w">  </span><span class="nt">&lt;/property&gt;</span>
+<a id="__codelineno-27-6" name="__codelineno-27-6" href="#__codelineno-27-6"></a><span class="nt">&lt;/configuration&gt;</span>
+</code></pre></div>
+<p><a class="glightbox" href="../../img/bigdata/exp1/hadoop-mapred-site.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="mapred-site.xml" src="../../img/bigdata/exp1/hadoop-mapred-site.png" /></a></p>
+<h3 id="workers">workers<a class="headerlink" href="#workers" title="Permanent link">&para;</a></h3>
+<ul>
+<li>修改 <code>workers</code> 文件：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>nano<span class="w"> </span>workers
+</code></pre></div></li>
+<li>移除自带的 <code>localhost</code></li>
+<li>填入以下内容：
+  <div class="highlight"><span class="filename">workers</span><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>namenode
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>datanode1
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>datanode2
+</code></pre></div></li>
+<li>保存</li>
+</ul>
+<p><a class="glightbox" href="../../img/bigdata/exp1/hadoop-workers.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="workers" src="../../img/bigdata/exp1/hadoop-workers.png" /></a></p>
+<h2 id="_25">配置网络<a class="headerlink" href="#_25" title="Permanent link">&para;</a></h2>
+<ul>
+<li>退出 <code>hadoop</code> 用户：<code>exit</code></li>
+<li>此时应当回退到了 <code>super</code> 用户，如果没有，重新登录</li>
+<li>修改 <code>hosts</code>：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/hosts
+</code></pre></div></li>
+<li>修改 <code>127.0.0.1 namenode</code> 为 <code>192.168.178.100 namenode</code></li>
+<li>添加以下两行：
+  <div class="highlight"><span class="filename">/etc/hosts</span><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>192.168.178.101 datanode1
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>192.168.178.102 datanode2
+</code></pre></div></li>
+<li>保存退出</li>
+</ul>
+<p><a class="glightbox" href="../../img/bigdata/exp1/hadoop-hosts.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="hosts" src="../../img/bigdata/exp1/hadoop-hosts.png" /></a></p>
+<h2 id="_26">克隆虚拟机<a class="headerlink" href="#_26" title="Permanent link">&para;</a></h2>
+<p>我们需要三台虚拟机作为真分布式 Hadoop 集群中的三台机器。我们以配置好的 <code>namenode</code> 为蓝本，创建另外两台机器。</p>
+<h3 id="_27">克隆文件<a class="headerlink" href="#_27" title="Permanent link">&para;</a></h3>
+<ul>
+<li>关机：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>poweroff
+</code></pre></div></li>
+<li>在虚拟机软件中，右键 namenode，连续使用两次“创建链接克隆”<sup id="fnref2:5"><a class="footnote-ref" href="#fn:5">5</a></sup>，保存为 datanode1 和 datanode2<br />
+<a class="glightbox" href="../../img/bigdata/exp1/clone-vms.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="克隆虚拟机" src="../../img/bigdata/exp1/clone-vms.png" /></a></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">如果你没有看到“克隆虚拟机”选项</p>
+<p>这个功能只在 VMware Workstation Pro 中提供，VMware Workstation Player 无此功能。你可以切换到 VMware Workstation Pro 打开 <code>namenode</code>
+虚拟机再执行克隆操作（二者格式互相兼容），也可以直接复制一份 <code>namenode</code> 虚拟机所在的文件夹，再双击打开新的文件夹内的 <code>.vmx</code> 文件。链接克隆的好处请参考附注<sup id="fnref:5"><a class="footnote-ref" href="#fn:5">5</a></sup>。</p>
+</div>
+<h3 id="_28">配置克隆机网络<a class="headerlink" href="#_28" title="Permanent link">&para;</a></h3>
+<ul>
+<li>开启 <strong>datanode1</strong>，如果提示是复制了还是移动了虚拟机，选择“我已复制该虚拟机”<ul>
+<li>登录到 <code>super</code> 用户</li>
+<li>修改主机名：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>datanode1
+</code></pre></div></li>
+<li>修改 IP 配置：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/netplan/00-installer-config.yaml
+</code></pre></div></li>
+<li>将 <code>addresses:</code> 下的 <code>192.168.178.100/24</code> 替换为 <strong><code>192.168.178.101/24</code></strong></li>
+<li>保存退出</li>
+<li>重启虚拟机：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>sudo<span class="w"> </span>reboot
+</code></pre></div></li>
+<li>登录到 <code>super</code> 用户</li>
+<li>验证 IP 地址：<code>ip addr</code></li>
+<li>出现 <strong><code>inet 192.168.178.101/24</code></strong> 即表示设置正确</li>
+</ul>
+</li>
+<li>开启 <strong>datanode2</strong>，如果提示是复制了还是移动了虚拟机，选择“我已复制该虚拟机”<ul>
+<li>登录到 <code>super</code> 用户</li>
+<li>修改主机名：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>sudo<span class="w"> </span>hostnamectl<span class="w"> </span>set-hostname<span class="w"> </span>datanode2
+</code></pre></div></li>
+<li>修改 IP 配置：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/netplan/00-installer-config.yaml
+</code></pre></div></li>
+<li>将 <code>addresses:</code> 下的 <code>192.168.178.100/24</code> 替换为 <strong><code>192.168.178.102/24</code></strong></li>
+<li>保存退出</li>
+<li>重启虚拟机：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>sudo<span class="w"> </span>reboot
+</code></pre></div></li>
+<li>登录到 <code>super</code> 用户</li>
+<li>验证 IP 地址：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>ip<span class="w"> </span>addr
+</code></pre></div></li>
+<li>出现 <strong><code>inet 192.168.178.102/24</code></strong> 即表示设置正确</li>
+</ul>
+</li>
+</ul>
+<h3 id="_29">在三台机器上配置公钥登录<a class="headerlink" href="#_29" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在三台同时运行的虚拟机上，各自：<ul>
+<li>切换到 <code>hadoop</code> 用户：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>su<span class="w"> </span>-<span class="w"> </span>hadoop
+</code></pre></div></li>
+<li>生成公钥对：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>ssh-keygen<span class="w"> </span>-t<span class="w"> </span>ed25519
+</code></pre></div></li>
+<li>按三次回车！（即全部使用默认配置）</li>
+</ul>
+</li>
+<li>保证上述三个步骤已在三台机上全部执行完毕后，<strong>逐一</strong>完成公钥复制：<ul>
+<li>在每台机器上运行这三个命令：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>ssh-copy-id<span class="w"> </span>namenode
+<a id="__codelineno-42-2" name="__codelineno-42-2" href="#__codelineno-42-2"></a>ssh-copy-id<span class="w"> </span>datanode1
+<a id="__codelineno-42-3" name="__codelineno-42-3" href="#__codelineno-42-3"></a>ssh-copy-id<span class="w"> </span>datanode2
+</code></pre></div></li>
+<li>根据提示，如果询问是否信任主机，输入 <code>yes</code></li>
+<li>如果询问 <code>hadoop</code> 用户密码，输入对应的密码</li>
+<li><strong>在三台机器中的每一台机器上，均需执行上述所有三个命令</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="hdfs">格式化 HDFS<a class="headerlink" href="#hdfs" title="Permanent link">&para;</a></h3>
+<p>在初次运行前，我们需要格式化 HDFS.</p>
+<ul>
+<li>在 namenode 机器上，<strong>使用 <code>hadoop</code> 用户身份</strong>：<ul>
+<li>格式化 HDFS：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>hdfs<span class="w"> </span>namenode<span class="w"> </span>-format
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">不要重复格式化！</p>
+<p>请勿多次格式化 HDFS，否则会导致 cluster ID 不匹配，继而 datanode 无法启动。</p>
+</div>
+<h2 id="_30">启动集群<a class="headerlink" href="#_30" title="Permanent link">&para;</a></h2>
+<ul>
+<li>在 namenode 机器上，<strong>使用 <code>hadoop</code> 用户身份</strong>：<ul>
+<li>启动集群：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>start-dfs.sh
+</code></pre></div></li>
+</ul>
+</li>
+<li>在 <strong>datanode1</strong> 机器上，<strong>使用 <code>hadoop</code> 用户身份</strong>：<ul>
+<li>启动 YARN：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>start-yarn.sh
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<p>如果需要停止集群，只需要在 <code>namenode</code> 执行 <code>stop-dfs.sh</code>，在 <code>datanode1</code> 执行 <code>stop-yarn.sh</code> 即可。</p>
+<div class="admonition danger">
+<p class="admonition-title">谨慎使用 <code>start-all.sh</code></p>
+<p>由于 YARN 被配置在 <code>datanode1</code> 运行，只能在 <code>datanode1</code> 机器上执行 <code>start-yarn.sh</code> 来启动 YARN，否则会导致启动失败。即使 HDFS 可以访问，YARN 也会工作异常，无法为后续如<a href="../exp5/">实验五</a>提供支持。</p>
+</div>
+<h2 id="_31">结束了？<a class="headerlink" href="#_31" title="Permanent link">&para;</a></h2>
+<p>恭喜你！Hadoop 的搭建工作就到此为止了。</p>
+<p>可以在浏览器输入以下地址，访问对应的控制面板：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">网页</th>
+<th style="text-align: left;">地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">HDFS 控制面板</td>
+<td style="text-align: left;"><a href="http://192.168.178.100:9870">http://192.168.178.100:9870</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">YARN 控制面板</td>
+<td style="text-align: left;"><a href="http://192.168.178.101:8088">http://192.168.178.101:8088</a></td>
+</tr>
+</tbody>
+</table>
+<p>可以输入 <code>jps</code><sup id="fnref:6"><a class="footnote-ref" href="#fn:6">6</a></sup> 命令，查看正在运行的模块信息。</p>
+<h3 id="_32">成功的标志<a class="headerlink" href="#_32" title="Permanent link">&para;</a></h3>
+<p>如果实验顺利完成，一共有以下几个成功标志：</p>
+<h4 id="_33">启动和停止过程<a class="headerlink" href="#_33" title="Permanent link">&para;</a></h4>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 15H6l7-14v8h5l-7 14v-8Z"/></svg></span> 启动过程应该输出类似：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>hadoop@namenode: ~ $ start-dfs.sh
+<a id="__codelineno-46-2" name="__codelineno-46-2" href="#__codelineno-46-2"></a>Starting namenodes on [namenode]
+<a id="__codelineno-46-3" name="__codelineno-46-3" href="#__codelineno-46-3"></a>Starting datanodes
+<a id="__codelineno-46-4" name="__codelineno-46-4" href="#__codelineno-46-4"></a>Starting secondary namenodes [datanode2]
+<a id="__codelineno-46-5" name="__codelineno-46-5" href="#__codelineno-46-5"></a>
+<a id="__codelineno-46-6" name="__codelineno-46-6" href="#__codelineno-46-6"></a>hadoop@datanode1: ~ $ start-yarn.sh
+<a id="__codelineno-46-7" name="__codelineno-46-7" href="#__codelineno-46-7"></a>Starting resourcemanager
+<a id="__codelineno-46-8" name="__codelineno-46-8" href="#__codelineno-46-8"></a>Starting nodemanagers
+</code></pre></div>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16.56 5.44-1.45 1.45A5.969 5.969 0 0 1 18 12a6 6 0 0 1-6 6 6 6 0 0 1-6-6c0-2.17 1.16-4.06 2.88-5.12L7.44 5.44A7.961 7.961 0 0 0 4 12a8 8 0 0 0 8 8 8 8 0 0 0 8-8c0-2.72-1.36-5.12-3.44-6.56M13 3h-2v10h2"/></svg></span> 停止过程应该输出类似：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>hadoop@datanode1: ~ $ stop-yarn.sh
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>Stopping nodemanagers
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>Stopping resourcemanager
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>hadoop@namenode: ~ $ stop-dfs.sh
+<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>Stopping namenodes on [namenode]
+<a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>Stopping datanodes
+<a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>Stopping secondary namenodes [datanode2]
+</code></pre></div>
+<p>启动或停止过程不应该出现任何 <code>WARNING</code> 或报错信息。不应该出现 <code>XXX did not exit gracefully</code> 信息。</p>
+<div class="admonition faq">
+<p class="admonition-title">首次启动？</p>
+<p>首次启动可能会出现这类警告信息：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>datanode1: Warning: Permanently added &#39;datanode1&#39; (ED25519) to the list of known hosts.
+<a id="__codelineno-48-2" name="__codelineno-48-2" href="#__codelineno-48-2"></a>datanode2: Warning: Permanently added &#39;datanode2&#39; (ED25519) to the list of known hosts.
+</code></pre></div>
+<p>这是首次 SSH 连接到其他服务器时的正常现象，不用担心。下次启动时应该就不会出现了。</p>
+<p>如果出现这类警告信息：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>datanode1: WARNING: /usr/local/hadoop/logs does not exist. Creating.
+<a id="__codelineno-49-2" name="__codelineno-49-2" href="#__codelineno-49-2"></a>datanode2: WARNING: /usr/local/hadoop/logs does not exist. Creating.
+</code></pre></div>
+<p>这是 <code>datanode1</code> 和 <code>datanode2</code> 首次运行 Hadoop 时正常产生的现象，因为没有日志目录，也不必担心。</p>
+</div>
+<h4 id="_34">三台服务器运行的后台任务<a class="headerlink" href="#_34" title="Permanent link">&para;</a></h4>
+<p>在三台服务器上以 <code>hadoop</code> 用户身份运行 <code>jps</code><sup id="fnref2:6"><a class="footnote-ref" href="#fn:6">6</a></sup>，应该得到以下输出（不分顺序）：</p>
+<ul>
+<li><code>namenode</code>:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>NameNode
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>NodeManager
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>DataNode
+<a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>Jps
+</code></pre></div></li>
+<li><code>datanode1</code>:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-51-1" name="__codelineno-51-1" href="#__codelineno-51-1"></a>ResourceManager
+<a id="__codelineno-51-2" name="__codelineno-51-2" href="#__codelineno-51-2"></a>NodeManager
+<a id="__codelineno-51-3" name="__codelineno-51-3" href="#__codelineno-51-3"></a>DataNode
+<a id="__codelineno-51-4" name="__codelineno-51-4" href="#__codelineno-51-4"></a>Jps
+</code></pre></div></li>
+<li><code>datanode2</code>:
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-52-1" name="__codelineno-52-1" href="#__codelineno-52-1"></a>SecondaryNameNode
+<a id="__codelineno-52-2" name="__codelineno-52-2" href="#__codelineno-52-2"></a>NodeManager
+<a id="__codelineno-52-3" name="__codelineno-52-3" href="#__codelineno-52-3"></a>DataNode
+<a id="__codelineno-52-4" name="__codelineno-52-4" href="#__codelineno-52-4"></a>Jps
+</code></pre></div></li>
+</ul>
+<h4 id="hadoop_5">Hadoop 集群节点<a class="headerlink" href="#hadoop_5" title="Permanent link">&para;</a></h4>
+<p>打开 Hadoop 控制面板，在顶部导航栏中选择 <code>Datanodes</code>，你应该看到类似这样的界面：</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/hadoop-datanodes.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Hadoop 集群节点" src="../../img/bigdata/exp1/hadoop-datanodes.png" /></a></p>
+<p>如果有三个数据节点，那么你的 Hadoop 集群就安装并全部启动成功了。</p>
+<h4 id="yarn">YARN 节点<a class="headerlink" href="#yarn" title="Permanent link">&para;</a></h4>
+<p>打开 YARN 控制面板，你应该看到类似这样的界面：</p>
+<p><a class="glightbox" href="../../img/bigdata/exp1/yarn-datanodes.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="YARN 节点" src="../../img/bigdata/exp1/yarn-datanodes.png" /></a></p>
+<p>如果红框位置有三个数据节点，那么你的 YARN 的配置就是正确的并启动成功了。</p>
+<h4 id="_35">自动验证<a class="headerlink" href="#_35" title="Permanent link">&para;</a></h4>
+<p>我们开发了一个自动验证工具（目前仅可用于 Windows），你可以使用它验证自己的实验结果。</p>
+<p>在<a href="../res/bigdata/exp1/HadoopVerifier.exe"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg></span>此处下载</a>。</p>
+<div class="admonition note">
+<p>※ 由于是独立开发应用，Microsoft Defender 反病毒应用程序可能误触发自动提交样本。</p>
+</div>
+<h2 id="_36">那以后呢？<a class="headerlink" href="#_36" title="Permanent link">&para;</a></h2>
+<p>未来，如果想要启停 Hadoop 环境，步骤如下：</p>
+<ul>
+<li>三台机器全部开机，随后：</li>
+<li><code>namenode</code>:<ul>
+<li>登录到 <code>hadoop</code> 用户</li>
+<li>运行 <code>start-dfs.sh</code></li>
+<li>结束，可输入 <code>exit</code> 退出登录</li>
+</ul>
+</li>
+<li><code>datanode1</code>:<ul>
+<li>登录到 <code>hadoop</code> 用户</li>
+<li>运行 <code>start-yarn.sh</code></li>
+<li>结束，可输入 <code>exit</code> 退出登录</li>
+</ul>
+</li>
+<li><code>datanode2</code>: 什么都不用做</li>
+</ul>
+<p>如果需要停止 Hadoop 环境，将 <code>start</code> 替换为 <code>stop</code> 即可。</p>
+<div class="admonition question">
+<p class="admonition-title">我没法关机？</p>
+<p>Hadoop 为低权限用户，可能没有关机权限，也没有 <code>sudo</code> 权限。此时可以退出登录，重新登录到 <code>super</code> 用户再执行 <code>poweroff</code> 命令。</p>
+</div>
+<h2 id="faq">FAQ / 常见问题<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<p>以下是对一些实验中较为常见的问题的解答。</p>
+<h3 id="_37">其它系统配置<a class="headerlink" href="#_37" title="Permanent link">&para;</a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.2L4 17.2V4h16v12M12.2 5.5c-.9 0-1.6.2-2.1.5-.6.4-.9 1-.8 1.7h2c0-.3.1-.5.3-.6.2-.1.4-.2.7-.2.3 0 .6.1.8.3.2.2.3.4.3.7 0 .3-.1.5-.2.7-.2.2-.4.4-.6.5-.5.3-.9.6-1.1.8-.4.3-.5.6-.5 1.1h2c0-.3.1-.5.1-.7.1-.2.3-.3.5-.5.5-.2.8-.5 1.1-.9.3-.4.4-.8.4-1.2 0-.7-.3-1.3-.8-1.7-.4-.3-1.2-.5-2.1-.5M11 12v2h2v-2h-2Z"/></svg></span> <strong>Q</strong><br />
+我可以使用其他的 Linux 系统作为虚拟机系统吗？我可以使用 Ubuntu 22.04 桌面版或者 20.04, 18.04 进行实验吗？我可以用我最喜欢的 Arch Linux / Gentoo / nixOS 吗？</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m-9.53 12L7 10.5l1.4-1.41 2.07 2.08L15.6 6 17 7.41 10.47 14Z"/></svg></span> <strong>A</strong><br />
+当然可以<sup id="fnref:7"><a class="footnote-ref" href="#fn:7">7</a></sup>。但需要注意的是系统版本的不同可能导致一些实验细节上的不一致，难免会出现一些意料之外的问题。</p>
+<h3 id="hadoop-envsh"><code>hadoop-env.sh</code> 文件未找到<a class="headerlink" href="#hadoop-envsh" title="Permanent link">&para;</a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.2L4 17.2V4h16v12M12.2 5.5c-.9 0-1.6.2-2.1.5-.6.4-.9 1-.8 1.7h2c0-.3.1-.5.3-.6.2-.1.4-.2.7-.2.3 0 .6.1.8.3.2.2.3.4.3.7 0 .3-.1.5-.2.7-.2.2-.4.4-.6.5-.5.3-.9.6-1.1.8-.4.3-.5.6-.5 1.1h2c0-.3.1-.5.1-.7.1-.2.3-.3.5-.5.5-.2.8-.5 1.1-.9.3-.4.4-.8.4-1.2 0-.7-.3-1.3-.8-1.7-.4-.3-1.2-.5-2.1-.5M11 12v2h2v-2h-2Z"/></svg></span> <strong>Q</strong><br />
+在安装 Java 时，当我修改 <code>/usr/local/hadoop/etc/hadoop/hadoop-env.sh</code> 的时候，提示我文件未找到，是怎么回事？</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m-9.53 12L7 10.5l1.4-1.41 2.07 2.08L15.6 6 17 7.41 10.47 14Z"/></svg></span> <strong>A</strong><br />
+你可能在安装 Hadoop 时，在 <code>sudo mv hadoop-3.3.6/* .</code> 这个命令遗漏了末尾的点（<code>.</code>）符号。这会导致错误的移动行为。类似地，如果在安装
+Hadoop 过程中，<code>chown</code> 命令报错，提示 <code>chown: missing operand after ...</code>，你可能也是遗漏了这个 <code>.</code> 点。</p>
+<h3 id="apt"><code>apt</code> 无法连接<a class="headerlink" href="#apt" title="Permanent link">&para;</a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.2L4 17.2V4h16v12M12.2 5.5c-.9 0-1.6.2-2.1.5-.6.4-.9 1-.8 1.7h2c0-.3.1-.5.3-.6.2-.1.4-.2.7-.2.3 0 .6.1.8.3.2.2.3.4.3.7 0 .3-.1.5-.2.7-.2.2-.4.4-.6.5-.5.3-.9.6-1.1.8-.4.3-.5.6-.5 1.1h2c0-.3.1-.5.1-.7.1-.2.3-.3.5-.5.5-.2.8-.5 1.1-.9.3-.4.4-.8.4-1.2 0-.7-.3-1.3-.8-1.7-.4-.3-1.2-.5-2.1-.5M11 12v2h2v-2h-2Z"/></svg></span> <strong>Q</strong><br />
+在安装 Java 时，<code>apt</code> 命令刷屏且不执行安装，怎么办？</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m-9.53 12L7 10.5l1.4-1.41 2.07 2.08L15.6 6 17 7.41 10.47 14Z"/></svg></span> <strong>A</strong><br />
+你有可能错误地在<strong>代理设置</strong>页面填写了镜像地址，而没有真正地更改镜像地址。请使用以下命令删除代理配置：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-53-1" name="__codelineno-53-1" href="#__codelineno-53-1"></a>sudo<span class="w"> </span>rm<span class="w"> </span>/etc/apt/apt.conf.d/90curtin-aptproxy
+</code></pre></div>
+<p>随后使用：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-54-1" name="__codelineno-54-1" href="#__codelineno-54-1"></a>sudo<span class="w"> </span>apt<span class="w"> </span>update
+</code></pre></div>
+<p>检查 <code>apt</code> 联网是否正常。</p>
+<h3 id="scp"><code>scp</code> 连接超时<a class="headerlink" href="#scp" title="Permanent link">&para;</a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.2L4 17.2V4h16v12M12.2 5.5c-.9 0-1.6.2-2.1.5-.6.4-.9 1-.8 1.7h2c0-.3.1-.5.3-.6.2-.1.4-.2.7-.2.3 0 .6.1.8.3.2.2.3.4.3.7 0 .3-.1.5-.2.7-.2.2-.4.4-.6.5-.5.3-.9.6-1.1.8-.4.3-.5.6-.5 1.1h2c0-.3.1-.5.1-.7.1-.2.3-.3.5-.5.5-.2.8-.5 1.1-.9.3-.4.4-.8.4-1.2 0-.7-.3-1.3-.8-1.7-.4-.3-1.2-.5-2.1-.5M11 12v2h2v-2h-2Z"/></svg></span> <strong>Q</strong>  </p>
+<p>我在尝试使用 <code>scp</code> 复制 Hadoop 包时，提示：</p>
+<div class="admonition quote">
+<p>ssh: connect to host 192.168.178.100 port 22: Connection timed out</p>
+</div>
+<p>怎么办？</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m-9.53 12L7 10.5l1.4-1.41 2.07 2.08L15.6 6 17 7.41 10.47 14Z"/></svg></span> <strong>A</strong><br />
+此问题常见于 Windows，可能是以下几种情况：</p>
+<ol>
+<li>你为虚拟机设置错了子网，比如你的虚拟机所在的子网并不是 <code>192.168.178.0/24</code> 但你却设置成了这样</li>
+<li>你的虚拟网卡缺失</li>
+</ol>
+<p>你可以尝试：</p>
+<ul>
+<li>打开任务管理器</li>
+<li>切换到“性能”标签页</li>
+<li>检查是否有“以太网”图表，下方适配器名称为 <code>VMware Network Adapter VMnet8</code>（或与你的虚拟化软件对应的名称）<br />
+<a class="glightbox" href="../../img/bigdata/exp1/taskmgr-vethernet-adapter.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="任务管理器图表" src="../../img/bigdata/exp1/taskmgr-vethernet-adapter.png" /></a><ul>
+<li>如果没有，或者只看到了“WLAN”与/或“以太网”，说明你的问题是上述第二种情况，你需要重新安装你的虚拟化软件</li>
+</ul>
+</li>
+<li>点击该图表，查看“IPv4 地址”一栏，确定你所在的子网，如 <code>192.168.110.1</code>，对应的就是 <code>192.168.110.0/24</code></li>
+<li>在虚拟机运行以下命令：
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-55-1" name="__codelineno-55-1" href="#__codelineno-55-1"></a>sudo<span class="w"> </span>nano<span class="w"> </span>/etc/netplan/00-installer-config.yaml
+</code></pre></div></li>
+<li>替换所有此前的“第三段数字”为你在任务管理器里看到的新的“第三段数字”（如本例子中的 <code>178</code> 应为 <code>110</code>）</li>
+<li>保存，运行 <code>sudo reboot</code> 重新启动虚拟机</li>
+</ul>
+<h3 id="scp_1"><code>scp</code> 无法确认连接<a class="headerlink" href="#scp_1" title="Permanent link">&para;</a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.2L4 17.2V4h16v12M12.2 5.5c-.9 0-1.6.2-2.1.5-.6.4-.9 1-.8 1.7h2c0-.3.1-.5.3-.6.2-.1.4-.2.7-.2.3 0 .6.1.8.3.2.2.3.4.3.7 0 .3-.1.5-.2.7-.2.2-.4.4-.6.5-.5.3-.9.6-1.1.8-.4.3-.5.6-.5 1.1h2c0-.3.1-.5.1-.7.1-.2.3-.3.5-.5.5-.2.8-.5 1.1-.9.3-.4.4-.8.4-1.2 0-.7-.3-1.3-.8-1.7-.4-.3-1.2-.5-2.1-.5M11 12v2h2v-2h-2Z"/></svg></span> <strong>Q</strong><br />
+我在 Windows 上复制 Hadoop 包时，我被提示：</p>
+<div class="admonition quote">
+<p>The authenticity of host '192.168.178.100 (192.168.178.100)' can't be established.<br />
+ECDSA key fingerprint is SHA256:XXXXXXXXX.<br />
+Are you sure you want to continue connecting (yes/no/[fingerprint])?</p>
+</div>
+<p>但是我输入 <code>yes</code> 时无反应，怎么办？</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m-9.53 12L7 10.5l1.4-1.41 2.07 2.08L15.6 6 17 7.41 10.47 14Z"/></svg></span> <strong>A</strong><br />
+你的中文输入法（尤其是搜狗拼音）正在妨碍控制台输入，切换至英文模式，或切换输入法，再输入 <code>yes</code> 回车即可。</p>
+<div class="admonition tip">
+<p class="admonition-title">自动信任</p>
+<p>你也可以使用以下命令自动信任虚拟机（注意修改成你虚拟机的 IP）：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-56-1" name="__codelineno-56-1" href="#__codelineno-56-1"></a>ssh<span class="w"> </span>-o<span class="w"> </span><span class="nv">BatchMode</span><span class="o">=</span>yes<span class="w"> </span>-o<span class="w"> </span><span class="nv">StrictHostKeyChecking</span><span class="o">=</span>no<span class="w"> </span>super@192.168.178.100
+</code></pre></div>
+</div>
+<h3 id="scp_2"><code>scp</code> 命令未找到<a class="headerlink" href="#scp_2" title="Permanent link">&para;</a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.2L4 17.2V4h16v12M12.2 5.5c-.9 0-1.6.2-2.1.5-.6.4-.9 1-.8 1.7h2c0-.3.1-.5.3-.6.2-.1.4-.2.7-.2.3 0 .6.1.8.3.2.2.3.4.3.7 0 .3-.1.5-.2.7-.2.2-.4.4-.6.5-.5.3-.9.6-1.1.8-.4.3-.5.6-.5 1.1h2c0-.3.1-.5.1-.7.1-.2.3-.3.5-.5.5-.2.8-.5 1.1-.9.3-.4.4-.8.4-1.2 0-.7-.3-1.3-.8-1.7-.4-.3-1.2-.5-2.1-.5M11 12v2h2v-2h-2Z"/></svg></span> <strong>Q</strong><br />
+我在 Windows 上复制 Hadoop 包时，我被提示：</p>
+<div class="admonition quote">
+<p>'scp' 不是内部或外部命令，也不是可运行的程序或批处理文件。</p>
+</div>
+<p>怎么办？</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m-9.53 12L7 10.5l1.4-1.41 2.07 2.08L15.6 6 17 7.41 10.47 14Z"/></svg></span> <strong>A</strong><br />
+这通常意味着你的电脑并没有 <code>scp</code> 命令。你需要 Windows 10 April 2018 Update (1803, build 17134) 或更高版本，并且已经安装可选功能“OpenSSH 客户端”。你可以尝试以下步骤重新启用 <code>scp</code> 命令：</p>
+<div class="admonition tip inline end">
+<p class="admonition-title">不想用命令行？</p>
+<p>你也可以下载图形化应用 <a href="https://winscp.net/eng/download.php">WinSCP <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a> 来替代 <code>scp</code> 命令进行文件传输。</p>
+</div>
+<ul>
+<li>前往<a href="ms-settings:optionalfeatures">“设置” <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> 应用 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> 应用和功能 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> 可选功能</a></li>
+<li>选择“<strong>添加功能</strong>”</li>
+<li>勾选“<strong>OpenSSH 客户端</strong>”</li>
+<li>选择“<strong>安装</strong>”</li>
+</ul>
+<p>安装过程需要网络连接。等待安装完成后，你应该就可以使用 <code>scp</code> 和 <code>ssh</code> 命令了。如果你没有看到这个可选功能，你可能正在使用偏旧的 Windows 10，可以运行 <code>winver</code> 命令确认“操作系统内部版本”（需 &gt;17134）。</p>
+<h3 id="ssh-scp"><code>ssh</code> 或 <code>scp</code> 提示远程指纹更改<a class="headerlink" href="#ssh-scp" title="Permanent link">&para;</a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.2L4 17.2V4h16v12M12.2 5.5c-.9 0-1.6.2-2.1.5-.6.4-.9 1-.8 1.7h2c0-.3.1-.5.3-.6.2-.1.4-.2.7-.2.3 0 .6.1.8.3.2.2.3.4.3.7 0 .3-.1.5-.2.7-.2.2-.4.4-.6.5-.5.3-.9.6-1.1.8-.4.3-.5.6-.5 1.1h2c0-.3.1-.5.1-.7.1-.2.3-.3.5-.5.5-.2.8-.5 1.1-.9.3-.4.4-.8.4-1.2 0-.7-.3-1.3-.8-1.7-.4-.3-1.2-.5-2.1-.5M11 12v2h2v-2h-2Z"/></svg></span> <strong>Q</strong><br />
+我因为问题重做了实验（重新安装了 OS）， 但在 SSH 或 SCP 连接时，我遇到这样的警告，怎么办？</p>
+<div class="admonition quote">
+<p>WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!</p>
+</div>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m-9.53 12L7 10.5l1.4-1.41 2.07 2.08L15.6 6 17 7.41 10.47 14Z"/></svg></span> <strong>A</strong><br />
+这是正常现象，是 OpenSSH 的安全功能之一。重新安装后会导致公钥发生变化而不匹配导致无法连接。你可以使用以下命令移除对此前公钥的记忆：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-57-1" name="__codelineno-57-1" href="#__codelineno-57-1"></a>ssh-keygen<span class="w"> </span>-R<span class="w"> </span><span class="m">192</span>.168.178.100
+</code></pre></div>
+<h3 id="_38">启动集群时提示权限拒绝<a class="headerlink" href="#_38" title="Permanent link">&para;</a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.2L4 17.2V4h16v12M12.2 5.5c-.9 0-1.6.2-2.1.5-.6.4-.9 1-.8 1.7h2c0-.3.1-.5.3-.6.2-.1.4-.2.7-.2.3 0 .6.1.8.3.2.2.3.4.3.7 0 .3-.1.5-.2.7-.2.2-.4.4-.6.5-.5.3-.9.6-1.1.8-.4.3-.5.6-.5 1.1h2c0-.3.1-.5.1-.7.1-.2.3-.3.5-.5.5-.2.8-.5 1.1-.9.3-.4.4-.8.4-1.2 0-.7-.3-1.3-.8-1.7-.4-.3-1.2-.5-2.1-.5M11 12v2h2v-2h-2Z"/></svg></span> <strong>Q</strong><br />
+我在启动 Hadoop 集群时，得到这种错误，怎么办？</p>
+<div class="admonition quote">
+<p>datanode1: hadoop@datanode1: Permission denied (publickey,password).<br />
+datanode2: hadoop@datanode2: Permission denied (publickey,password).</p>
+</div>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m-9.53 12L7 10.5l1.4-1.41 2.07 2.08L15.6 6 17 7.41 10.47 14Z"/></svg></span> <strong>A</strong><br />
+你的公钥登录配置错误。请检查“克隆虚拟机”章节。</p>
+<h3 id="datanode">启动集群后看不到 <code>datanode</code><a class="headerlink" href="#datanode" title="Permanent link">&para;</a></h3>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2m0 14H5.2L4 17.2V4h16v12M12.2 5.5c-.9 0-1.6.2-2.1.5-.6.4-.9 1-.8 1.7h2c0-.3.1-.5.3-.6.2-.1.4-.2.7-.2.3 0 .6.1.8.3.2.2.3.4.3.7 0 .3-.1.5-.2.7-.2.2-.4.4-.6.5-.5.3-.9.6-1.1.8-.4.3-.5.6-.5 1.1h2c0-.3.1-.5.1-.7.1-.2.3-.3.5-.5.5-.2.8-.5 1.1-.9.3-.4.4-.8.4-1.2 0-.7-.3-1.3-.8-1.7-.4-.3-1.2-.5-2.1-.5M11 12v2h2v-2h-2Z"/></svg></span> <strong>Q</strong><br />
+我的集群启动正常，但启动后在 <strong>Datanodes</strong> 页面看不到任何 datanode，如何解决？</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.11 0 2-.89 2-2V4a2 2 0 0 0-2-2m-9.53 12L7 10.5l1.4-1.41 2.07 2.08L15.6 6 17 7.41 10.47 14Z"/></svg></span> <strong>A</strong><br />
+你可能多次格式化了 HDFS，导致 cluster ID 不匹配。如要修复，请先确保集群未在运行，再在三台机器上删除 <code>/usr/local/hadoop/data</code> 目录，或者复制以下命令在任意节点执行：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-58-1" name="__codelineno-58-1" href="#__codelineno-58-1"></a><span class="nv">command</span><span class="o">=</span><span class="s2">&quot;rm -rf /usr/local/hadoop/data&quot;</span>
+<a id="__codelineno-58-2" name="__codelineno-58-2" href="#__codelineno-58-2"></a>ssh<span class="w"> </span>namenode<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$command</span><span class="s2">&quot;</span>
+<a id="__codelineno-58-3" name="__codelineno-58-3" href="#__codelineno-58-3"></a>ssh<span class="w"> </span>datanode1<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$command</span><span class="s2">&quot;</span>
+<a id="__codelineno-58-4" name="__codelineno-58-4" href="#__codelineno-58-4"></a>ssh<span class="w"> </span>datanode2<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$command</span><span class="s2">&quot;</span>
+</code></pre></div>
+<p>并在 <strong>Namenode</strong> 上格式化<strong>一次</strong> HDFS.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-59-1" name="__codelineno-59-1" href="#__codelineno-59-1"></a>hdfs<span class="w"> </span>namenode<span class="w"> </span>-format
+</code></pre></div>
+<p>完成后，启动集群。</p>
+<h2 id="changelog">Changelog / 更新日志<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h2>
+<p>以下为一些本手册的主要变化，可能不包括所有变更。</p>
+<ul>
+<li>2023/03/21<ul>
+<li>根据实验结果，添加了两个常见问题解答<ul>
+<li><code>ssh</code> 或 <code>scp</code> 提示远程指纹更改</li>
+<li>启动集群后看不到 <code>datanode</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>2023/03/11<ul>
+<li>新增首次启动时日志目录不存在的警告信息提示</li>
+<li>为 <code>scp</code> 命令用户名添加了提示</li>
+</ul>
+</li>
+<li>2023/03/09<ul>
+<li>调整 <code>.editorconfig</code> 配置</li>
+<li>修正了部分语法高亮</li>
+<li>调整了部分提示框的布局</li>
+</ul>
+</li>
+<li>2023/03/04<ul>
+<li>新增了首次启动过程中对 SSH 连接警告信息的提示</li>
+<li>新增了“权限拒绝”常见问题</li>
+<li>调整了“克隆虚拟机”章节结构</li>
+<li>调整了“常见问题”章节部分排版</li>
+</ul>
+</li>
+<li>2023/02/28<ul>
+<li>调整了部分信息框为默认收起</li>
+<li>新增了“代理设置”页面的截图</li>
+<li>新增了实验“成功的标志”章节</li>
+<li>新增了“常见问题”板块</li>
+<li>为部分操作增加了 ARM64 架构系统的特殊情况</li>
+</ul>
+</li>
+<li>2023/02/27<ul>
+<li>重新启用了底部导航</li>
+<li>增加了针对深信服 Web VPN 导致的文本错误的缓解措施</li>
+<li>增加了一定程度的反识别措施</li>
+<li>小幅度的排版调整</li>
+</ul>
+</li>
+<li>2023/02/26<ul>
+<li>针对深信服 Web VPN 导致的文本错误添加了警告</li>
+</ul>
+</li>
+<li>2023/02/25<ul>
+<li>适配 Ubuntu 20.04 → 22.04 安装过程中变化</li>
+<li>调整了软件下载部分的文本</li>
+<li>重新制作了所有配图 <span class="critic comment"> 抓飞友 </span></li>
+</ul>
+</li>
+<li>2023/02/24<ul>
+<li>修复 Ubuntu Server 22.04 LTS 下载链接</li>
+</ul>
+</li>
+<li>2024/03/03<ul>
+<li>修复死链</li>
+<li>更新了操作系统版本至 Ubuntu 22.04.4 LTS</li>
+<li>更新了 Hadoop 版本至 3.3.6</li>
+</ul>
+</li>
+<li>2024/03/10<ul>
+<li>新增了自动验证应用</li>
+</ul>
+</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>比如端口号等，目的是尽可能在后续实验中保持兼容性&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>如果你是 Windows 10 专业版、教育版或企业版，你可以使用 Hyper-V 功能来管理虚拟机，可以实现同样的效果，你也可以在 Windows 上使用 VirtualBox
+  来替代 VMware 或 Hyper-V. 如果你已经启用了 WSL 2（“适用于 Linux 的 Windows 子系统”），则你已经正在使用 Hyper-V 了&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+<li id="fn:3">
+<p>如果没有提示这个设置，可以忽略&#160;<a class="footnote-backref" href="#fnref:3" title="Jump back to footnote 3 in the text">&#8617;</a></p>
+</li>
+<li id="fn:4">
+<p>理论上可以用 <code>openjdk-8-jdk-headless</code> 来替换以消耗更小空间，但出于 Apache 软件的体量，使用完整版以避免特殊问题；经测试 Java 11 也可以正常运行&#160;<a class="footnote-backref" href="#fnref:4" title="Jump back to footnote 4 in the text">&#8617;</a></p>
+</li>
+<li id="fn:5">
+<p>链接克隆可以大幅节约硬盘空间，在本教程实例中大约可以节约 10 GiB 空间。链接克隆功能只在 VMware Workstation Pro 提供&#160;<a class="footnote-backref" href="#fnref:5" title="Jump back to footnote 5 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:5" title="Jump back to footnote 5 in the text">&#8617;</a></p>
+</li>
+<li id="fn:6">
+<p>如果你只安装了 JRE，也是可以运行 Hadoop 的，但 <code>jps</code> 命令不包含在 JRE 中，需要 JDK&#160;<a class="footnote-backref" href="#fnref:6" title="Jump back to footnote 6 in the text">&#8617;</a><a class="footnote-backref" href="#fnref2:6" title="Jump back to footnote 6 in the text">&#8617;</a></p>
+</li>
+<li id="fn:7">
+<p>事实上，本实验已经有过在 Arch Linux 和 Fedora 上成功完成的经验了。你甚至可以在 <a href="https://aur.archlinux.org/packages/hadoop">AUR <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a> 上找到现有的包&#160;<a class="footnote-backref" href="#fnref:7" title="Jump back to footnote 7 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../" class="md-footer__link md-footer__link--prev" aria-label="上一页: 主页">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                主页
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../exp2/" class="md-footer__link md-footer__link--next" aria-label="下一页: 实验 2">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                实验 2
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      版权所有 &copy; 2022 - 2024，仅限内部使用，不得未经允许再分发。<a href='/meta/privacy'>隐私政策 </a>及<a href='/meta/terms'> 服务协议</a>。
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+
+
+  
+
+<h4>数据隐私</h4>
+<p>我们不向您收集任何数据，或以任何形式跟踪您。请查看我们的<a href="/meta/privacy">隐私政策</a>以获得更多信息。</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.footer", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>

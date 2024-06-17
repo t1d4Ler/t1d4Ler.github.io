@@ -1,0 +1,1550 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../exp1/">
+      
+      
+        <link rel="next" href="../exp3-shell/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.27">
+    
+    
+      
+        <title>实验 2 - 在线实验手册</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-linux-hadoop" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="在线实验手册" class="md-header__button md-logo" aria-label="在线实验手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c.76 0 1.5.11 2.2.31l1.57-1.57A9.822 9.822 0 0 0 12 2 10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10M7.91 10.08 6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            在线实验手册
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              实验 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="pink" data-md-color-accent="pink"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="purple" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  欢迎
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../meta/privacy/" class="md-tabs__link">
+          
+  
+  关于
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
+          
+  
+  大数据技术原理与应用
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="在线实验手册" class="md-nav__button md-logo" aria-label="在线实验手册" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8c.76 0 1.5.11 2.2.31l1.57-1.57A9.822 9.822 0 0 0 12 2 10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10M7.91 10.08 6.5 11.5 11 16 21 6l-1.41-1.42L11 13.17l-3.09-3.09Z"/></svg>
+
+    </a>
+    在线实验手册
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    欢迎
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    关于
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            关于
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meta/privacy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    隐私政策
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../meta/terms/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    服务协议
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    大数据技术原理与应用
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            大数据技术原理与应用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    主页
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    实验 2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    实验 2
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用的 Linux 命令
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常用的 Linux 命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env-" class="md-nav__link">
+    <span class="md-ellipsis">
+      env - 环境变量工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd-" class="md-nav__link">
+    <span class="md-ellipsis">
+      cd - 切换目录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-" class="md-nav__link">
+    <span class="md-ellipsis">
+      ls - 列出文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir-" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdir - 创建目录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp-" class="md-nav__link">
+    <span class="md-ellipsis">
+      cp - 复制文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv-" class="md-nav__link">
+    <span class="md-ellipsis">
+      mv - 移动文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm-" class="md-nav__link">
+    <span class="md-ellipsis">
+      rm - 删除文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat-" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat - 查看或合并文件内容
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-less-" class="md-nav__link">
+    <span class="md-ellipsis">
+      more 和 less - 交互式阅读文件内容
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head-tail-" class="md-nav__link">
+    <span class="md-ellipsis">
+      head 和 tail - 查看文件的前/后若干行
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch-" class="md-nav__link">
+    <span class="md-ellipsis">
+      touch - 修改文件时间戳
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chmod-" class="md-nav__link">
+    <span class="md-ellipsis">
+      chmod - 调整文件权限
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown-" class="md-nav__link">
+    <span class="md-ellipsis">
+      chown - 调整文件所有者
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-" class="md-nav__link">
+    <span class="md-ellipsis">
+      find - 查找文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar-" class="md-nav__link">
+    <span class="md-ellipsis">
+      tar - 压缩文件实用工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep-" class="md-nav__link">
+    <span class="md-ellipsis">
+      grep - 查找文本
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      杂项
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用的 Hadoop 命令
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      结束了？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changelog / 更新日志
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp3-shell/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 3 (Shell)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp3-java/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 3 (Java)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 4
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp5/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 5
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp6/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 6
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exp7/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    实验 7
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用的 Linux 命令
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="常用的 Linux 命令">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env-" class="md-nav__link">
+    <span class="md-ellipsis">
+      env - 环境变量工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cd-" class="md-nav__link">
+    <span class="md-ellipsis">
+      cd - 切换目录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ls-" class="md-nav__link">
+    <span class="md-ellipsis">
+      ls - 列出文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mkdir-" class="md-nav__link">
+    <span class="md-ellipsis">
+      mkdir - 创建目录
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cp-" class="md-nav__link">
+    <span class="md-ellipsis">
+      cp - 复制文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mv-" class="md-nav__link">
+    <span class="md-ellipsis">
+      mv - 移动文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rm-" class="md-nav__link">
+    <span class="md-ellipsis">
+      rm - 删除文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cat-" class="md-nav__link">
+    <span class="md-ellipsis">
+      cat - 查看或合并文件内容
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-less-" class="md-nav__link">
+    <span class="md-ellipsis">
+      more 和 less - 交互式阅读文件内容
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#head-tail-" class="md-nav__link">
+    <span class="md-ellipsis">
+      head 和 tail - 查看文件的前/后若干行
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#touch-" class="md-nav__link">
+    <span class="md-ellipsis">
+      touch - 修改文件时间戳
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chmod-" class="md-nav__link">
+    <span class="md-ellipsis">
+      chmod - 调整文件权限
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#chown-" class="md-nav__link">
+    <span class="md-ellipsis">
+      chown - 调整文件所有者
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#find-" class="md-nav__link">
+    <span class="md-ellipsis">
+      find - 查找文件
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tar-" class="md-nav__link">
+    <span class="md-ellipsis">
+      tar - 压缩文件实用工具
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grep-" class="md-nav__link">
+    <span class="md-ellipsis">
+      grep - 查找文本
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      杂项
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hadoop" class="md-nav__link">
+    <span class="md-ellipsis">
+      常用的 Hadoop 命令
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      结束了？
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changelog / 更新日志
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="2-linux-hadoop">实验 2 - 熟悉常用的 Linux 和 Hadoop 操作<a class="headerlink" href="#2-linux-hadoop" title="Permanent link">&para;</a></h1>
+<p>本次实验相对简单但较冗长。如果你已经有一定的 Linux/UNIX shell 使用经验，应该能相对顺利地完成。</p>
+<p>登录到系统，我们开始吧。</p>
+<div class="admonition info">
+<p class="admonition-title">使用 SSH 连接</p>
+<p>在实验 1 中，你可能已经尝试过了。你可以在启动虚拟机以后就把它放到一边去（比如：最小化），然后使用 <code>ssh</code> 连接到虚拟机：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh<span class="w"> </span>hadoop@192.168.178.100
+</code></pre></div>
+</div>
+<h2 id="linux">常用的 Linux 命令<a class="headerlink" href="#linux" title="Permanent link">&para;</a></h2>
+<div class="admonition success">
+<p class="admonition-title">正在使用 macOS？</p>
+<p>如果你正在使用 macOS，由于 macOS 是类 UNIX 系统，你可以直接在系统上完成这个章节除 Hadoop 命令以外的部分，不需要用到虚拟机。打开“终端”应用即可（按 <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd class="key-space">Space</kbd></span> 打开“聚焦”搜索，输入“终端”也可）。</p>
+</div>
+<p>我们来尝试使用一些常用的 Linux 命令来完成一些简单的任务。</p>
+<h3 id="env-"><code>env</code> - 环境变量工具<a class="headerlink" href="#env-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>打印环境变量
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>env
+</code></pre></div></li>
+<li>将 <code>env</code> 命令输出内容保存到 <code>/tmp/env.tmp</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>env &gt; /tmp/env.tmp
+</code></pre></div></li>
+</ul>
+<h3 id="cd-"><code>cd</code> - 切换目录<a class="headerlink" href="#cd-" title="Permanent link">&para;</a></h3>
+<div class="admonition info inline end">
+<p class="admonition-title">命令来源</p>
+<p><code>cd</code>: <mark class="critic">c</mark>hange <mark class="critic">d</mark>irectory</p>
+</div>
+<ul>
+<li>切换到 <code>/usr/local</code> 目录
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>/usr/local
+</code></pre></div></li>
+<li>前往上级目录
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nb">cd</span><span class="w"> </span>..
+</code></pre></div></li>
+<li>前往自己的家目录
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">cd</span><span class="w"> </span>~
+</code></pre></div></li>
+</ul>
+<div class="admonition info">
+<p class="admonition-title">特殊的目录符号</p>
+<p>常见的目录包括以下几个：</p>
+<ul>
+<li><code>~</code>：家目录，用户的主目录</li>
+<li><code>.</code>：当前目录</li>
+<li><code>..</code>：上级目录</li>
+</ul>
+</div>
+<h3 id="ls-"><code>ls</code> - 列出文件<a class="headerlink" href="#ls-" title="Permanent link">&para;</a></h3>
+<div class="admonition info inline end">
+<p class="admonition-title">命令来源</p>
+<p><code>ls</code>: <mark class="critic">l</mark>i<mark class="critic">s</mark>t directory contents</p>
+</div>
+<ul>
+<li>查看 <code>/usr</code> 下所有文件
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>ls<span class="w"> </span>-la<span class="w"> </span>/usr
+</code></pre></div></li>
+</ul>
+<h3 id="mkdir-"><code>mkdir</code> - 创建目录<a class="headerlink" href="#mkdir-" title="Permanent link">&para;</a></h3>
+<div class="admonition info inline end">
+<p class="admonition-title">命令来源</p>
+<p><code>mkdir</code>: <mark class="critic">m</mark>a<mark class="critic">k</mark>e <mark class="critic">dir</mark>ectories</p>
+</div>
+<ul>
+<li>在 <code>/tmp</code> 创建一个 <code>a</code> 目录
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>/tmp
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>mkdir<span class="w"> </span>a
+</code></pre></div></li>
+<li>在当前目录下创建目录 <code>a1/a2/a3/a4</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>a1/a2/a3/a4
+</code></pre></div></li>
+</ul>
+<h3 id="cp-"><code>cp</code> - 复制文件<a class="headerlink" href="#cp-" title="Permanent link">&para;</a></h3>
+<div class="admonition info inline end">
+<p class="admonition-title">命令来源</p>
+<p><code>cp</code>: <mark class="critic">c</mark>o<mark class="critic">p</mark>y files and directories</p>
+</div>
+<ul>
+<li>将刚刚临时创建的 <code>env.tmp</code> 文件复制到 <code>/tmp</code>，命名 <code>env-copy.tmp</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>cp<span class="w"> </span>/tmp/env.tmp<span class="w"> </span>/tmp/env-copy.tmp
+</code></pre></div></li>
+<li>新建一个目录 <code>/tmp/d1</code>，复制到 <code>/tmp/d2</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>mkdir<span class="w"> </span>/tmp/d1
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>cp<span class="w"> </span>-r<span class="w"> </span>/tmp/d1<span class="w"> </span>/tmp/d2
+</code></pre></div></li>
+</ul>
+<h3 id="mv-"><code>mv</code> - 移动文件<a class="headerlink" href="#mv-" title="Permanent link">&para;</a></h3>
+<div class="admonition info inline end">
+<p class="admonition-title">命令来源</p>
+<p><code>mv</code>: <mark class="critic">m</mark>o<mark class="critic">v</mark>e (rename) files</p>
+</div>
+<ul>
+<li>将 <code>/tmp/env-copy.tmp</code> 移动到 <code>/tmp/a</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>mv<span class="w"> </span>/tmp/env-copy.tmp<span class="w"> </span>/tmp/a
+</code></pre></div></li>
+<li>将 <code>/tmp/a</code> 重命名为 <code>/tmp/b</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>mv<span class="w"> </span>/tmp/a<span class="w"> </span>/tmp/b
+</code></pre></div></li>
+</ul>
+<h3 id="rm-"><code>rm</code> - 删除文件<a class="headerlink" href="#rm-" title="Permanent link">&para;</a></h3>
+<div class="admonition info inline end">
+<p class="admonition-title">命令来源</p>
+<p><code>rm</code>: <mark class="critic">r</mark>e<mark class="critic">m</mark>ove files or directories</p>
+</div>
+<ul>
+<li>删除 <code>/tmp/b/env-copy.tmp</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>rm<span class="w"> </span>/tmp/b/env-copy.tmp
+</code></pre></div></li>
+<li>删除 <code>b</code> 目录
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>rm<span class="w"> </span>-r<span class="w"> </span>/tmp/b
+</code></pre></div></li>
+</ul>
+<h3 id="cat-"><code>cat</code> - 查看或合并文件内容<a class="headerlink" href="#cat-" title="Permanent link">&para;</a></h3>
+<div class="admonition info">
+<p class="admonition-title">命令来源</p>
+<p><code>cat</code>: con<mark class="critic">cat</mark>enate files and print on the standard output</p>
+<p><del>是 <code>/bin/cat/</code>，不是这只<a href='javascript:document.getElementById("lossless-download").style.display="block";var player=document.getElementById("cat-player");player.style.display="block";player.currentTime=0;player.play();'>猫猫 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6Z"/></svg></span></a></del></p>
+<p><audio id="cat-player" controls preload="metadata" src="/res/bigdata/exp2/cat.mp3" style="display: none"/>
+<p id="lossless-download" style="display: none"><img alt="😼" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@15.0.3/assets/svg/1f63c.svg" title=":smirk_cat:" /> 被你发现了！<a href="/res/bigdata/exp2/C418 - Cat.flac" download="C418 - Cat.flac">FLAC 无损下载 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg></span></a></p></p>
+<p><a class="glightbox" href="../../img/bigdata/exp2/bin-cat.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="/bin/cat" src="../../img/bigdata/exp2/bin-cat.jpg" /></a></p>
+</div>
+<ul>
+<li>查看 <code>/tmp/env.tmp</code> 文件内容
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>cat<span class="w"> </span>/tmp/env.tmp
+</code></pre></div></li>
+</ul>
+<h3 id="more-less-"><code>more</code> 和 <code>less</code> - 交互式阅读文件内容<a class="headerlink" href="#more-less-" title="Permanent link">&para;</a></h3>
+<div class="admonition tip inline end">
+<p class="admonition-title"><code>more</code> 和 <code>less</code> 不是一样的</p>
+<p><code>less</code> 与 <code>more</code> 形似，但具有大量优化，详情可见 <a href="https://manpages.ubuntu.com/manpages/jammy/en/man1/less.1.html">Ubuntu Manpage <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a>.</p>
+<p>在大多数情况下，<code>less</code> 可以作为 <code>more</code> 的更佳平替。</p>
+</div>
+<ul>
+<li>使用 <code>more</code> 交互式查看 <code>/tmp/env.tmp</code> 文件内容（按 <span class="keys"><kbd class="key-q">Q</kbd></span> 退出）
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>cat<span class="w"> </span>/tmp/env.tmp<span class="w"> </span><span class="p">|</span><span class="w"> </span>more
+</code></pre></div></li>
+<li>使用 <code>less</code> 交互式查看 <code>/tmp/env.tmp</code> 文件内容（按 <span class="keys"><kbd class="key-q">Q</kbd></span> 退出）
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>cat<span class="w"> </span>/tmp/env.tmp<span class="w"> </span><span class="p">|</span><span class="w"> </span>less
+</code></pre></div></li>
+</ul>
+<h3 id="head-tail-"><code>head</code> 和 <code>tail</code> - 查看文件的前/后若干行<a class="headerlink" href="#head-tail-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>查看 <code>/tmp/env.tmp</code> 的前 5 行
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>cat<span class="w"> </span>/tmp/env.tmp<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-n5
+</code></pre></div></li>
+<li>查看 <code>/tmp/env.tmp</code> 的后 5 行
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>cat<span class="w"> </span>/tmp/env.tmp<span class="w"> </span><span class="p">|</span><span class="w"> </span>tail<span class="w"> </span>-n5
+</code></pre></div></li>
+</ul>
+<h3 id="touch-"><code>touch</code> - 修改文件时间戳<a class="headerlink" href="#touch-" title="Permanent link">&para;</a></h3>
+<div class="admonition tip inline end">
+<p class="admonition-title">时间不对？</p>
+<p>你得到的输出可能是 <code>Nov 11 08:00 /tmp/hello</code>，这是为什么呢？先自己思考一下吧 ;)</p>
+<p>同时，<code>touch</code> 命令还允许很多种“时间”描述，你可以尝试：</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>touch<span class="w"> </span>-d<span class="w"> </span><span class="s2">&quot;next thursday&quot;</span><span class="w"> </span>/tmp/hello
+</code></pre></div>
+<p>然后查看结果。</p>
+<p>你可以阅读 <a href="https://manpages.ubuntu.com/manpages/jammy/en/man1/touch.1.html">Ubuntu Manpage <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a> 来了解更多。</p>
+</div>
+<ul>
+<li>创建文件 <code>/tmp/hello</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>touch<span class="w"> </span>/tmp/hello
+</code></pre></div></li>
+<li>修改文件的创建日期为 2022/11/11
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>touch<span class="w"> </span>-d2022-11-11T00:00:00Z<span class="w"> </span>/tmp/hello
+</code></pre></div></li>
+<li>查看文件信息
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>ls<span class="w"> </span>-la<span class="w"> </span>/tmp/hello
+</code></pre></div></li>
+</ul>
+<h3 id="chmod-"><code>chmod</code> - 调整文件权限<a class="headerlink" href="#chmod-" title="Permanent link">&para;</a></h3>
+<div class="admonition info inline end">
+<p class="admonition-title">命令来源</p>
+<p><code>chmod</code>: <mark class="critic">ch</mark>ange file <mark class="critic">mod</mark>e bits</p>
+</div>
+<ul>
+<li>调整 <code>/tmp/hello</code> 权限为 <code>0755</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>chmod<span class="w"> </span><span class="m">0755</span><span class="w"> </span>/tmp/hello
+</code></pre></div></li>
+</ul>
+<h3 id="chown-"><code>chown</code> - 调整文件所有者<a class="headerlink" href="#chown-" title="Permanent link">&para;</a></h3>
+<div class="admonition info inline end">
+<p class="admonition-title">命令来源</p>
+<p><code>chown</code>: <mark class="critic">ch</mark>ange file <mark class="critic">own</mark>er and group</p>
+</div>
+<ul>
+<li>切换到 <code>super</code> 用户
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>su<span class="w"> </span>-<span class="w"> </span>super
+</code></pre></div></li>
+<li>调整 <code>/tmp/hello</code> 所有者为 <code>root</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>sudo<span class="w"> </span>chown<span class="w"> </span>root:root<span class="w"> </span>/tmp/hello
+</code></pre></div></li>
+<li>移除这个文件
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>sudo<span class="w"> </span>rm<span class="w"> </span>/tmp/hello
+</code></pre></div></li>
+<li>退出 <code>super</code> 用户
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="nb">exit</span>
+</code></pre></div></li>
+</ul>
+<h3 id="find-"><code>find</code> - 查找文件<a class="headerlink" href="#find-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>建一个目录，放一些东西供我们查找用
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>mkdir<span class="w"> </span>/tmp/find
+<a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
+<a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a>mkdir<span class="w"> </span>/tmp/find/foo
+<a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;test&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/tmp/find/foo/test.txt
+<a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>
+<a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a>mkdir<span class="w"> </span>/tmp/find/bar
+<a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a>mkdir<span class="w"> </span>/tmp/find/bar/test.txt
+</code></pre></div></li>
+<li>在 <code>/tmp/find</code> 目录查找文件名为 <code>test.txt</code> 的<strong>文件</strong>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>find<span class="w"> </span>/tmp/find<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s2">&quot;test.txt&quot;</span>
+</code></pre></div></li>
+</ul>
+<h3 id="tar-"><code>tar</code> - 压缩文件实用工具<a class="headerlink" href="#tar-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>在 <code>/tmp</code> 新建 <code>tartest</code> 目录，打包成 <code>test.tar.gz</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="nb">cd</span><span class="w"> </span>/tmp
+<a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>mkdir<span class="w"> </span>tartest
+<a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a>tar<span class="w"> </span>-zc<span class="w"> </span>tartest<span class="w"> </span>-f<span class="w"> </span>test.tar.gz
+</code></pre></div></li>
+<li>解压缩到 <code>/tmp</code> 目录
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>rm<span class="w"> </span>-r<span class="w"> </span>tartest
+<a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a>tar<span class="w"> </span>-zxf<span class="w"> </span>/tmp/test.tar.gz
+</code></pre></div></li>
+</ul>
+<h3 id="grep-"><code>grep</code> - 查找文本<a class="headerlink" href="#grep-" title="Permanent link">&para;</a></h3>
+<ul>
+<li>从 <code>/tmp/env.tmp</code> 查找 <code>SHELL</code>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>grep<span class="w"> </span><span class="s1">&#39;SHELL&#39;</span><span class="w"> </span>/tmp/env.tmp
+</code></pre></div></li>
+</ul>
+<h3 id="_1">杂项<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>创建一个临时文件，用于临时将 <code>JAVA_HOME</code> 设置到环境变量<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export JAVA_HOME=/usr/lib/jvm/java-1.8.0-openjdk-amd64&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>/tmp/java_home.source
+<a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="nb">source</span><span class="w"> </span>/tmp/java_home.source
+</code></pre></div></li>
+<li>查看 <code>JAVA_HOME</code> 值
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="nb">echo</span><span class="w"> </span><span class="nv">$JAVA_HOME</span>
+</code></pre></div></li>
+<li>清理我们在 <code>/tmp</code> 创建的文件
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>rm<span class="w"> </span>-r<span class="w"> </span>/tmp/env.tmp<span class="w"> </span>/tmp/a1<span class="w"> </span>/tmp/d1<span class="w"> </span>/tmp/d2<span class="w"> </span>/tmp/find<span class="w"> </span>/tmp/test.tar.gz<span class="w"> </span>/tmp/tartest
+</code></pre></div></li>
+</ul>
+<h2 id="hadoop">常用的 Hadoop 命令<a class="headerlink" href="#hadoop" title="Permanent link">&para;</a></h2>
+<ul>
+<li>启动 Hadoop</li>
+<li>使用 <code>hadoop</code> 身份登录到 <code>namenode</code></li>
+<li>在 HDFS 创建用户目录
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>hdfs<span class="w"> </span>dfs<span class="w"> </span>-mkdir<span class="w"> </span>-p<span class="w"> </span>/user/hadoop
+</code></pre></div></li>
+<li>在本地文件系统生成临时文件，使用 <code>uname -a</code> 输出
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>uname<span class="w"> </span>-a<span class="w"> </span>&gt;<span class="w"> </span>/tmp/uname.txt
+</code></pre></div></li>
+<li>将生成的 <code>uname.txt</code> 上传到 HDFS 的 <code>/user/hadoop</code> 目录
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>hdfs<span class="w"> </span>dfs<span class="w"> </span>-put<span class="w"> </span>/tmp/uname.txt<span class="w"> </span>/user/hadoop/uname.txt
+</code></pre></div></li>
+<li>将 HDFS 中的 <code>/user/hadoop/testrc</code> 复制到本地
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>hdfs<span class="w"> </span>dfs<span class="w"> </span>-get<span class="w"> </span>/user/hadoop/uname.txt<span class="w"> </span>/tmp/uname-downloaded.txt
+</code></pre></div></li>
+<li>查看下载文件内容
+  <div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>cat<span class="w"> </span>/tmp/uname-downloaded.txt
+</code></pre></div></li>
+</ul>
+<h2 id="_2">结束了？<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<p>结束了。实验 2 相对简单，但目的是初步熟悉常用的 Linux 命令，如何在系统里导航和执行最基本的任务。接下来，你会用到这里的经验的。</p>
+<h2 id="changelog">Changelog / 更新日志<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h2>
+<p>以下为一些本手册的主要变化，可能不包括所有变更。</p>
+<ul>
+<li>2023/03/17<ul>
+<li>调整了部分命令，以免对系统配置发生修改</li>
+<li>修改了 <code>hadoop fs</code> 命令为更加针对 HDFS 的 <code>hdfs dfs</code> 命令</li>
+</ul>
+</li>
+<li>2023/03/09<ul>
+<li>增加了“命令来源”板块</li>
+<li>调整了提示框的布局</li>
+<li>调整了语法高亮</li>
+</ul>
+</li>
+</ul>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p>已经很少有人使用 <code>rmdir</code> 命令了&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>如果你是 ARM 架构虚拟机，你可能需要调整为 <code>/usr/lib/jvm/java-1.8.0-openjdk-arm64</code>&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="页脚" >
+        
+          
+          <a href="../exp1/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 实验 1">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              <div class="md-ellipsis">
+                实验 1
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../exp3-shell/" class="md-footer__link md-footer__link--next" aria-label="下一页: 实验 3 (Shell)">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              <div class="md-ellipsis">
+                实验 3 (Shell)
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      版权所有 &copy; 2022 - 2024，仅限内部使用，不得未经允许再分发。<a href='/meta/privacy'>隐私政策 </a>及<a href='/meta/terms'> 服务协议</a>。
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+
+
+  
+
+<h4>数据隐私</h4>
+<p>我们不向您收集任何数据，或以任何形式跟踪您。请查看我们的<a href="/meta/privacy">隐私政策</a>以获得更多信息。</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout(function(){document.querySelector("[data-md-component=consent]").hidden=!1},250);var action,form=document.forms.consent;for(action of["submit","reset"])form.addEventListener(action,function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map(function(e){return[e,!0]}))),location.hash="",location.reload()})</script>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "content.code.annotate", "navigation.footer", "navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.ad660dcc.min.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
