@@ -714,25 +714,10 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="运行">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用自动验证工具
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       测试
     </span>
@@ -750,7 +735,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       关闭集群
     </span>
@@ -849,25 +834,10 @@
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="运行">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      使用自动验证工具
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
 </li>
       
         <li class="md-nav__item">
-  <a href="#_6" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       测试
     </span>
@@ -885,7 +855,7 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_7" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       关闭集群
     </span>
@@ -1021,14 +991,7 @@
 <p>现在你可以尝试访问 <a href="http://192.168.178.100:8080" target="_blank">Spark 面板，即 <code>namenode</code> 的 8080 端口 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span></a> 查看 Spark 状态了。你也可以使用 <code>jps</code> 命令确认是否在 <code>namenode</code> 上同时有 <code>Worker</code> 和 <code>Master</code> 在运行，且在其他节点上有 <code>Worker</code> 在运行。</p>
 <p>如果你的 Spark 面板长得像这样，恭喜，你的 Spark 集群已经搭建完成，正常运行了。</p>
 <p><a class="glightbox" href="../../img/bigdata/exp7/spark-panel.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Spark WebUI" src="../../img/bigdata/exp7/spark-panel.png" /></a></p>
-<h3 id="_5">使用自动验证工具<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h3>
-<p>如果你正在使用 Windows，可以尝试自动验证工具测试你的集群。</p>
-<p>在<a href="../res/bigdata/exp1/HadoopVerifier.exe"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 20h14v-2H5m14-9h-4V3H9v6H5l7 7 7-7Z"/></svg></span>此处下载</a>。</p>
-<div class="admonition note">
-<p>※ 由于是独立开发应用，Microsoft Defender 反病毒应用程序可能误触发自动提交样本。</p>
-<p>※ 可能不是最新版本，但程序启动时会自动应用增量更新。</p>
-</div>
-<h2 id="_6">测试<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<h2 id="_5">测试<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
 <p>Spark 内置了几个测试项目，我们可以运行其中的一些来尝试，以 <code>hadoop</code> 用户身份：</p>
 <div class="highlight"><span class="filename">Scala 与 Java 测试项目</span><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>spark-submit<span class="w"> </span>--class<span class="w"> </span>org.apache.spark.examples.SparkPi<span class="w"> </span>--master<span class="w"> </span>spark://namenode:7077<span class="w"> </span><span class="nv">$SPARK_HOME</span>/examples/jars/spark-examples_2.13-3.5.1.jar
 </code></pre></div>
@@ -1073,7 +1036,7 @@
 <a id="__codelineno-28-10" name="__codelineno-28-10" href="#__codelineno-28-10"></a><span class="kd">val</span><span class="w"> </span><span class="n">res2</span><span class="p">:</span><span class="w"> </span><span class="nc">Long</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">20</span>
 </code></pre></div>
 <p>完成了！按 <span class="keys"><kbd class="key-control">Ctrl</kbd><span>+</span><kbd class="key-c">C</kbd></span> 退出 Spark Shell.</p>
-<h2 id="_7">关闭集群<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h2>
+<h2 id="_6">关闭集群<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
 <ol>
 <li>停止 Spark 集群：
     <div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="nv">$SPARK_HOME</span>/sbin/stop-all.sh
@@ -1152,7 +1115,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      版权所有 &copy; 2022 - 2024，仅限内部使用，不得未经允许再分发。<a href='/meta/privacy'>隐私政策 </a>及<a href='/meta/terms'> 服务协议</a>。
+      版权所有 &copy; 2022 - 2024，使用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' target='_blank'>CC BY-NC-SA 4.0 授权</a> / <a href='/meta/privacy'>隐私政策</a> / <a href='/meta/terms'>服务协议</a>
     </div>
   
   
